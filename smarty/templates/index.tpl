@@ -8,7 +8,7 @@
     <title>Sample Project</title>
 </head>
 <body>
-    <h1>Welcome to Sample Project</h1>
+    <h1>Welcome to Daddy</h1>
     <p>This is a basic HTML template using Smarty.</p>
 
     {if (isset($PHP_SELF))}
