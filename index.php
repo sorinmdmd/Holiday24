@@ -31,6 +31,7 @@ require_once 'klassen/DbFunctions.inc.php';
 require_once 'klassen/Sicherheit.inc.php';
 require_once 'klassen/TCPDF/tcpdf.php';
 require_once("./klassen/SVGGraph/autoloader.php");
+include ("keineAhnung/header.php");
 
 DEFINE('ENCODING', 'UTF-8');
 DEFINE("PATH_AND_FILENAME", "images/graph.svg");

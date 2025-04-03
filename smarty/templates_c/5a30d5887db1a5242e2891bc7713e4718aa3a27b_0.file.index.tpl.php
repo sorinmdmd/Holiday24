@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-03 20:17:04
+/* Smarty version 4.2.0, created on 2025-04-03 20:37:10
   from '/var/www/html/iksy05/IKSY2/Git/iksy2/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67eeecc0787d62_72083816',
+  'unifunc' => 'content_67eef17675c102_34917688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a30d5887db1a5242e2891bc7713e4718aa3a27b' => 
     array (
       0 => '/var/www/html/iksy05/IKSY2/Git/iksy2/smarty/templates/index.tpl',
-      1 => 1743710467,
+      1 => 1743711465,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67eeecc0787d62_72083816 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67eef17675c102_34917688 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@ function content_67eeecc0787d62_72083816 (Smarty_Internal_Template $_smarty_tpl)
     <title>Sample Project</title>
 </head>
 <body>
-    <h1>Welcome to Sample Project</h1>
+    <h1>Welcome to Daddy</h1>
     <p>This is a basic HTML template using Smarty.</p>
 
     <?php if (((isset($_smarty_tpl->tpl_vars['PHP_SELF']->value)))) {?>
