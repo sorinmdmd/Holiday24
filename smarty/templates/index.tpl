@@ -9,7 +9,7 @@
 </head>
 <body>
     {include file="header.tpl"}
-    <h1>Welcome to Daddy</h1>
+    <h1>Welcome to Holiday24</h1>
     <p>This is a basic HTML template using Smarty.</p>
 
     {if (isset($PHP_SELF))}
