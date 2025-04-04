@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 08:23:18
+/* Smarty version 4.2.0, created on 2025-04-04 09:10:32
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67ef96f6223bd0_54683019',
+  'unifunc' => 'content_67efa208b1f9d1_51651158',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8349de398158401276bb474a4e564f757e32b730' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl',
-      1 => 1743754985,
+      1 => 1743757829,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67ef96f6223bd0_54683019 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67efa208b1f9d1_51651158 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +34,7 @@ function content_67ef96f6223bd0_54683019 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <h1>Welcome to Daddy</h1>
+    <h1>Welcome to Holiday24</h1>
     <p>This is a basic HTML template using Smarty.</p>
 
     <?php if (((isset($_smarty_tpl->tpl_vars['PHP_SELF']->value)))) {?>
