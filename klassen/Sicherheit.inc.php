@@ -36,6 +36,13 @@ class Sicherheit {
 	    }
 	    return false;
 	}
-	            	
+
+	public static function generateCSRFToken() {
+        return bin2hex(random_bytes(64));
+    }
+
+    public static function validateCSRFToken($token, $sessionToken) {
+        return hash_equals($token, $sessionToken);
+    }
 }
 ?>
