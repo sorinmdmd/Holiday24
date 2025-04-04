@@ -15,5 +15,9 @@ $smarty->assign('ueberschrift', htmlentities($ueberschrift));
 // $angebote = Lieferservice::getAngebot($link);
 // $smarty->assign('angebote', $angebote);
 
+// Assign user_id to Smarty if the user is logged in
+if (isset($_SESSION['user_id'])) {
+    $smarty->assign('user_id', $_SESSION['user_id']);
+}
 $smarty->display('aboutus.tpl');
 ?>

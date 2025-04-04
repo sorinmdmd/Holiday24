@@ -29,8 +29,9 @@ if ($REQUEST_METHOD == "POST") {
     $user = DbFunctions::verifyUser($link, $email, $password);
 
     if ($user) {
-        $_SESSION['user_id'] = $user['CustomerID'];
+        $_SESSION['user_id'] = $user['id']; // Use 'id' instead of 'CustomerID'
         $_SESSION['user_role'] = $user['role'];
+        $smarty->assign('user_id', $user['id']); // Assign user_id to Smarty
         header("Location: index.php"); // Redirect to a dashboard or home page
         exit();
     } else {
@@ -50,6 +51,11 @@ if ($REQUEST_METHOD == "POST") {
 // Ensure email and password are assigned even if not set
 $smarty->assign('email', isset($_POST['email']) ? $_POST['email'] : '');
 $smarty->assign('password', isset($_POST['password']) ? $_POST['password'] : '');
+
+// Assign user_id to Smarty if the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    $smarty->assign('user_id', $_SESSION['user_id']);
+}
 
 $smarty->display('login.tpl');
 ?>

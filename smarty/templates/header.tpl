@@ -11,7 +11,13 @@
             <ul>
                 <li><a href="angebote.php">Unsere Angebote</a></li>
                 <li><a href="aboutus.php">Über uns</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li>
+                    {if isset($user_id)}
+                        <a href="logout.php">Logout</a>
+                    {else}
+                        <a href="login.php">Login</a>
+                    {/if}
+                </li>
             </ul>
         </nav>
     </div>
