@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 14:31:36
+/* Smarty version 4.2.0, created on 2025-04-04 14:36:57
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67efed48e34256_25600496',
+  'unifunc' => 'content_67efee890cc552_61078915',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6de48d7ec1bbea8756387024e0a243cc1a11147d' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl',
-      1 => 1743777035,
+      1 => 1743777354,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67efed48e34256_25600496 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67efee890cc552_61078915 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="icon" href="images/logo.png" type="image/png">
 <header>
     <div class="header-container">
         <div class="logo">

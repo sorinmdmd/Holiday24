@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="icon" href="images/logo.png" type="image/png">
 <header>
     <div class="header-container">
         <div class="logo">

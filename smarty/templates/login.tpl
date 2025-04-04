@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{$ueberschrift}</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
     {include file="header.tpl"}
