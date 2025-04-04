@@ -8,8 +8,8 @@ require_once 'klassen/Sicherheit.inc.php';
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
-$ueberschrift = "Unsere Angebote";
-$smarty->assign('ueberschrift', htmlentities($ueberschrift));
+$title = "Our Offers";
+$smarty->assign('title', htmlentities($title));
 
 // Hier könntest du die Angebote aus der Datenbank laden
 // $angebote = Lieferservice::getAngebot($link);

@@ -15,8 +15,8 @@
                 {elseif isset($user_id) && $user_role == 'admin'}
                     <li><a href="admin_panel.php">Admin Panel</a></li>
                 {/if}
-                <li><a href="angebote.php">Unsere Angebote</a></li>
-                <li><a href="aboutus.php">Über uns</a></li>
+                <li><a href="angebote.php">Our Offers</a></li>
+                <li><a href="aboutus.php">About us</a></li>
                
                 <li>
                     {if isset($user_id)}

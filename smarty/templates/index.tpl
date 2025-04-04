@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/Tables.css">
         <link rel="icon" href="images/logo.png" type="image/png">
 
-    <title>Holiday24</title>
+    <title>{$title}</title>
 </head>
 <body>
     {include file="header.tpl"}

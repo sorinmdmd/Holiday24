@@ -8,8 +8,8 @@ require_once 'klassen/Sicherheit.inc.php';
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
-$ueberschrift = "BEISPIEL";
-$smarty->assign('ueberschrift', htmlentities($ueberschrift));
+$title = "Holiday24";
+$smarty->assign('title', htmlentities($title));
 
 $PHP_SELF = $_SERVER['PHP_SELF'];
 $REQUEST_METHOD = $_SERVER['REQUEST_METHOD'];

@@ -2,14 +2,14 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>{$ueberschrift}</title>
+    <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
     {include file="header.tpl"}
     <main>
-        <h1>{$ueberschrift}</h1>
+        <h1>{$title}</h1>
         {if isset($fehler)}
             <p style="color: red;">{$fehler}</p>
         {/if}
@@ -19,13 +19,13 @@
     <label for="email">E-Mail:</label>
     <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
     
-    <label for="password">Passwort:</label>
+    <label for="password">Password:</label>
     <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
     
-    <button type="submit">Anmelden</button>
+    <button type="submit">Log In</button>
 
     <div class="forgot-password">
-        <a href="passwort_vergessen.php">Passwort vergessen?</a>
+        <a href="passwort_vergessen.php">Forgot password?</a>
     </div>
 </form>
     </main>

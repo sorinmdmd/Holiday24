@@ -2,13 +2,13 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>{$ueberschrift}</title>
+    <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     {include file="header.tpl"}
     <main>
-        <h1>{$ueberschrift}</h1>
+        <h1>{$title}</h1>
         <!-- Hier könntest du die Angebote auflisten -->
         <!-- {foreach from=$angebote item=angebot}
             <div class="angebot">
