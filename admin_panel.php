@@ -8,7 +8,7 @@ require_once 'klassen/Sicherheit.inc.php';
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
-$ueberschrift = "Über Uns";
+$ueberschrift = "Admin Panel";
 $smarty->assign('ueberschrift', htmlentities($ueberschrift));
 
 // Hier könntest du die Angebote aus der Datenbank laden
@@ -23,5 +23,5 @@ if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
 // Assign user_role to Smarty if the user is logged in
-$smarty->display('aboutus.tpl');
+$smarty->display('admin_panel.tpl');
 ?>

@@ -1,57 +1,86 @@
+/* Reset & Base Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* Header Styles */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0073e6;
-    padding: 10px 20px;
+    padding: 15px 30px;
     color: white;
+    flex-wrap: wrap;
 }
 
-.header-container .logo img {
-    height: 40px; /* Adjust the size as needed */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
+.logo img {
+    height: 45px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo a:hover img {
+    transform: scale(1.1);
+}
+
+.site-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+/* Navigation Styles */
 nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    color: #cce6ff;
 }
 
-.header-container .logo a {
-    display: inline-block;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
 
-.header-container .logo img {
-    height: 40px; /* Anpassen nach Bedarf */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
-}
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
 
-.header-container .logo a:hover img {
-    transform: scale(1.1); /* Slightly enlarge the image on hover */
-}
-
-.site-name {
-    font-size: 3em; /* Größe des Textes anpassen */
-    font-weight: bold;
-    color: white;
+    .site-name {
+        font-size: 1.8em;
+    }
 }
