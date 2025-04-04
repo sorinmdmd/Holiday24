@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{$ueberschrift}</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
     {include file="header.tpl"}
@@ -12,14 +12,21 @@
         {if isset($fehler)}
             <p style="color: red;">{$fehler}</p>
         {/if}
-        <form action="{$PHP_SELF}" method="POST">
-            <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
-            <label for="password">Passwort:</label>
-            <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
-            <button type="submit">Anmelden</button>
-        </form>
+       <form action="{$PHP_SELF}" method="POST">
+    <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
+    
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
+    
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
+    
+    <button type="submit">Anmelden</button>
+
+    <div class="forgot-password">
+        <a href="passwort_vergessen.php">Passwort vergessen?</a>
+    </div>
+</form>
     </main>
 </body>
 </html>
