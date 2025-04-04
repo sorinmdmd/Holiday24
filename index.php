@@ -2,30 +2,6 @@
 
 session_start();
 
-// public static function graficarray($bezirkname, $resultarray)
-//     {
-//         $result = [];
-
-//         foreach($bezirkname as $index => $key){
-//             $result[$key] = $resultarray[$index-1];
-//         }
-//         return $result;
-//     }
-
-// public static function getHSalzBezirk($link, $monat, $monate)
-// {
-//     $key = array_search($monat, $monate);
-//     $query = "Select BezirkNr,Menge from Salzbedarf where MonatNr=$key";
-
-//     return DbFunctions::getHash($link, $query);
-// }
-
-// <select name="kategorie">
-// {foreach from=$kategorien item=kategorie}
-//         <option value="{$kategorie}">{$kategorie}</option>
-//     {/foreach}
-// </select>
-
 require_once 'klassen/includes/startTemplate.inc.php';
 require_once 'klassen/DbFunctions.inc.php';
 require_once 'klassen/Sicherheit.inc.php';
