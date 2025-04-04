@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 15:20:41
+/* Smarty version 4.2.0, created on 2025-04-04 15:31:04
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67eff8c95ecce0_87376897',
+  'unifunc' => 'content_67effb386f54f9_26808518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8349de398158401276bb474a4e564f757e32b730' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl',
-      1 => 1743780039,
+      1 => 1743780645,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67eff8c95ecce0_87376897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67effb386f54f9_26808518 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/Forms.css">
-    <link rel="stylesheet" type="text/css" href="css/Tables.css">
         <link rel="icon" href="images/logo.png" type="image/png">
 
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>

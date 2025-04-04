@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 15:23:13
+/* Smarty version 4.2.0, created on 2025-04-04 15:29:30
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/mytravelpacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67eff961a9e2e2_35673214',
+  'unifunc' => 'content_67effada3a8ae2_91477074',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30ffebf43e64d80b3529a8512e7d1401bf9c6a87' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/mytravelpacks.tpl',
-      1 => 1743780171,
+      1 => 1743780222,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67eff961a9e2e2_35673214 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67effada3a8ae2_91477074 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
