@@ -8,7 +8,7 @@ require_once 'klassen/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
-$link = DbFunctions::connectWithDatabase();
+//$link = DbFunctions::connectWithDatabase();
 $ueberschrift = "BEISPIEL";
 $smarty->assign('ueberschrift', htmlentities($ueberschrift));
 //$result = Lieferservice::getAngebot($link);

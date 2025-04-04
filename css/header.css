@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0073e6;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header-container .logo img {
+    height: 40px; /* Adjust the size as needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.header-container .logo a {
+    display: inline-block;
+}
+
+.header-container .logo img {
+    height: 40px; /* Anpassen nach Bedarf */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.header-container .logo a:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+.site-name {
+    font-size: 3em; /* Größe des Textes anpassen */
+    font-weight: bold;
+    color: white;
+}
