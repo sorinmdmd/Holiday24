@@ -13,7 +13,7 @@
                 <li><a href="aboutus.php">Über uns</a></li>
                 <li>
                     {if isset($user_id)}
-                        <a href="logout.php">Logout</a>
+                        <a href="logout.php">Logout ({$user_role})</a>
                     {else}
                         <a href="login.php">Login</a>
                     {/if}

@@ -18,5 +18,8 @@ $smarty->assign('ueberschrift', htmlentities($ueberschrift));
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 }
+if (isset($_SESSION['user_role'])) {
+    $smarty->assign('user_role', $_SESSION['user_role']);
+}
 $smarty->display('angebote.tpl');
 ?>

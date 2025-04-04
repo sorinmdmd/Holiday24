@@ -19,5 +19,9 @@ $smarty->assign('ueberschrift', htmlentities($ueberschrift));
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 }
+if (isset($_SESSION['user_role'])) {
+    $smarty->assign('user_role', $_SESSION['user_role']);
+}
+// Assign user_role to Smarty if the user is logged in
 $smarty->display('aboutus.tpl');
 ?>
