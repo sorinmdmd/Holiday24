@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 14:36:59
+/* Smarty version 4.2.0, created on 2025-04-04 15:17:10
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/angebote.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67efee8b8626c7_07400728',
+  'unifunc' => 'content_67eff7f6186244_71058743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '218d0f9569432b9ce92d4a9876e96ce365fa1365' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/angebote.tpl',
-      1 => 1743777407,
+      1 => 1743779826,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67efee8b8626c7_07400728 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67eff7f6186244_71058743 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $_smarty_tpl->tpl_vars['ueberschrift']->value;?>
+    <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="icon" href="images/logo.png" type="image/png">
@@ -35,7 +35,7 @@ function content_67efee8b8626c7_07400728 (Smarty_Internal_Template $_smarty_tpl)
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <main>
-        <h1><?php echo $_smarty_tpl->tpl_vars['ueberschrift']->value;?>
+        <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
         <!-- Hier könntest du die Angebote auflisten -->
         <!-- <?php

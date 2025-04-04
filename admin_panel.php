@@ -8,8 +8,8 @@ require_once 'klassen/Sicherheit.inc.php';
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
-$ueberschrift = "Admin Panel";
-$smarty->assign('ueberschrift', htmlentities($ueberschrift));
+$title = "Admin Panel";
+$smarty->assign('title', htmlentities($title));
 
 // Hier könntest du die Angebote aus der Datenbank laden
 // $angebote = Lieferservice::getAngebot($link);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 14:36:57
+/* Smarty version 4.2.0, created on 2025-04-04 15:20:41
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67efee890bfc53_48482272',
+  'unifunc' => 'content_67eff8c95ecce0_87376897',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8349de398158401276bb474a4e564f757e32b730' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/index.tpl',
-      1 => 1743777392,
+      1 => 1743780039,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67efee890bfc53_48482272 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67eff8c95ecce0_87376897 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,8 @@ function content_67efee890bfc53_48482272 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" type="text/css" href="css/Tables.css">
         <link rel="icon" href="images/logo.png" type="image/png">
 
-    <title>Holiday24</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
 </head>
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

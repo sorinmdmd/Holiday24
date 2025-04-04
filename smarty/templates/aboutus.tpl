@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{$ueberschrift}</title>
+    <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="icon" href="images/logo.png" type="image/png">
-
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
     {include file="header.tpl"}
     <main>
-        <h1>{$ueberschrift}</h1>
-        <!-- Hier könntest du die Angebote auflisten -->
-        <!-- {foreach from=$angebote item=angebot}
-            <div class="angebot">
-                <h2>{$angebot.titel}</h2>
-                <p>{$angebot.beschreibung}</p>
+        <h1>{$title}</h1>
+        <!-- You could list the offers here -->
+        <!-- {foreach from=$offers item=offer}
+            <div class="offer">
+                <h2>{$offer.title}</h2>
+                <p>{$offer.description}</p>
             </div>
         {/foreach} -->
     </main>
