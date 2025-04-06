@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-04 15:30:39
+/* Smarty version 4.2.0, created on 2025-04-06 21:21:58
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/angebote.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67effb1f8460b4_76828870',
+  'unifunc' => 'content_67f2f076b81a67_06660102',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '218d0f9569432b9ce92d4a9876e96ce365fa1365' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/angebote.tpl',
-      1 => 1743780618,
+      1 => 1743974282,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67effb1f8460b4_76828870 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f2f076b81a67_06660102 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
         <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>

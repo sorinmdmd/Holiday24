@@ -49,3 +49,16 @@
         z-index: 9;
     }
 }
+
+/* Initial hidden state with blur and opacity */
+.hidden-layer {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 1s ease-out, filter 1s ease-out;
+}
+
+/* When loaded, fade in and unblur */
+.loaded-layer {
+    opacity: 1;
+    filter: blur(0);
+}

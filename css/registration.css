@@ -7,6 +7,18 @@ main {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
@@ -20,6 +32,9 @@ form label {
   margin-top: 20px;
   font-weight: bold;
   color: black;
+  opacity: 0;
+  animation: inputFadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.2s;
 }
 
 form input {
@@ -29,12 +44,24 @@ form input {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border 0.3s ease;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: inputFadeSlideIn 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes inputFadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 form input:focus {
   border-color: #5cacee;
   outline: none;
+  box-shadow: 0 0 5px rgba(92, 172, 238, 0.5);
 }
 
 button[type="submit"] {
@@ -47,11 +74,12 @@ button[type="submit"] {
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
   background-color: #4098d7;
+  transform: scale(1.02);
 }
 
 .acount-made-question {
