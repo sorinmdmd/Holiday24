@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 10:43:09
+/* Smarty version 4.2.0, created on 2025-04-06 12:07:42
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f25abd0493d0_51381877',
+  'unifunc' => 'content_67f26e8ea9af82_18275785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '01afb49efb6e0e90253e1403d41ea331ed018d9f' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl',
-      1 => 1743936099,
+      1 => 1743941252,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f25abd0493d0_51381877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f26e8ea9af82_18275785 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -63,7 +63,7 @@ echo $_smarty_tpl->tpl_vars['password']->value;
             
             <button type="submit">Register</button>
 
-            <div class="acount-">
+            <div class="acount-made-question">
                 <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
