@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/header.css">
-<link rel="stylesheet" type="text/css" href="css/globalcss">
+<link rel="stylesheet" type="text/css" href="css/global.css">
 <link rel="icon" href="images/logo.png" type="image/png">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">

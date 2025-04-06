@@ -4,6 +4,7 @@
     --hover-color: #4F959D;
     --accent-color: #98D2C0;
     --text-color: #F6F8D5;
+    --primary-gradient: linear-gradient(135deg, #205781 0%, #2A6F97 50%, #3386AD 100%);
 }
 * {
     margin: 0;
@@ -17,7 +18,7 @@ html {
 body {
     min-height: 100vh;
     min-height: 100dvh;
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
 }
 main {
     padding: min(5em, 7%);
