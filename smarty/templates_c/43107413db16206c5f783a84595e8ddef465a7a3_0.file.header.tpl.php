@@ -1,0 +1,62 @@
+<?php
+/* Smarty version 4.2.0, created on 2025-04-06 15:11:46
+  from '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.0',
+  'unifunc' => 'content_67f299b2e123d1_43918812',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '43107413db16206c5f783a84595e8ddef465a7a3' => 
+    array (
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/header.tpl',
+      1 => 1743952303,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_67f299b2e123d1_43918812 (Smarty_Internal_Template $_smarty_tpl) {
+?><link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/globalcss">
+<link rel="icon" href="images/logo.png" type="image/png">
+<header>
+<button id="open-sidebar-button" onclick="openSidebar()">
+    <img src="images/menu-button.svg" height="40px" width="40px" fill="#FFA725">
+</button>  
+<nav id="navbar">
+    <ul>
+        <li>
+            <button id="close-sidebar-button" onclick="closeSidebar()">
+                <img src="images/close-button.svg" height="40px" width="40px" fill="#FFA725">
+            </button>
+        </li>
+        <li class="home-li"><a class="active-link" href="index.php">Home</a></li>
+        <li><a href="angebote.php">Our trips</a></li>
+        <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'customer') {?>
+            <li><a href="mytravelpacks.php">My Travel Packs</a></li>
+        <?php } elseif ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
+            <li><a href="admin_panel.php">Admin Panel</a></li>
+        <?php }?>
+        <li><a href="aboutus.php">About us</a></li>
+        <li>
+            <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>
+                <a class="accent-link" href="logout.php">Logout (<?php echo $_smarty_tpl->tpl_vars['user_role']->value;?>
+)</a>
+            <?php } else { ?>
+                <a class="accent-link" href="login.php">Login</a>
+            <?php }?>
+        </li>
+    </ul>
+</nav>
+<div id="overlay" onclick="closeSidebar()"></div>      
+<?php echo '<script'; ?>
+ src="script.js" defer><?php echo '</script'; ?>
+>
+</header>
+<?php }
+}
