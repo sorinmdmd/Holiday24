@@ -51,7 +51,15 @@ class DbFunctions
 
 	public static function registerUser($link, $firstName, $lastName, $email, $password)
 	{
-		$id = bin2hex(random_bytes(16)); // oder generateUUID()
+		$id = sprintf(
+			'%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+			random_int(0, 0xffff), random_int(0, 0xffff),
+			random_int(0, 0xffff),
+			random_int(0, 0x0fff) | 0x4000,
+			random_int(0, 0x3fff) | 0x8000,
+			random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff)
+		);
+		
 		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
 		$query = "INSERT INTO customer (id, first_name, last_name, email, password_hash, role) VALUES (?, ?, ?, ?, ?, 'customer')";
 		$stmt = mysqli_prepare($link, $query);
@@ -59,12 +67,6 @@ class DbFunctions
 
 		return mysqli_stmt_execute($stmt);
 	}
-
-	function generateUUID(): string
-	{
-		return bin2hex(random_bytes(16));
-	}
-
 	public static function emailExists($link, $email): bool
 	{
 		$query = "SELECT 1 FROM customer WHERE email = ? LIMIT 1";
@@ -75,7 +77,5 @@ class DbFunctions
 
 		return mysqli_stmt_num_rows($stmt) > 0;
 	}
-
-
 }
 ?>

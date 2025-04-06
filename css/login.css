@@ -1,82 +1,92 @@
 /* login.css */
 
-main {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-main h1 {
-    text-align: center;
-    margin-bottom: 24px;
-    font-size: 24px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
     color: #333;
-}
-
-main form {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-main label {
-    margin-bottom: 6px;
-    font-weight: bold;
+main {
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
     color: #444;
 }
 
-main input[type="email"],
-main input[type="password"] {
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-main input[type="email"]:focus,
-main input[type="password"]:focus {
-    border-color: #007bff;
+form input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+form input:focus {
+    border-color: #5cacee;
     outline: none;
 }
 
-main button[type="submit"] {
+button[type="submit"] {
+    margin-top: 30px;
+    width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #5cacee;
     color: white;
-    font-weight: bold;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
-main button[type="submit"]:hover {
-    background-color: #0056b3;
+button[type="submit"]:hover {
+    background-color: #4098d7;
 }
 
-main p {
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 14px;
-}
-
-main .forgot-password {
-    margin-top: 12px;
+.forgot-password {
+    margin-top: 20px;
     text-align: center;
 }
 
-main .forgot-password a {
-    font-size: 14px;
-    color: #007bff;
+.forgot-password a {
+    color: #5cacee;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: bold;
 }
 
-main .forgot-password a:hover {
-    color: #0056b3;
+.forgot-password a:hover {
     text-decoration: underline;
+}
+
+p[style*="color: red"] {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
 }
