@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 15:11:46
+/* Smarty version 4.2.0, created on 2025-04-06 15:32:14
   from '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f299b2e123d1_43918812',
+  'unifunc' => 'content_67f29e7eec3105_56910954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '43107413db16206c5f783a84595e8ddef465a7a3' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/header.tpl',
-      1 => 1743952303,
+      1 => 1743953519,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67f299b2e123d1_43918812 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f29e7eec3105_56910954 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/globalcss">
 <link rel="icon" href="images/logo.png" type="image/png">

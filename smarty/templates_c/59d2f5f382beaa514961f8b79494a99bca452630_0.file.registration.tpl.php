@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 15:31:50
-  from '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/login.tpl' */
+/* Smarty version 4.2.0, created on 2025-04-06 15:37:19
+  from '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f29e664e04b1_86687979',
+  'unifunc' => 'content_67f29fafb1e847_81408629',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f5e62bb432d565bea31a3c2e344876f9673c6975' => 
+    '59d2f5f382beaa514961f8b79494a99bca452630' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/login.tpl',
-      1 => 1743953425,
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainCopy/iksy2/smarty/templates/registration.tpl',
+      1 => 1743953438,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f29e664e04b1_86687979 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f29fafb1e847_81408629 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -29,8 +29,7 @@ function content_67f29e664e04b1_86687979 (Smarty_Internal_Template $_smarty_tpl)
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
 </head>
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -38,15 +37,20 @@ function content_67f29e664e04b1_86687979 (Smarty_Internal_Template $_smarty_tpl)
     <main>
         <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
-        <?php if ((isset($_smarty_tpl->tpl_vars['fehler']->value))) {?>
-            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fehler']->value;?>
-</p>
-        <?php }?>
-        <form action="<?php echo $_smarty_tpl->tpl_vars['PHP_SELF']->value;?>
-" method="POST">
+          <form method="post" action="registration.php">
             <input type="hidden" name="csrf_token" value="<?php if ((isset($_smarty_tpl->tpl_vars['csrf_token']->value))) {
 echo $_smarty_tpl->tpl_vars['csrf_token']->value;
 }?>">
+
+             <label for="firstName">First Name:</label>
+            <input type="firstName" id="firstName" name="firstName" value="<?php if ((isset($_smarty_tpl->tpl_vars['firstName']->value))) {
+echo $_smarty_tpl->tpl_vars['firstName']->value;
+}?>" required><br>
+
+             <label for="lastName">Last Name:</label>
+            <input type="lastName" id="lastName" name="lastName" value="<?php if ((isset($_smarty_tpl->tpl_vars['lastName']->value))) {
+echo $_smarty_tpl->tpl_vars['lastName']->value;
+}?>" required><br>
             
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" value="<?php if ((isset($_smarty_tpl->tpl_vars['email']->value))) {
@@ -58,15 +62,16 @@ echo $_smarty_tpl->tpl_vars['email']->value;
 echo $_smarty_tpl->tpl_vars['password']->value;
 }?>" required><br>
             
-            <button type="submit">Log In</button>
+            <button type="submit">Register</button>
 
-            <div class="forgot-password">
-                <a href="passwort_vergessen.php">Forgot password?</a>
+            <div class="acount-made-question">
+                <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
-        <div class="forgot-password">
-            <p>Don't have an account? <a href="registration.php">Register here</a></p>
-            </div>
+        <?php if ((isset($_smarty_tpl->tpl_vars['errorMessage']->value))) {?>
+            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessage']->value;?>
+</p>
+        <?php }?>
     </main>
 </body>
 </html>
