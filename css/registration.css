@@ -1,5 +1,4 @@
-/* login.css */
-
+/* Reset some basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 80px auto;
   background: white;
   padding: 40px;

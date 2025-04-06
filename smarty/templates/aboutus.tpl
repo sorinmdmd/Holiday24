@@ -10,13 +10,7 @@
     {include file="header.tpl"}
     <main>
         <h1>{$title}</h1>
-        <!-- You could list the offers here -->
-        <!-- {foreach from=$offers item=offer}
-            <div class="offer">
-                <h2>{$offer.title}</h2>
-                <p>{$offer.description}</p>
-            </div>
-        {/foreach} -->
+       
     </main>
 </body>
 </html>
