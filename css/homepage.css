@@ -1,0 +1,51 @@
+.home {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, blue, lightblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home h1 {
+    transition:0.3s ease all;
+    border-radius: 12px;
+    position: absolute;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    z-index: 99;
+}
+.img {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+
+.layer1 {
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+}
+
+.layer2 {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+}
+
+.layer3 {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 800px) {   
+    .home h1 { 
+        font-size: 40px;
+        z-index: 9;
+    }
+}
