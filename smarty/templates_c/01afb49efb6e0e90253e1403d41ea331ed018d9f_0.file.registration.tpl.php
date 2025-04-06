@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 09:16:44
-  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/login.tpl' */
+/* Smarty version 4.2.0, created on 2025-04-06 09:31:14
+  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f2467c939199_69248073',
+  'unifunc' => 'content_67f249e2743300_68518238',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3d253eba67110f465de38b80dff4b8acc8c60fa8' => 
+    '01afb49efb6e0e90253e1403d41ea331ed018d9f' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/login.tpl',
-      1 => 1743931002,
+      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl',
+      1 => 1743931867,
       2 => 'file',
     ),
   ),
@@ -21,15 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f2467c939199_69248073 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f249e2743300_68518238 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -37,15 +36,20 @@ function content_67f2467c939199_69248073 (Smarty_Internal_Template $_smarty_tpl)
     <main>
         <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
-        <?php if ((isset($_smarty_tpl->tpl_vars['fehler']->value))) {?>
-            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fehler']->value;?>
-</p>
-        <?php }?>
-        <form action="<?php echo $_smarty_tpl->tpl_vars['PHP_SELF']->value;?>
-" method="POST">
+          <form method="post" action="registration.php">
             <input type="hidden" name="csrf_token" value="<?php if ((isset($_smarty_tpl->tpl_vars['csrf_token']->value))) {
 echo $_smarty_tpl->tpl_vars['csrf_token']->value;
 }?>">
+
+             <label for="firstName">First Name:</label>
+            <input type="firstName" id="firstName" name="firstName" value="<?php if ((isset($_smarty_tpl->tpl_vars['firstName']->value))) {
+echo $_smarty_tpl->tpl_vars['firstName']->value;
+}?>" required><br>
+
+             <label for="lastName">Last Name:</label>
+            <input type="lastName" id="lastName" name="lastName" value="<?php if ((isset($_smarty_tpl->tpl_vars['lastName']->value))) {
+echo $_smarty_tpl->tpl_vars['lastName']->value;
+}?>" required><br>
             
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" value="<?php if ((isset($_smarty_tpl->tpl_vars['email']->value))) {
@@ -57,15 +61,16 @@ echo $_smarty_tpl->tpl_vars['email']->value;
 echo $_smarty_tpl->tpl_vars['password']->value;
 }?>" required><br>
             
-            <button type="submit">Log In</button>
+            <button type="submit">Register</button>
 
             <div class="forgot-password">
-                <a href="passwort_vergessen.php">Forgot password?</a>
+                <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
-        <div class="forgot-password">
-            <p>Don't have an account? <a href="registration.php">Register here</a></p>
-            </div>
+        <?php if ((isset($_smarty_tpl->tpl_vars['fehler']->value))) {?>
+            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fehler']->value;?>
+</p>
+        <?php }?>
     </main>
 </body>
 </html>

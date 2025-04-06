@@ -48,5 +48,23 @@ class DbFunctions
 		}
 		return false;
 	}
+
+	public static function registerUser($link, $firstName, $lastName, $email, $password)
+	{
+		$id = bin2hex(random_bytes(16)); // oder generateUUID()
+		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
+		$query = "INSERT INTO customer (id, first_name, last_name, email, password_hash, role) VALUES (?, ?, ?, ?, ?, 'customer')";
+		$stmt = mysqli_prepare($link, $query);
+		mysqli_stmt_bind_param($stmt, 'sssss', $id, $firstName, $lastName, $email, $passwordHash);
+
+		return mysqli_stmt_execute($stmt);
+	}
+
+
+	function generateUUID(): string
+	{
+		return bin2hex(random_bytes(16));
+	}
+
 }
 ?>

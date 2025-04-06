@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title}</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     {include file="header.tpl"}
     <main>
         <h1>{$title}</h1>
-        {if isset($fehler)}
-            <p style="color: red;">{$fehler}</p>
-        {/if}
-        <form action="{$PHP_SELF}" method="POST">
+          <form method="post" action="registration.php">
             <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
+
+             <label for="firstName">First Name:</label>
+            <input type="firstName" id="firstName" name="firstName" value="{if isset($firstName)}{$firstName}{/if}" required><br>
+
+             <label for="lastName">Last Name:</label>
+            <input type="lastName" id="lastName" name="lastName" value="{if isset($lastName)}{$lastName}{/if}" required><br>
             
             <label for="email">E-Mail:</label>
             <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
@@ -22,15 +24,15 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
             
-            <button type="submit">Log In</button>
+            <button type="submit">Register</button>
 
             <div class="forgot-password">
-                <a href="passwort_vergessen.php">Forgot password?</a>
+                <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
-        <div class="forgot-password">
-            <p>Don't have an account? <a href="registration.php">Register here</a></p>
-            </div>
+        {if isset($fehler)}
+            <p style="color: red;">{$fehler}</p>
+        {/if}
     </main>
 </body>
 </html>
