@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 09:16:44
+/* Smarty version 4.2.0, created on 2025-04-06 10:43:47
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f2467c939199_69248073',
+  'unifunc' => 'content_67f25ae3eb5135_79307738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3d253eba67110f465de38b80dff4b8acc8c60fa8' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/login.tpl',
-      1 => 1743931002,
+      1 => 1743936203,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f2467c939199_69248073 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f25ae3eb5135_79307738 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>

@@ -26,12 +26,12 @@
             
             <button type="submit">Register</button>
 
-            <div class="forgot-password">
+            <div class="acount-">
                 <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
-        {if isset($fehler)}
-            <p style="color: red;">{$fehler}</p>
+        {if isset($errorMessage)}
+            <p style="color: red;">{$errorMessage}</p>
         {/if}
     </main>
 </body>

@@ -51,15 +51,8 @@ class DbFunctions
 
 	public static function registerUser($link, $firstName, $lastName, $email, $password)
 	{
-		$id = sprintf(
-			'%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-			random_int(0, 0xffff), random_int(0, 0xffff),
-			random_int(0, 0xffff),
-			random_int(0, 0x0fff) | 0x4000,
-			random_int(0, 0x3fff) | 0x8000,
-			random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff)
-		);
-		
+		$id = self::generateID();
+
 		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
 		$query = "INSERT INTO customer (id, first_name, last_name, email, password_hash, role) VALUES (?, ?, ?, ?, ?, 'customer')";
 		$stmt = mysqli_prepare($link, $query);
@@ -76,6 +69,17 @@ class DbFunctions
 		mysqli_stmt_store_result($stmt);
 
 		return mysqli_stmt_num_rows($stmt) > 0;
+	}
+
+	public static function generateID(): String {
+		return sprintf(
+			'%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+			random_int(0, 0xffff), random_int(0, 0xffff),
+			random_int(0, 0xffff),
+			random_int(0, 0x0fff) | 0x4000,
+			random_int(0, 0x3fff) | 0x8000,
+			random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff)
+		);
 	}
 }
 ?>
