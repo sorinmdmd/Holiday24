@@ -68,18 +68,18 @@ button[type="submit"]:hover {
   background-color: #4098d7;
 }
 
-.forgot-password {
+.acount-made-question {
   margin-top: 20px;
   text-align: center;
 }
 
-.forgot-password a {
+.acount-made-question a {
   color: #5cacee;
   text-decoration: none;
   font-weight: bold;
 }
 
-.forgot-password a:hover {
+.acount-made-question a:hover {
   text-decoration: underline;
 }
 

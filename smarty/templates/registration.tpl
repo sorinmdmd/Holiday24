@@ -26,7 +26,7 @@
             
             <button type="submit">Register</button>
 
-            <div class="acount-">
+            <div class="acount-made-question">
                 <p>Already have an account? <a href="login.php">Log in here</a></p>
             </div>
         </form>
