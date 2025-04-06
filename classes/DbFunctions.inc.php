@@ -60,11 +60,22 @@ class DbFunctions
 		return mysqli_stmt_execute($stmt);
 	}
 
-
 	function generateUUID(): string
 	{
 		return bin2hex(random_bytes(16));
 	}
+
+	public static function emailExists($link, $email): bool
+	{
+		$query = "SELECT 1 FROM customer WHERE email = ? LIMIT 1";
+		$stmt = mysqli_prepare($link, $query);
+		mysqli_stmt_bind_param($stmt, 's', $email);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_store_result($stmt);
+
+		return mysqli_stmt_num_rows($stmt) > 0;
+	}
+
 
 }
 ?>

@@ -26,22 +26,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
     $csrf_token = $_POST['csrf_token'];
 
-    // Validate CSRF token
+    // Werte ins Template geben, falls Fehler auftreten
+    $smarty->assign('firstName', htmlentities($firstName));
+    $smarty->assign('lastName', htmlentities($lastName));
+    $smarty->assign('email', htmlentities($email));
+
+    // CSRF prüfen
     if (!hash_equals($_SESSION['csrf_token'], $csrf_token)) {
-        $smarty->assign('fehler', 'Invalid CSRF token.');
+        $smarty->assign('fehler', 'Ungültiger CSRF-Token.');
     } else {
-        // Validate and sanitize input
+        // Eingabevalidierung
         if (empty($firstName) || empty($lastName) || empty($email) || empty($password)) {
-            $smarty->assign('fehler', 'All fields are required.');
+            $smarty->assign('fehler', 'Alle Felder sind erforderlich.');
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $smarty->assign('fehler', 'Invalid email format.');
+            $smarty->assign('fehler', 'Ungültiges E-Mail-Format.');
+        } elseif (DbFunctions::emailExists($link, $email)) {
+            $smarty->assign('fehler', 'Diese E-Mail-Adresse ist bereits registriert.');
         } else {
-            // Register the user
+            // Registrierung durchführen
             if (DbFunctions::registerUser($link, $firstName, $lastName, $email, $password)) {
                 header("Location: login.php");
                 exit();
             } else {
-                $smarty->assign('fehler', 'Error registering user.');
+                $smarty->assign('fehler', 'Fehler beim Registrieren des Nutzers.');
             }
         }
     }

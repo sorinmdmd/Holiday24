@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title}</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
 </head>
 <body>
     {include file="header.tpl"}

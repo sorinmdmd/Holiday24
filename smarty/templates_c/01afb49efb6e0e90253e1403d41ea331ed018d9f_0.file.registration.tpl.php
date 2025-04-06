@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 09:31:14
+/* Smarty version 4.2.0, created on 2025-04-06 09:38:30
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f249e2743300_68518238',
+  'unifunc' => 'content_67f24b9692b040_77902620',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '01afb49efb6e0e90253e1403d41ea331ed018d9f' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/registration.tpl',
-      1 => 1743931867,
+      1 => 1743932306,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f249e2743300_68518238 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f24b9692b040_77902620 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
 </head>
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
