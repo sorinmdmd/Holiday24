@@ -12,17 +12,17 @@
                 <img src="images/close-button.svg" height="40px" width="40px" fill="#FFA725">
             </button>
         </li>
-        <li class="home-li"><a class="active-link" href="index.php">Home</a></li>
-        <li><a href="ouroffers.php">Our trips</a></li>
-        {if isset($user_id) && $user_role == 'customer'}
-            <li><a href="mytravelpacks.php">My Travel Packs</a></li>
+        <li class="home-li"><a class="{if $activePage == 'index'}active-link{/if}" href="index.php">Home</a></li>
+            {if isset($user_id) && $user_role == 'customer'}
+            <li><a class="{if $activePage == 'mytravelpacks'}active-link{/if}" href="mytravelpacks.php">My Travel Packs</a></li>
         {elseif isset($user_id) && $user_role == 'admin'}
-            <li><a href="admin_panel.php">Admin Panel</a></li>
+            <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">Admin Panel</a></li>
         {/if}
-        <li><a href="aboutus.php">About us</a></li>
+        <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Our trips</a></li>
+        <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php #aboutusId">About us</a></li>
         <li>
             {if isset($user_id)}
-                <a class="accent-link" href="logout.php">Logout ({$user_role})</a>
+                <a class="accent-link" href="logout.php">Logout({$user_role})</a>
             {else}
                 <a class="accent-link" href="login.php">Login</a>
             {/if}

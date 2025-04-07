@@ -56,6 +56,6 @@ $smarty->assign('password', isset($_POST['password']) ? $_POST['password'] : '')
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 }
-
+$smarty->assign('activePage', 'login');
 $smarty->display('login.tpl');
 ?>

@@ -23,5 +23,6 @@ if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
 // Assign user_role to Smarty if the user is logged in
+$smarty->assign('activePage', 'admin_panel');
 $smarty->display('admin_panel.tpl');
 ?>

@@ -42,5 +42,6 @@ if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
 
+$smarty->assign('activePage', 'index');
 $smarty->display('index.tpl');
 ?>
