@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-06 21:23:17
+/* Smarty version 4.2.0, created on 2025-04-07 10:12:45
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f2f0c508a828_44043046',
+  'unifunc' => 'content_67f3a51d82fd46_15031519',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6de48d7ec1bbea8756387024e0a243cc1a11147d' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl',
-      1 => 1743974594,
+      1 => 1744020756,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67f2f0c508a828_44043046 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f3a51d82fd46_15031519 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <link rel="icon" href="images/logo.png" type="image/png">
@@ -36,7 +36,7 @@ function content_67f2f0c508a828_44043046 (Smarty_Internal_Template $_smarty_tpl)
             </button>
         </li>
         <li class="home-li"><a class="active-link" href="index.php">Home</a></li>
-        <li><a href="angebote.php">Our trips</a></li>
+        <li><a href="ouroffers.php">Our trips</a></li>
         <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'customer') {?>
             <li><a href="mytravelpacks.php">My Travel Packs</a></li>
         <?php } elseif ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
