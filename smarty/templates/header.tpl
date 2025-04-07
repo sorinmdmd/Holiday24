@@ -13,7 +13,7 @@
             </button>
         </li>
         <li class="home-li"><a class="active-link" href="index.php">Home</a></li>
-        <li><a href="angebote.php">Our trips</a></li>
+        <li><a href="ouroffers.php">Our trips</a></li>
         {if isset($user_id) && $user_role == 'customer'}
             <li><a href="mytravelpacks.php">My Travel Packs</a></li>
         {elseif isset($user_id) && $user_role == 'admin'}
