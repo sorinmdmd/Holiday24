@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/global.css">
     <link rel="stylesheet" type="text/css" href="/css/homepage.css">
     <title>{$title}</title>
@@ -19,7 +18,9 @@
     {if (isset($PHP_SELF))}
     <form action="{$PHP_SELF}" method="post">
     <input type="hidden" name="csrf_token" value="{$csrf_token}"/>
-    
+    <div id="aboutusId">
+        {include file="aboutus.tpl"}
+    </div>
     {else}
         {if (isset($fehler))}
             Unzulässige Eingabe.

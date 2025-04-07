@@ -29,5 +29,6 @@ if (isset($_SESSION['user_id'])) {
 if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
+$smarty->assign('activePage', 'ouroffers');
 $smarty->display('ouroffers.tpl');
 ?>

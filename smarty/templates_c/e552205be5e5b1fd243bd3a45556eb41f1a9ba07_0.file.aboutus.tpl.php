@@ -1,14 +1,39 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.2.0, created on 2025-04-07 13:21:48
+  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutus.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.0',
+  'unifunc' => 'content_67f3d16c226997_93433240',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e552205be5e5b1fd243bd3a45556eb41f1a9ba07' => 
+    array (
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutus.tpl',
+      1 => 1744032047,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_67f3d16c226997_93433240 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{$title}</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/aboutus.css">
 </head>
 <body>
     <main>
-        <h1>{$title}</h1>
+        <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</h1>
         <section id="about-us">
             <p>Welcome to Holiday24, your ultimate destination for hassle-free travel planning. We specialize in curating exceptional travel bundles that include top-notch hotels and exciting experiences, all tailored to make your journey unforgettable.</p>
             <p>Our mission is to provide you with seamless and affordable travel solutions. Whether you're planning a romantic getaway, a family vacation, or an adventure-packed trip, our carefully crafted bundles ensure that every aspect of your travel is covered.</p>
@@ -18,3 +43,5 @@
     </main>
 </body>
 </html>
+<?php }
+}
