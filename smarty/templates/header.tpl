@@ -24,7 +24,7 @@
             {if isset($user_id)}
                 <a class="accent-link" href="logout.php">Logout ({$user_role})</a>
             {else}
-                <a class="{if $activePage == 'login'}accent-link{/if}" href="login.php">Login</a>
+                <a class="accent-link" href="login.php">Login</a>
             {/if}
         </li>
     </ul>
