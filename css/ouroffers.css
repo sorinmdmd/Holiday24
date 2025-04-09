@@ -26,7 +26,6 @@ h1::after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, #3498db, #9b59b6);
 }
 
 /* About Us Section */
@@ -110,26 +109,6 @@ main {
     margin: 0 auto;
     padding: 2rem;
     animation: fadeIn 0.8s ease-in-out;
-}
-
-h1 {
-    color: #2c3e50;
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    padding-bottom: 1rem;
-}
-
-h1::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, #3498db, #9b59b6);
 }
 
 /* About Us Section */

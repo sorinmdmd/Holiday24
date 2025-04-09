@@ -16,4 +16,9 @@
                       LEFT JOIN hotel h ON t.hotelid = h.id";
             return DbFunctions::getRows($link, $query);
         }
+        public static function getUserDetails($link) {
+            $query = "SELECT *
+                      FROM customer";
+            return DbFunctions::getRows($link, $query);
+        }
     }

@@ -44,9 +44,9 @@ class DbFunctions
 				echo $hashedPassword;
 			}
 		} else {
-			echo "No user found with the provided email.";
+			echo "<script>console.log('No user found with the provided email');</script>";
 		}
-		return false;
+		return false; 
 	}
 
 	public static function registerUser($link, $firstName, $lastName, $email, $password)

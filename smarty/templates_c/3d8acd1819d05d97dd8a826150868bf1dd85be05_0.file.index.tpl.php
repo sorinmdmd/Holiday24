@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-07 13:21:48
+/* Smarty version 4.2.0, created on 2025-04-09 10:06:05
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f3d16c4dfc47_92999777',
+  'unifunc' => 'content_67f6468db56b97_22648497',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3d8acd1819d05d97dd8a826150868bf1dd85be05' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/index.tpl',
-      1 => 1744032068,
+      1 => 1744193163,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:aboutus.tpl' => 1,
   ),
 ),false)) {
-function content_67f3d16c4dfc47_92999777 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67f6468db56b97_22648497 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +30,7 @@ function content_67f3d16c4dfc47_92999777 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/global.css">
     <link rel="stylesheet" type="text/css" href="/css/homepage.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
 </head>
@@ -37,7 +38,7 @@ function content_67f3d16c4dfc47_92999777 (Smarty_Internal_Template $_smarty_tpl)
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <section class="home">
-        <h1>Finde deine nächste Reise✈️</h1>
+        <h1>Your Journey Starts Here✈️</h1>
         <img src="images/layer1.png" class="img layer1" alt="">
         <img src="images/layer2.png" class="img layer2" alt="">
         <img src="images/layer3.png" class="img layer3" alt="">
