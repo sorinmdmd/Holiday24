@@ -35,7 +35,7 @@ if ($REQUEST_METHOD == "POST") {
         header("Location: index.php"); // Redirect to a dashboard or home page
         exit();
     } else {
-        $smarty->assign('fehler', "Ungültige E-Mail oder Passwort.");
+        $smarty->assign('fehler', "Invalid email or password.");
     }
 
     // Regenerate CSRF token after form submission

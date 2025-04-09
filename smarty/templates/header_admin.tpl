@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/header_admin.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">
@@ -17,8 +17,6 @@
         {elseif isset($user_id) && $user_role == 'admin'}
             <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">Admin Panel</a></li>
         {/if}
-        <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Our trips</a></li>
-        <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php #aboutusId">About us</a></li>
         <li>
             {if isset($user_id)}
                 <a class="accent-link" href="logout.php">Logout - {$user_role}</a>

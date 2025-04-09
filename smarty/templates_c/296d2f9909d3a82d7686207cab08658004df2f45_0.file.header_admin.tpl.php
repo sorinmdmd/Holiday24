@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-09 10:32:00
-  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header.tpl' */
+/* Smarty version 4.2.0, created on 2025-04-09 13:25:04
+  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header_admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f64ca09abc29_91428182',
+  'unifunc' => 'content_67f6753034bd13_92865198',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c944e32cc18aa55e5d1d55648561612121ae7684' => 
+    '296d2f9909d3a82d7686207cab08658004df2f45' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header.tpl',
-      1 => 1744194718,
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header_admin.tpl',
+      1 => 1744205078,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67f64ca09abc29_91428182 (Smarty_Internal_Template $_smarty_tpl) {
-?><link rel="stylesheet" type="text/css" href="css/header.css">
+function content_67f6753034bd13_92865198 (Smarty_Internal_Template $_smarty_tpl) {
+?><link rel="stylesheet" type="text/css" href="css/header_admin.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">
@@ -40,8 +40,6 @@ function content_67f64ca09abc29_91428182 (Smarty_Internal_Template $_smarty_tpl)
         <?php } elseif ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'admin_panel') {?>active-link<?php }?>" href="admin_panel.php">Admin Panel</a></li>
         <?php }?>
-        <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'ouroffers') {?>active-link<?php }?>" href="ouroffers.php">Our trips</a></li>
-        <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'aboutus') {?>active-link<?php }?>" href="index.php #aboutusId">About us</a></li>
         <li>
             <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>
                 <a class="accent-link" href="logout.php">Logout - <?php echo $_smarty_tpl->tpl_vars['user_role']->value;?>
