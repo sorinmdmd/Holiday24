@@ -10,30 +10,37 @@
 <body>
     {include file="header_admin.tpl"}
     <h1>Benutzerverwaltung</h1>
-    <a href="">Neuen Benutzer hinzufügen</a>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Aktionen</th>
-            </tr>
-        </thead>
-        <tbody>
-            {foreach $users as $user}
+    <div class="benutzerTabelle">
+        <a href="">Neuen Benutzer hinzufügen</a>
+        <table>
+            <thead>
                 <tr>
-                    <td>{$user.id}</td>
-                    <td>{$user.first_name}{$user.last_name}</td>
-                    <td>{$user.email}</td>
-                    <td>
-                        <a href="">Bearbeiten</a>
-                        <a>|</a>
-                        <a href="">Löschen</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Aktionen</th>
                 </tr>
-            {/foreach}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {foreach $users as $user}
+                    <tr>
+                        <td>{$user.id}</td>
+                        <td>{$user.first_name}{$user.last_name}</td>
+                        <td>{$user.email}</td>
+                        <td>
+                            {if $user.id == 0}
+                                <p style="color: violet;">Admin</p>
+                            {else}
+                                <form method="POST" action="">
+                                    <input type="hidden" name="delete_user_id" value="{$user.id}">
+                                    <button type="submit">Löschen</button>
+                                </form>
+                            {/if}
+                        </td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

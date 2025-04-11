@@ -58,6 +58,6 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 $smarty->assign('csrf_token', $_SESSION['csrf_token']);
-
+$smarty->assign('activePage', 'login');
 $smarty->display('registration.tpl');
 ?>
