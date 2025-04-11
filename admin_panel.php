@@ -13,6 +13,13 @@ $title = "Admin Panel";
 $smarty->assign('title', htmlentities($title));
 $users = DbAccess::getUserDetails($link);
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
+    $userId = $_POST['delete_user_id']; 
+    if ($userId != 0) {
+        DbFunctions::deleteUser($link, $userId);
+    }
+}
+
 // Hier könntest du die Angebote aus der Datenbank laden
 // $angebote = Lieferservice::getAngebot($link);
 // $smarty->assign('angebote', $angebote);

@@ -4,8 +4,8 @@ class DbFunctions
 {
 	public static function connectWithDatabase()
 	{
-		$link = mysqli_connect('sql7.freesqldatabase.com', 'sql7771264', 'b4BbQQSe5e');
-		$query = "USE sql7771264";
+		$link = mysqli_connect('pav050.hs-bochum.de', 'iksy2_holiday24', 'rfQJY/]cDIfCxxd/');
+		$query = "USE iksy2_holiday24";
 		self::executeQuery($link, $query);
 		return $link;
 	}
@@ -111,5 +111,29 @@ class DbFunctions
 		
 		return $rows;
 	}
+
+	public static function getUserId($link) {
+		$query = "SELECT id FROM customer"; 
+   	 	$result = self::executeQuery($link, $query);
+
+    	if ($row = mysqli_fetch_assoc($result)) {
+        	return $row['id']; 
+    	}
+
+    	return null;
+	}
+
+	public static function deleteUser($link, $userId) {
+       
+        $userId = mysqli_real_escape_string($link, $userId);    
+        $query = "DELETE FROM customer WHERE id = '$userId'";
+        $result = self::executeQuery($link, $query);
+
+        if ($result && mysqli_affected_rows($link) > 0) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
 }
 ?>
