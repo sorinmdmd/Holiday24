@@ -12,7 +12,6 @@ $link = DbFunctions::connectWithDatabase();
 $title = "My Profile";
 $smarty->assign('title', htmlentities($title));
 $me = DbAccess::getUserById($link, $_SESSION['user_id']);
-echo $_SESSION['user_id'];
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);

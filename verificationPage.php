@@ -50,29 +50,17 @@ if (!isset($_SESSION['verification_code']) || $codeExpired) {
 
 // Form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $enteredCode = $_POST['verification_code'] ?? '';
-
-    if (isset($_SESSION['verification_code']) && $enteredCode == $_SESSION['verification_code']) {
-        DbAccess::verifyUser($link, $_SESSION['user_id']);
-        unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
-        header("Location: myProfile.php");
-        exit();
-    } else {
-        $smarty->assign('error', "Invalid verification code.");
-    }
-}
-
-// Form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'verify') {
         $enteredCode = $_POST['verification_code'] ?? '';
 
+        // Check if the entered code matches the session code
         if (isset($_SESSION['verification_code']) && $enteredCode == $_SESSION['verification_code']) {
             DbAccess::verifyUser($link, $_SESSION['user_id']);
             unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
             header("Location: myProfile.php");
             exit();
         } else {
+            // Set error only if the code is invalid
             $smarty->assign('error', "Invalid verification code.");
         }
     } elseif (isset($_POST['action']) && $_POST['action'] === 'resend_email') {
@@ -90,6 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
 $smarty->assign('activePage', 'verificationPage');
 $smarty->display('verificationPage.tpl');
+?>
