@@ -14,6 +14,7 @@
         <li class="home-li"><a class="{if $activePage == 'index'}active-link{/if}" href="index.php">Home</a></li>
             {if isset($user_id) && $user_role == 'customer'}
             <li><a class="{if $activePage == 'mytravelpacks'}active-link{/if}" href="mytravelpacks.php">My Travel Packs</a></li>
+            <li><a class="{if $activePage == 'myProfile'}active-link{/if}" href="myProfile.php">My Profile</a></li>
         {elseif isset($user_id) && $user_role == 'admin'}
             <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="adminPanel.php">Admin Panel</a></li>
         {/if}

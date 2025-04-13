@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-13 09:58:35
+/* Smarty version 4.2.0, created on 2025-04-13 10:21:43
   from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67fb8acb8d8f03_58418749',
+  'unifunc' => 'content_67fb903772afd2_73278408',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6de48d7ec1bbea8756387024e0a243cc1a11147d' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/header.tpl',
-      1 => 1744538312,
+      1 => 1744539701,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67fb8acb8d8f03_58418749 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67fb903772afd2_73278408 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>
@@ -37,6 +37,7 @@ function content_67fb8acb8d8f03_58418749 (Smarty_Internal_Template $_smarty_tpl)
         <li class="home-li"><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'index') {?>active-link<?php }?>" href="index.php">Home</a></li>
             <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'customer') {?>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'mytravelpacks') {?>active-link<?php }?>" href="mytravelpacks.php">My Travel Packs</a></li>
+            <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'myProfile') {?>active-link<?php }?>" href="myProfile.php">My Profile</a></li>
         <?php } elseif ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'admin_panel') {?>active-link<?php }?>" href="adminPanel.php">Admin Panel</a></li>
         <?php }?>

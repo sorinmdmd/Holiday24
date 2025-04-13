@@ -119,7 +119,6 @@ class DbFunctions
     	if ($row = mysqli_fetch_assoc($result)) {
         	return $row['id']; 
     	}
-
     	return null;
 	}
 
