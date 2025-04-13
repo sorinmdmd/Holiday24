@@ -15,7 +15,7 @@
             {if isset($user_id) && $user_role == 'customer'}
             <li><a class="{if $activePage == 'mytravelpacks'}active-link{/if}" href="mytravelpacks.php">My Travel Packs</a></li>
         {elseif isset($user_id) && $user_role == 'admin'}
-            <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">Admin Panel</a></li>
+            <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="adminPanel.php">Admin Panel</a></li>
         {/if}
         <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Our trips</a></li>
         <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php #aboutusId">About us</a></li>
