@@ -15,10 +15,14 @@
             <p style="color: red;">{$error}</p>
         {/if}
 
-        <form method="post">
+        <form method="post" action="verificationPage.php">
             <label for="verification_code">Enter Verification Code:</label>
             <input type="text" id="verification_code" name="verification_code" required>
-            <button type="submit">Verify</button>
+            <button type="submit" name="action" value="verify">Verify</button>
+        </form>
+
+        <form method="post" action="verificationPage.php">
+            <button type="submit" name="action" value="resend_email">Resend Verification Email</button>
         </form>
     </main>
 </body>
