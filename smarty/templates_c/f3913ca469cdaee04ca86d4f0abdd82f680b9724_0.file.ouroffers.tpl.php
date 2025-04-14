@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-09 09:22:44
+/* Smarty version 4.2.0, created on 2025-04-14 18:45:00
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f63c6492b809_74612942',
+  'unifunc' => 'content_67fd57acde0b51_19380372',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3913ca469cdaee04ca86d4f0abdd82f680b9724' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl',
-      1 => 1744188921,
+      1 => 1744656297,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:header-admin.tpl' => 1,
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f63c6492b809_74612942 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67fd57acde0b51_19380372 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -35,8 +36,14 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/P
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
+        <?php $_smarty_tpl->_subTemplateRender("file:header-admin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+    <?php } else { ?>
+        <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    <?php }?>
+    
     <!-- Search Menu -->
     <div class="search-menu">
         <div class="search-fields">

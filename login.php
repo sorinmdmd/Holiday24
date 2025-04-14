@@ -27,12 +27,14 @@ if ($REQUEST_METHOD == "POST") {
     $password = $_POST['password'];
 
     $user = DbFunctions::verifyUser($link, $email, $password);
-
+    
     if ($user) {
         $_SESSION['user_id'] = $user['id']; // Use 'id' instead of 'CustomerID'
         $_SESSION['user_role'] = $user['role'];
         $smarty->assign('user_id', $user['id']); // Assign user_id to Smarty
-        header("Location: index.php"); // Redirect to a dashboard or home page
+        if($user['role'] == 'admin') {
+            header("Location: admin_panel.php");
+        } else header("Location: index.php"); // Redirect to a dashboard or home page
         exit();
     } else {
         $smarty->assign('fehler', "Invalid email or password.");
