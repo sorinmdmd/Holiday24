@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-09 13:25:04
+/* Smarty version 4.2.0, created on 2025-04-14 17:02:36
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header_admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f6753034bd13_92865198',
+  'unifunc' => 'content_67fd3fac48cde5_79980858',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '296d2f9909d3a82d7686207cab08658004df2f45' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/header_admin.tpl',
-      1 => 1744205078,
+      1 => 1744645314,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67f6753034bd13_92865198 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67fd3fac48cde5_79980858 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header_admin.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>

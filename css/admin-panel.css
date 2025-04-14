@@ -1,0 +1,26 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 80vh;
+    flex-wrap: wrap;
+}
+
+.big-button {
+    padding: 25px 50px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(145deg,rgb(255, 255, 255),rgb(255, 255, 255));
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.big-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3);
+}
