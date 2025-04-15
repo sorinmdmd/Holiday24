@@ -6,11 +6,11 @@ nav ul {
     list-style: none;
     display: flex;
 }
+nav .home-li {
+    margin-right: auto;
+}
 nav li {
     display: flex;
-}
-nav li:last-child {
-    margin-left: auto;
 }
 nav a {
     display: flex;
@@ -24,10 +24,12 @@ nav a:hover {
 }
 nav a.active-link {
     border-bottom: 2px solid var(--text-color);
-}   
+}
 nav a.accent-link {
-   
     background-color: var(--accent-color);
+}
+nav li:last-child{
+    margin-left: auto;
 }
 #open-sidebar-button {
     display: none;

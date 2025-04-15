@@ -9,9 +9,14 @@ require_once 'classes/DbAccess.inc.php';
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
+
 $title = "Admin Panel";
 $smarty->assign('title', htmlentities($title));
+
 $users = DbAccess::getUserDetails($link);
+
+$travelbundles = DbAccess::getTravelbundles($link);
+$smarty->assign('travelbundles', $travelbundles);
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);

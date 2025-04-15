@@ -212,7 +212,7 @@ main {
     margin-top: 15px;
 }
 
-.info-button, .book-button, .soldout-button {
+.info-button, .book-button, .soldout-button, .edit-button {
     padding: 8px 16px;
     border-radius: 5px;
     text-decoration: none;
@@ -229,6 +229,11 @@ main {
 
 .book-button {
     background-color: #2ecc71;
+    color: white;
+}
+
+.edit-button {
+    background-color: darkorange;
     color: white;
 }
 
