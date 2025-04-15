@@ -8,7 +8,12 @@
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    {include file="header.tpl"}
+    {if isset($user_id) && $user_role == 'admin'}
+        {include file="header-admin.tpl"}
+    {else}
+        {include file="header.tpl"}
+    {/if}
+    
     <!-- Search Menu -->
     <div class="search-menu">
         <div class="search-fields">

@@ -28,6 +28,9 @@ nav a.active-link {
 nav a.accent-link {
     background-color: var(--accent-color);
 }
+nav li:last-child{
+    margin-left: auto;
+}
 #open-sidebar-button {
     display: none;
     background: none;
