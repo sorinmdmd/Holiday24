@@ -9,47 +9,56 @@
 </head>
 <body>
     {if isset($user_id) && $user_role == 'admin'}
-        {include file="header-admin.tpl"}
+        {include file="header-admin.tpl"}   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
     {else}
         {include file="header.tpl"}
     {/if}
     
     <!-- Search Menu -->
     <div class="search-menu">
-        <div class="search-fields">
-            <!-- Destination country -->
-            <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
+        <form method="post" action="ouroffers.php">
+            <div class="search-fields">
+                <!-- Destination country -->
+                <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
 
-            <!-- Month of Travel Dropdown -->
-            <select name="month">
-                <option value="" disabled selected>Month of travel</option>
-                {foreach key=id item=name from=$months}
-                    <option value="{$id}">{$name}</option>
-                {/foreach}
-            </select>
+                <!-- Month of Travel Dropdown -->
+                <select name="month">
+                    <option value="" disabled selected>Month of travel</option>
+                    {foreach key=id item=name from=$months}
+                        <option value="{$id}">{$name}</option>
+                    {/foreach}
+                </select>
 
-            <!-- Travelers Dropdown -->
-            <select name="number_travelers">
-                <option value="" disabled selected>Travelers</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
+                <!-- Travelers Dropdown -->
+                <select name="number_travelers">
+                    <option value="" disabled selected>Travelers</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
 
-        <!-- Submit Button -->
-        <div class="submit-button">
-            <input type="submit" id="submit_btn" name="Button1" value="Let's go!">
-        </div>
+            <!-- Submit Button -->
+            <div class="submit-button">
+                <input type="submit" id="submit_btn" name="Button1" value="Let's go!">
+            </div>
+        </form>
     </div>
 
     <!-- Main section -->
 
     <main class="content">
         <h1>{$title}</h1>
+        
         <section id="our-offers">
+            {if $no_results}
+                <div class="no-results" id="filter_error">
+                    Sorry, there are no travelpacks matching your search at the moment.
+                </div>
+            {/if}
+
             <div class="travel-bundle-container">
                 {foreach from=$travelbundles item=bundle}
                     <div class="travel-card">
@@ -65,11 +74,16 @@
                         <div class="travel-buttons">
                             <a href="tripdetails.php?id={$bundle.id}" class="info-button">Mehr Info</a>
                             {if $bundle.available_spaces > 0}
-                                <a href="booking.php?id={$bundle.id}" class="book-button">Buchen</a>
+                                {if isset($user_id)}
+                                    <a href="booking.php?id={$bundle.id}" class="book-button">Buchen</a>
+                                {else}
+                                    <a href="login.php" class="book-button">Buchen</a>
+                                {/if}
                             {else}
                                 <span class="soldout-button">Ausgebucht</span>
                             {/if}
                         </div>
+
                     </div>
                 {/foreach}
             </div>
