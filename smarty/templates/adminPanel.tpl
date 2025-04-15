@@ -9,13 +9,9 @@
 </head>
 <body>
     {include file="header-admin.tpl"}
-    <h1>Admin Panel</h1>
-    <div class="button-container">
-        <a href="manageUsers.php" class="big-button">Manage Users</a>
-        <a href="manageTravelPacks.php" class="big-button">Manage Travel Packs</a>
-    </div>
+    <h1 id="adminH1">Admin Panel</h1>
     <h1>User Management</h1>
-    <div class="benutzerTabelle" id="section-one">
+    <div id="userTable" class="benutzerTabelle">
         <table>
             <thead>
                 <tr>

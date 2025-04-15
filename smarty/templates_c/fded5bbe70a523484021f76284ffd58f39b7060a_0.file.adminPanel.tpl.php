@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-14 18:44:31
+/* Smarty version 4.2.0, created on 2025-04-15 09:00:27
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67fd578f720c58_86624409',
+  'unifunc' => 'content_67fe202b478566_07507442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fded5bbe70a523484021f76284ffd58f39b7060a' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl',
-      1 => 1744656237,
+      1 => 1744707618,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header-admin.tpl' => 1,
   ),
 ),false)) {
-function content_67fd578f720c58_86624409 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67fe202b478566_07507442 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -35,13 +35,9 @@ function content_67fd578f720c58_86624409 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header-admin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <h1>Admin Panel</h1>
-    <div class="button-container">
-        <a href="manageUsers.php" class="big-button">Manage Users</a>
-        <a href="manageTravelPacks.php" class="big-button">Manage Travel Packs</a>
-    </div>
+    <h1 id="adminH1">Admin Panel</h1>
     <h1>User Management</h1>
-    <div class="benutzerTabelle" id="section-one">
+    <div id="userTable" class="benutzerTabelle">
         <table>
             <thead>
                 <tr>

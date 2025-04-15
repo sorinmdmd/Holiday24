@@ -19,6 +19,12 @@ if (isset($_SESSION['user_id'])) {
 if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
+    $userId = $_POST['delete_user_id']; 
+    if ($userId != 0) {
+        DbFunctions::deleteUser($link, $userId);
+    }
+}
 // Assign user_role to Smarty if the user is logged in
 $smarty->assign('users', $users);
 $smarty->assign('activePage', 'admin_panel');

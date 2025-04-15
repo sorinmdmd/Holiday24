@@ -12,17 +12,13 @@
             </button>
         </li>
         <li class="home-li"><a class="{if $activePage == 'index'}active-link{/if}" href="index.php">Home</a></li>
-        {if isset($user_id) && $user_role == 'customer'}
-            <li><a class="{if $activePage == 'mytravelpacks'}active-link{/if}" href="mytravelpacks.php">My Travel Packs</a></li>
-            <li><a class="{if $activePage == 'myProfile'}active-link{/if}" href="myProfile.php">My Profile</a></li>
-        {elseif isset($user_id) && $user_role == 'admin'}
-            <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">Admin Panel</a></li>
-        {/if}
+        <li><a class="{if $activePage == 'mytravelpacks'}active-link{/if}" href="mytravelpacks.php">My Travel Packs</a></li>
+        <li><a class="{if $activePage == 'myProfile'}active-link{/if}" href="myProfile.php">My Profile</a></li>
         <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Our trips</a></li>
         <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php #aboutusId">About us</a></li>
         <li>
             {if isset($user_id)}
-                <a class="accent-link" href="logout.php">Logout - {$user_role}</a>
+                <a class="accent-link" href="logout.php">Logout</a>
             {else}
                 <a class="accent-link" href="login.php">Login</a>
             {/if}

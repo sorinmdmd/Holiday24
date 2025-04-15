@@ -1,3 +1,8 @@
+#adminH1 {
+    margin-top: 40vh;
+    margin-bottom: 50vh;
+}
+
 h1 {
     color: var(--text-color);
     font-size: 80px;
