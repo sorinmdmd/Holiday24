@@ -1,3 +1,15 @@
+/* Basic styles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
+    z-index: -1;
+}
+
 .content {
     padding: 2vw;
 }
@@ -28,89 +40,7 @@ h1::after {
     height: 3px;
 }
 
-/* Our Offers */
-#our-offers {
-    background: white;
-    border-radius: 10px;
-    padding: 2.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
-#our-offers p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-#our-offers p:first-child {
-    font-size: 1.2rem;
-    color: #2c3e50;
-    font-weight: 500;
-}
-
-#our-offers p:last-child {
-    margin-bottom: 0;
-    font-style: italic;
-    color: #7f8c8d;
-}
-
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        padding: 1rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    #our-offers {
-        padding: 1.5rem;
-    }
-}
-
-/* Decorative Elements */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
-    z-index: -1;
-}
-
-#our-offers {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Search menu */
-.content {
-    padding: 2vw;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    animation: fadeIn 0.8s ease-in-out;
-}
-
+/* Search menu*/
 .search-menu {
     display: flex;
     justify-content: space-between; 
@@ -118,6 +48,11 @@ main {
     background-color: #f8d3af; 
     padding: 10px 20px;
     flex-wrap: wrap; 
+}
+
+.search-menu form {
+    display: flex;
+    gap: 10px;
 }
 
 .search-fields {
@@ -139,7 +74,6 @@ main {
     margin-left: auto; 
 }
 
-
 .submit-button input[type="submit"] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
@@ -150,20 +84,42 @@ main {
 }
 
 .submit-button input[type="submit"]:hover {
-    color: black;
     background-color: #D7E6F6; 
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid grey;
 }
 
-.search-menu form {
-    display: flex;
-    gap: 10px;
+/* Our offers */
+#our-offers {
+    background: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#our-offers p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
+}
 
-/* Travel Bundle Cards */
+#our-offers p:first-child {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+#our-offers p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+#filter_error {
+    color: red;
+}
+
+/* Travelpack cards */
 .travel-bundle-container {
     display: flex;
     flex-wrap: wrap;
@@ -193,6 +149,14 @@ main {
     padding-bottom: 10px;
 }
 
+.city-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 .travel-dates {
     font-size: 1rem;
     color: #555;
@@ -203,14 +167,16 @@ main {
     margin: 8px 0;
 }
 
+/* Buttons */
 .travel-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
 }
 
-.info-button, .book-button, .soldout-button, .edit-button {
-    padding: 8px 16px;
+.info-button, .book-button, .soldout-button, .edit-button, .cancel-button{
+    padding: 10px 16px;
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
@@ -225,7 +191,12 @@ main {
 }
 
 .book-button {
-    background-color: #2ecc71;
+    background-color: #22c55e;
+    color: white;
+}
+
+.cancel-button {
+    background-color: #e66d48;
     color: white;
 }
 
@@ -240,23 +211,51 @@ main {
     cursor: not-allowed;
 }
 
-.city-image {
-    height: 150px;
-    background-size: cover;
-    background-position: center;
+/* Booking form */
+.inline-booking-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.inline-booking-form select {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+    appearance: none;
+    padding: 8px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #our-offers {
+        padding: 1.5rem;
+    }
+    
     .travel-card {
         width: 100%;
         max-width: 400px;
     }
-}
-
-#filter_error {
-    color: red;
 }
