@@ -12,8 +12,9 @@
     {include file="header-admin.tpl"}
     <h1 id="adminH1">Admin Panel</h1>
     <div id="userTable">
+    <div id="userTable">
         <h1>User Management</h1>
-        <div id="userTable" class="benutzerTabelle">
+        <div class="benutzerTabelle">
             <table>
                 <thead>
                     <tr>

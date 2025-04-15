@@ -13,7 +13,7 @@
         <li>
             <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">ADMIN</a></li>
             <li><a href="admin_panel.php#userTable">Manage Users</a></li>
-            <li><a href="admin_panel.php">Manage Travel</a></li>
+            <li><a href="admin_panel.php#travelManagement">Manage Travel</a></li>
             <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Travelpacks</a></li> 
             <li><a class="accent-link" href="logout.php">Logout - {$user_role}</a></li>
         </li>
