@@ -11,34 +11,36 @@
 <body>
     {include file="header-admin.tpl"}
     <h1 id="adminH1">Admin Panel</h1>
-    <h1>User Management</h1>
-    <div id="userTable" class="benutzerTabelle">
-        <table>
-            <thead>
-                <tr>
-                    <th>First and Last Name</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {foreach $users as $user}
+    <div id="userTable">
+        <h1>User Management</h1>
+        <div id="userTable" class="benutzerTabelle">
+            <table>
+                <thead>
                     <tr>
-                        <td>{$user.first_name} {$user.last_name}</td>
-                        <td>{$user.email}</td>
-                        <td>
-                            {if $user.id == 0}
-                            {else}
-                                <form method="POST" action="">
-                                    <input type="hidden" name="delete_user_id" value="{$user.id}">
-                                    <button type="submit">Delete</button>
-                                </form>
-                            {/if}
-                        </td>
+                        <th>First and Last Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
                     </tr>
-                {/foreach}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {foreach $users as $user}
+                        <tr>
+                            <td>{$user.first_name} {$user.last_name}</td>
+                            <td>{$user.email}</td>
+                            <td>
+                                {if $user.id == 0}
+                                {else}
+                                    <form method="POST" action="">
+                                        <input type="hidden" name="delete_user_id" value="{$user.id}">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                {/if}
+                            </td>
+                        </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
     </div>
     <div id="travelManagement">
             <h1>Travel Management</h1>
