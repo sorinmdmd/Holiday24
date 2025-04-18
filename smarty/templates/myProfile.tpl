@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/myprofile.css">
+    <link rel="stylesheet" type="text/css" href="css/myProfile.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>

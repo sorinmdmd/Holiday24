@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/header_admin.css">
+<link rel="stylesheet" type="text/css" href="css/headerAdmin.css">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">
     <img src="images/menu-button.svg" height="40px" width="40px" fill="#FFA725">
@@ -11,9 +11,9 @@
             </button>
         </li>
         <li>
-            <li><a class="{if $activePage == 'admin_panel'}active-link{/if}" href="admin_panel.php">ADMIN</a></li>
-            <li><a href="admin_panel.php#userTable">Manage Users</a></li>
-            <li><a href="admin_panel.php#travelManagement">Manage Travel</a></li>
+            <li><a class="{if $activePage == 'adminPanel'}active-link{/if}" href="adminPanel.php">ADMIN</a></li>
+            <li><a href="adminPanel.php#userTable">Manage Users</a></li>
+            <li><a href="adminPanel.php#travelManagement">Manage Travel</a></li>
             <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Travelpacks</a></li> 
             <li><a class="accent-link" href="logout.php">Logout - {$user_role}</a></li>
         </li>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title}</title>
-    <link rel="stylesheet" type="text/css" href="css/global_admin.css">
-    <link rel="stylesheet" type="text/css" href="css/admin-panel.css">
+    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
+    <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
     <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    {include file="header-admin.tpl"}
+    {include file="headerAdmin.tpl"}
     <h1 id="adminH1">Admin Panel</h1>
     <div id="userTable">
     <div id="userTable">
