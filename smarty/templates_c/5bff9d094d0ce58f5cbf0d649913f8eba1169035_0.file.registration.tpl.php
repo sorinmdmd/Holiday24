@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-11 20:32:30
+/* Smarty version 4.2.0, created on 2025-04-18 10:21:52
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67f97c5eef0bf8_70543588',
+  'unifunc' => 'content_680227c0b3b259_85332317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5bff9d094d0ce58f5cbf0d649913f8eba1169035' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/registration.tpl',
-      1 => 1744401270,
+      1 => 1744971710,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67f97c5eef0bf8_70543588 (Smarty_Internal_Template $_smarty_tpl) {
+function content_680227c0b3b259_85332317 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -43,12 +43,12 @@ function content_67f97c5eef0bf8_70543588 (Smarty_Internal_Template $_smarty_tpl)
 echo $_smarty_tpl->tpl_vars['csrf_token']->value;
 }?>">
 
-             <label for="firstName">First Name:</label>
+            <label for="firstName">First Name:</label>
             <input type="firstName" id="firstName" name="firstName" value="<?php if ((isset($_smarty_tpl->tpl_vars['firstName']->value))) {
 echo $_smarty_tpl->tpl_vars['firstName']->value;
 }?>" required><br>
 
-             <label for="lastName">Last Name:</label>
+            <label for="lastName">Last Name:</label>
             <input type="lastName" id="lastName" name="lastName" value="<?php if ((isset($_smarty_tpl->tpl_vars['lastName']->value))) {
 echo $_smarty_tpl->tpl_vars['lastName']->value;
 }?>" required><br>
@@ -60,6 +60,11 @@ echo $_smarty_tpl->tpl_vars['email']->value;
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" value="<?php if ((isset($_smarty_tpl->tpl_vars['password']->value))) {
+echo $_smarty_tpl->tpl_vars['password']->value;
+}?>" required><br>
+
+            <label for="password2">Verify Password:</label>
+            <input type="password" id="password" name="password2" value="<?php if ((isset($_smarty_tpl->tpl_vars['password']->value))) {
 echo $_smarty_tpl->tpl_vars['password']->value;
 }?>" required><br>
             

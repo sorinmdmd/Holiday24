@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastName = trim($_POST['lastName']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+    $password2 = trim($_POST['password2']);
     $csrf_token = $_POST['csrf_token'];
 
     // Werte ins Template geben, falls errorMessage auftreten
@@ -36,11 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Eingabevalidierung
         if (empty($firstName) || empty($lastName) || empty($email) || empty($password)) {
-            $smarty->assign('errorMessage', 'Alle Felder sind erforderlich.');
+            $smarty->assign('errorMessage', 'All fields are required.');
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $smarty->assign('errorMessage', 'Ungültiges E-Mail-Format.');
+            $smarty->assign('errorMessage', 'Invalid email format.');
         } elseif (DbFunctions::emailExists($link, $email)) {
-            $smarty->assign('errorMessage', 'Diese E-Mail-Adresse ist bereits registriert.');
+            $smarty->assign('errorMessage', 'This email address is already registered.');
+        } elseif (!Sicherheit::validatePassword(($password))) {
+            $smarty->assign('errorMessage', 'The password must contain at least one number, one upper character, and contain at least one special character.');
+        } elseif ($password != $password2) {
+            $smarty->assign('errorMessage', 'Passwords do not match.');
         } else {
             // Registrierung durchführen
             if (DbFunctions::registerUser($link, $firstName, $lastName, $email, $password)) {
