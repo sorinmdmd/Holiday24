@@ -31,6 +31,6 @@ if (isset($_SESSION['user_role'])) {
 
 $smarty->assign('no_results', $no_results);
 $smarty->assign('activePage', 'mytravelpacks');
-$smarty->display('mytravelpacks.tpl');
+$smarty->display('myTravelpacks.tpl');
 
 ?>

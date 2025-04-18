@@ -32,6 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
 }
 // Assign user_role to Smarty if the user is logged in
 $smarty->assign('users', $users);
-$smarty->assign('activePage', 'admin_panel');
+$smarty->assign('activePage', 'adminPanel');
 $smarty->display('adminPanel.tpl');
 ?>

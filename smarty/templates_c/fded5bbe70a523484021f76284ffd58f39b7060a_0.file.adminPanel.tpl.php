@@ -1,27 +1,27 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-15 10:51:19
+/* Smarty version 4.2.0, created on 2025-04-18 09:31:28
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67fe3a27441445_70667905',
+  'unifunc' => 'content_68021bf007cd54_41280015',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fded5bbe70a523484021f76284ffd58f39b7060a' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl',
-      1 => 1744714277,
+      1 => 1744968614,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header-admin.tpl' => 1,
+    'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_67fe3a27441445_70667905 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68021bf007cd54_41280015 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -30,13 +30,13 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/P
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/global_admin.css">
-    <link rel="stylesheet" type="text/css" href="css/admin-panel.css">
+    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
+    <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
     <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <?php $_smarty_tpl->_subTemplateRender("file:header-admin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1 id="adminH1">Admin Panel</h1>
     <div id="userTable">
