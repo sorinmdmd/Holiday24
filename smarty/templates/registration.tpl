@@ -14,10 +14,10 @@
           <form method="post" action="registration.php">
             <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
 
-             <label for="firstName">First Name:</label>
+            <label for="firstName">First Name:</label>
             <input type="firstName" id="firstName" name="firstName" value="{if isset($firstName)}{$firstName}{/if}" required><br>
 
-             <label for="lastName">Last Name:</label>
+            <label for="lastName">Last Name:</label>
             <input type="lastName" id="lastName" name="lastName" value="{if isset($lastName)}{$lastName}{/if}" required><br>
             
             <label for="email">E-Mail:</label>
@@ -25,6 +25,9 @@
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
+
+            <label for="password2">Verify Password:</label>
+            <input type="password" id="password" name="password2" value="{if isset($password)}{$password}{/if}" required><br>
             
             <button type="submit">Register</button>
 

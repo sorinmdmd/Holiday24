@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 09:31:28
+/* Smarty version 4.2.0, created on 2025-04-18 10:25:32
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68021bf007cd54_41280015',
+  'unifunc' => 'content_6802289ca70a82_38878543',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fded5bbe70a523484021f76284ffd58f39b7060a' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/adminPanel.tpl',
-      1 => 1744968614,
+      1 => 1744971875,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_68021bf007cd54_41280015 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6802289ca70a82_38878543 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -83,43 +83,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
     <div id="travelManagement">
-            <h1>Travel Management</h1>
-            <div class="travel-bundle-container">
-                <?php
+        <h1>Travel Management</h1>
+        <div class="travel-bundle-container">
+            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['travelbundles']->value, 'bundle');
 $_smarty_tpl->tpl_vars['bundle']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bundle']->value) {
 $_smarty_tpl->tpl_vars['bundle']->do_else = false;
 ?>
-                    <div class="travel-card">
-                        <h2><?php echo $_smarty_tpl->tpl_vars['bundle']->value['city'];?>
+                <div class="travel-card">
+                    <h2><?php echo $_smarty_tpl->tpl_vars['bundle']->value['city'];?>
 </h2>
-                        <div class="city-image" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bundle']->value['img_path'];?>
+                    <div class="city-image" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bundle']->value['img_path'];?>
 )"></div>
-                        <p class="travel-dates">
-                            <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['bundle']->value['start_date'],"%d %b %Y");?>
+                    <p class="travel-dates">
+                        <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['bundle']->value['start_date'],"%d %b %Y");?>
  - <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['bundle']->value['end_date'],"%d %b %Y");?>
 
-                        </p>
-                        <p class="travel-price"><b>Price:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['price'];?>
+                    </p>
+                    <p class="travel-price"><b>Price:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['price'];?>
  €</p>
-                        <p class="travel-spaces"><b>Free slots:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['available_spaces'];?>
+                    <p class="travel-spaces"><b>Free slots:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['available_spaces'];?>
 </p>
-                        <p class="travel-hotel"><b>Hotel:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['hotel_name'];?>
+                    <p class="travel-hotel"><b>Hotel:</b> <?php echo $_smarty_tpl->tpl_vars['bundle']->value['hotel_name'];?>
 </p>
                         
-                        <div class="travel-buttons">
-                            <?php if ($_smarty_tpl->tpl_vars['bundle']->value['available_spaces'] > 0) {?>
-                                <a href="" class="edit-button">Edit</a>
-                            <?php } else { ?>
-                                <span class="soldout-button">Ausgebucht</span>
-                            <?php }?>
-                        </div>
+                    <div class="travel-buttons">
+                        <?php if ($_smarty_tpl->tpl_vars['bundle']->value['available_spaces'] > 0) {?>
+                            <a href="" class="edit-button">Edit</a>
+                        <?php } else { ?>
+                            <span class="soldout-button">Ausgebucht</span>
+                        <?php }?>
                     </div>
-                <?php
+                </div>
+            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </div>
+        </div>
     </div>
 </body>
 </html>

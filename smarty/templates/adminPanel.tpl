@@ -44,29 +44,29 @@
         </div>
     </div>
     <div id="travelManagement">
-            <h1>Travel Management</h1>
-            <div class="travel-bundle-container">
-                {foreach from=$travelbundles item=bundle}
-                    <div class="travel-card">
-                        <h2>{$bundle.city}</h2>
-                        <div class="city-image" style="background-image: url({$bundle.img_path})"></div>
-                        <p class="travel-dates">
-                            {$bundle.start_date|date_format:"%d %b %Y"} - {$bundle.end_date|date_format:"%d %b %Y"}
-                        </p>
-                        <p class="travel-price"><b>Price:</b> {$bundle.price} €</p>
-                        <p class="travel-spaces"><b>Free slots:</b> {$bundle.available_spaces}</p>
-                        <p class="travel-hotel"><b>Hotel:</b> {$bundle.hotel_name}</p>
+        <h1>Travel Management</h1>
+        <div class="travel-bundle-container">
+            {foreach from=$travelbundles item=bundle}
+                <div class="travel-card">
+                    <h2>{$bundle.city}</h2>
+                    <div class="city-image" style="background-image: url({$bundle.img_path})"></div>
+                    <p class="travel-dates">
+                        {$bundle.start_date|date_format:"%d %b %Y"} - {$bundle.end_date|date_format:"%d %b %Y"}
+                    </p>
+                    <p class="travel-price"><b>Price:</b> {$bundle.price} €</p>
+                    <p class="travel-spaces"><b>Free slots:</b> {$bundle.available_spaces}</p>
+                    <p class="travel-hotel"><b>Hotel:</b> {$bundle.hotel_name}</p>
                         
-                        <div class="travel-buttons">
-                            {if $bundle.available_spaces > 0}
-                                <a href="" class="edit-button">Edit</a>
-                            {else}
-                                <span class="soldout-button">Ausgebucht</span>
-                            {/if}
-                        </div>
+                    <div class="travel-buttons">
+                        {if $bundle.available_spaces > 0}
+                            <a href="" class="edit-button">Edit</a>
+                        {else}
+                            <span class="soldout-button">Ausgebucht</span>
+                        {/if}
                     </div>
-                {/foreach}
-            </div>
+                </div>
+            {/foreach}
+        </div>
     </div>
 </body>
 </html>
