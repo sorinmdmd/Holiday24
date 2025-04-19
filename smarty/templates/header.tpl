@@ -17,7 +17,7 @@
             <li><a class="{if $activePage == 'myProfile'}active-link{/if}" href="myProfile.php">My Profile</a></li>
         {/if}
         <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ouroffers.php">Our trips</a></li>
-        <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php #aboutusId">About us</a></li>
+        <li><a class="{if $activePage == 'aboutus'}active-link{/if}" href="index.php#aboutusId">About us</a></li>
         <li>
             {if isset($user_id)}
                 <a class="accent-link" href="logout.php">Logout</a>

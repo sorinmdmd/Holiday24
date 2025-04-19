@@ -86,6 +86,97 @@ class DbAccess
         }
         return $bundles;
     }
+
+    public static function getBookingsForUser($link, $user_id) {
+
+        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
+                        t.start_date, t.end_date, h.name as hotel_name, b.booked_slots
+                      FROM booking b
+                      INNER JOIN travelbundle t
+                      ON b.travelbundleid = t.id
+                      INNER JOIN hotel h
+                      ON t.hotelid = h.id
+                      WHERE customerid = '$user_id';";
+        return DbFunctions::getRows($link, $query);
+
+    }
     
+    public static function addBooking($link, $userid, $travelbundleid, $free_slots, $booked_slots) {
+        
+        $query = "SELECT COUNT(id) FROM booking WHERE customerid = ? AND travelbundleid = ?";
+        $stmt = mysqli_prepare($link, $query);
+        mysqli_stmt_bind_param($stmt, 'ss', $userid, $travelbundleid);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $b);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
+        
+        if($b == 0){
+            $bookingid = DbFunctions::generateID();
+            $query = "INSERT INTO booking(id, customerid, travelbundleid, booked_slots) VALUES (?,?,?,?)";
+            $stmt = mysqli_prepare($link, $query);
+            mysqli_stmt_bind_param($stmt, 'ssii', $bookingid, $userid, $travelbundleid, $booked_slots);
+            
+            $update_slots = self::updateFreeSlotsForTravelbundle($link, $travelbundleid, $booked_slots);
+    
+            if(!$update_slots){
+                return false;
+            }
+            return mysqli_stmt_execute($stmt);
+        }
+        
+        // Update available slots for travelbundle
+        self::updateFreeSlotsForTravelbundle($link, $travelbundleid, $booked_slots);
+
+        // Update booked slots for booking
+        $query = "UPDATE booking SET booked_slots = booked_slots + ? WHERE customerid = ? AND travelbundleid = ?";
+        $stmt = mysqli_prepare($link, $query);
+        if (!$stmt) {
+            error_log("Prepare failed: " . mysqli_error($link));
+            return false;
+        }
+        mysqli_stmt_bind_param($stmt, 'iss', $booked_slots, $userid, $travelbundleid);
+        return mysqli_stmt_execute($stmt);
+    }
+    
+    
+    public static function updateFreeSlotsForTravelbundle($link, $travelbundleid, $booked_slots) {
+        $query = "UPDATE travelbundle 
+                  SET available_spaces = available_spaces - ? 
+                  WHERE id = ?";
+        
+        $stmt = mysqli_prepare($link, $query);
+        if (!$stmt) {
+            error_log("Prepare failed: " . mysqli_error($link));
+            return false;
+        }
+        
+        mysqli_stmt_bind_param($stmt, 'is', $booked_slots, $travelbundleid);
+        
+        return mysqli_stmt_execute($stmt);
+    }
+
+    public static function cancelBooking($link, $customerid, $travelbundleid) {
+        $query = "SELECT booked_slots FROM booking WHERE customerid = ? AND travelbundleid = ?";
+        $stmt = mysqli_prepare($link, $query);
+        mysqli_stmt_bind_param($stmt, 'ss', $customerid, $travelbundleid);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $booked_slots);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
+    
+        if (!$booked_slots) return false;  // Falls keine Buchung gefunden
+    
+        // Update available slots (add back the canceled slots)
+        $update_success = self::updateFreeSlotsForTravelbundle($link, $travelbundleid, -$booked_slots);
+        if (!$update_success) return false;
+    
+        // Delete the booking
+        $query = "DELETE FROM booking WHERE customerid = ? AND travelbundleid = ?";
+        $stmt = mysqli_prepare($link, $query);
+        mysqli_stmt_bind_param($stmt, 'ss', $customerid, $travelbundleid);
+        return mysqli_stmt_execute($stmt);
+    }
+      
     
 }

@@ -72,15 +72,26 @@
                         <p class="travel-hotel"><b>Hotel:</b> {$bundle.hotel_name}</p>
                         
                         <div class="travel-buttons">
-                            <a href="tripdetails.php?id={$bundle.id}" class="info-button">Mehr Info</a>
                             {if $bundle.available_spaces > 0}
                                 {if isset($user_id)}
-                                    <a href="booking.php?id={$bundle.id}" class="book-button">Buchen</a>
+                                    <form method="post" action="ouroffers.php" class="inline-booking-form">
+                                        <input type="hidden" name="book_bundle_id" value="{$bundle.id}">
+                                        <input type="hidden" name="free_slots" value="{$bundle.available_spaces}">
+                                        <select name="slots" id="slots_{$bundle.id} placeholder ="Number of slots">
+                                            <option value="" disabled selected>Travelers</option>
+                                            {section name=i start=1 loop=6}
+                                                {if $smarty.section.i.index <= $bundle.available_spaces}
+                                                    <option value="{$smarty.section.i.index}">{$smarty.section.i.index}</option>
+                                                {/if}
+                                            {/section}
+                                        </select>
+                                        <button type="submit" name="confirm_booking" class="book-button">Book</button>
+                                    </form>
                                 {else}
-                                    <a href="login.php" class="book-button">Buchen</a>
+                                    <a href="login.php" class="book-button">Book</a>
                                 {/if}
                             {else}
-                                <span class="soldout-button">Ausgebucht</span>
+                                <span class="soldout-button">Full</span>
                             {/if}
                         </div>
 
@@ -89,5 +100,6 @@
             </div>
         </section>
     </main>
+
 </body>
 </html>

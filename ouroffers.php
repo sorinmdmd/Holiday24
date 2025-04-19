@@ -32,6 +32,35 @@
         if (empty($travelbundles)) {
             $no_results = true;
         }
+
+        if (isset($_SESSION['user_id']) && isset($_POST['book_bundle_id']) && isset($_POST['slots'])) {
+            $user_id = $_SESSION['user_id'];
+            $book_bundle_id = $_POST['book_bundle_id'];
+            $booked_slots = intval($_POST['slots']);
+            $free_slots = intval($_POST['free_slots']);
+            $link = DbFunctions::connectWithDatabase();
+            $success = DbAccess::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
+    
+            if ($success) {
+                $smarty->assign('booking_success', true);
+            } else {
+                $smarty->assign('booking_error', true);
+            }
+        }
+
+        if (isset($_SESSION['user_id']) && isset($_POST['cancel_button'])) {
+            $user_id = $_SESSION['user_id'];
+            $book_bundle_id = $_POST['book_bundle_id'];
+            $booked_slots = intval($_POST['slots']);
+            $link = DbFunctions::connectWithDatabase();
+            $success = DbAccess::cancelBooking($link, $user_id, $book_bundle_id, $booked_slots);
+    
+            if ($success) {
+                $smarty->assign('booking_success', true);
+            } else {
+                $smarty->assign('booking_error', true);
+            }
+        }
     }
 
     $smarty->assign('travelbundles', $travelbundles);
