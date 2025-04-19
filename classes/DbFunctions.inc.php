@@ -134,5 +134,18 @@ class DbFunctions
             return false; 
         }
     }
+
+	public static function getFirstFieldOfResult($link, $query)
+	{
+	    $result=self::executeQuery($link, $query);
+	    if (mysqli_num_rows($result)==0)
+	    {
+	        return null;
+	    }
+	    $row=mysqli_fetch_row($result);
+	    mysqli_free_result($result);
+	    return ($row[0]);
+	}
+
 }
 ?>
