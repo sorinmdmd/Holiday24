@@ -15,17 +15,6 @@
         {include file="header.tpl"}
     {/if}
 
-
-    <!-- Main section -->
-
-    <main class="content">
-    {if isset($user_id) && $user_role == 'admin'}
-        {include file="header-admin.tpl"}   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
-    {else}
-        {include file="header.tpl"}
-    {/if}
-
-
     <!-- Main section -->
 
     <main class="content">
