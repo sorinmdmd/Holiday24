@@ -5,9 +5,20 @@
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
+    {if isset($user_id) && $user_role == 'admin'}
+        {include file="headerAdmin.tpl"}   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
+    {else}
+        {include file="header.tpl"}
+    {/if}
+
+
+    <!-- Main section -->
+
+    <main class="content">
     {if isset($user_id) && $user_role == 'admin'}
         {include file="header-admin.tpl"}   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
     {else}

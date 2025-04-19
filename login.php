@@ -33,7 +33,7 @@ if ($REQUEST_METHOD == "POST") {
         $_SESSION['user_role'] = $user['role'];
         $smarty->assign('user_id', $user['id']); // Assign user_id to Smarty
         if($user['role'] == 'admin') {
-            header("Location: admin_panel.php");
+            header("Location: adminPanel.php");
         } else header("Location: index.php"); // Redirect to a dashboard or home page
         exit();
     } else {

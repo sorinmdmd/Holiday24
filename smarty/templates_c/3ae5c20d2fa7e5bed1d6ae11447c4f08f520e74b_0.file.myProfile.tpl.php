@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-13 17:15:13
+/* Smarty version 4.2.0, created on 2025-04-18 09:33:59
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myProfile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_67fbf121dbc354_42261363',
+  'unifunc' => 'content_68021c877f36f1_71853234',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3ae5c20d2fa7e5bed1d6ae11447c4f08f520e74b' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myProfile.tpl',
-      1 => 1744562799,
+      1 => 1744968670,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_67fbf121dbc354_42261363 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68021c877f36f1_71853234 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -29,7 +29,7 @@ function content_67fbf121dbc354_42261363 (Smarty_Internal_Template $_smarty_tpl)
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/myprofile.css">
+    <link rel="stylesheet" type="text/css" href="css/myProfile.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
