@@ -2,7 +2,7 @@
 h1 {
     color: var(--text-color);
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     margin-bottom: 2rem;
     position: relative;
     padding-bottom: 1rem;
@@ -24,12 +24,12 @@ main {
 
 #about-us p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 2.1rem;
     color: #555;
 }
 
 #about-us p:first-child {
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     color: #2c3e50;
     font-weight: 500;
 }

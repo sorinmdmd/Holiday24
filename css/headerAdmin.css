@@ -12,6 +12,9 @@ nav .home-li {
 nav li {
     display: flex;
 }
+nav li:last-child{
+    margin-left: auto;
+}
 nav a {
     display: flex;
     text-decoration: none;
@@ -27,9 +30,6 @@ nav a.active-link {
 }
 nav a.accent-link {
     background-color: var(--accent-color);
-}
-nav li:last-child{
-    margin-left: auto;
 }
 #open-sidebar-button {
     display: none;
@@ -86,5 +86,8 @@ nav li:last-child{
     }
     nav .home-li {
         margin-right: unset;
+    }
+    nav li:last-child{
+        margin-left: 0;
     }
 }

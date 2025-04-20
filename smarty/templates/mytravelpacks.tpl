@@ -5,16 +5,10 @@
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    {if isset($user_id) && $user_role == 'admin'}
-        {include file="headerAdmin.tpl"}   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
-    {else}
-        {include file="header.tpl"}
-    {/if}
-
+    {include file="header.tpl"}
     <!-- Main section -->
 
     <main class="content">
@@ -46,13 +40,11 @@
                                 <input type="hidden" name="travelbundleid" value="{$booking.id}">
                                 <button type="submit" name="cancel_booking" class="cancel-button">Cancel</button>
                             </form>
-
                         </div>
                     </div>
                 {/foreach}
             </div>
         </section>
-        
     </main>
 </body>
 </html>

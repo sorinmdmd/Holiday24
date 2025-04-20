@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 09:11:20
+/* Smarty version 4.2.0, created on 2025-04-19 18:18:26
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/mytravelpacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68021738614a13_73540451',
+  'unifunc' => 'content_6803e8f283ba76_58366932',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aedbed3f90ad02d8faa4110a9e9f63a4cd6fc366' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/mytravelpacks.tpl',
-      1 => 1744967478,
+      1 => 1745078788,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header-admin.tpl' => 1,
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_68021738614a13_73540451 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6803e8f283ba76_58366932 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -36,15 +35,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/P
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
-        <?php $_smarty_tpl->_subTemplateRender("file:header-admin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
-    <?php } else { ?>
-        <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <?php }?>
-
-
     <!-- Main section -->
 
     <main class="content">
@@ -79,13 +71,19 @@ $_smarty_tpl->tpl_vars['booking']->do_else = false;
  €</p>
                         <p class="travel-spaces"><b>Free slots:</b> <?php echo $_smarty_tpl->tpl_vars['booking']->value['available_spaces'];?>
 </p>
+                        <p class="travel-spaces"><b>My booked slots:</b> <?php echo $_smarty_tpl->tpl_vars['booking']->value['booked_slots'];?>
+</p>
                         <p class="travel-hotel"><b>Hotel:</b> <?php echo $_smarty_tpl->tpl_vars['booking']->value['hotel_name'];?>
 </p>
                         
                         <div class="travel-buttons">
-                            <button type="submit" name="cancel_button" class="cancel-button">Cancel</a>
+                            <form method="post" action="mytravelpacks.php"
+                                onsubmit="return confirm('Are you sure you want to cancel this trip?');">
+                                <input type="hidden" name="travelbundleid" value="<?php echo $_smarty_tpl->tpl_vars['booking']->value['id'];?>
+">
+                                <button type="submit" name="cancel_booking" class="cancel-button">Cancel</button>
+                            </form>
                         </div>
-
                     </div>
                 <?php
 }
