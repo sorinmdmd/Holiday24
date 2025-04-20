@@ -28,7 +28,37 @@ class MailService
             $this->mail->clearAllRecipients();
             $this->mail->addAddress($toEmail);
             $this->mail->Subject = 'Verify Your Account';
-            $this->mail->Body = "Your verification code is: <b>$verificationCode</b>";
+            $this->mail->Body = "Your verification code is: <b>{$verificationCode}</b>";
+
+            if (!$this->mail->send()) {
+                return false;
+            }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    public function sendBookingConfirmation($toEmail) {
+        try {
+            $this->mail->clearAllRecipients();
+            $this->mail->addAddress($toEmail);
+            $this->mail->Subject = 'Your booking confirmation';
+            $this->mail->Body = "Your new trip has been confirmed";
+
+            if (!$this->mail->send()) {
+                return false;
+            }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    public function sendCancelConfirmation($toEmail) {
+        try {
+            $this->mail->clearAllRecipients();
+            $this->mail->addAddress($toEmail);
+            $this->mail->Subject = 'Your booking has been cancelled';
+            $this->mail->Body = "Your trip has been cancelled";
 
             if (!$this->mail->send()) {
                 return false;

@@ -177,6 +177,4 @@ class DbAccess
         mysqli_stmt_bind_param($stmt, 'ss', $customerid, $travelbundleid);
         return mysqli_stmt_execute($stmt);
     }
-      
-    
 }

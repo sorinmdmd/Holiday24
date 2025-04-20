@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 09:15:50
+/* Smarty version 4.2.0, created on 2025-04-19 16:00:05
   from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68021846ce80b4_57434359',
+  'unifunc' => 'content_6803c8855a08e3_45487264',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f3913ca469cdaee04ca86d4f0abdd82f680b9724' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl',
-      1 => 1744967745,
+      1 => 1745078374,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_68021846ce80b4_57434359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6803c8855a08e3_45487264 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>

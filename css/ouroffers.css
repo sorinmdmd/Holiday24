@@ -45,7 +45,7 @@ h1::after {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    background-color: #f8d3af; 
+    background-color: var(--text-color); 
     padding: 10px 20px;
     flex-wrap: wrap; 
 }
@@ -168,10 +168,12 @@ h1::after {
 }
 
 /* Buttons */
+
 .travel-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    
 }
 
 .info-button, .book-button, .soldout-button, .edit-button, .cancel-button{
@@ -183,6 +185,7 @@ h1::after {
     font-weight: bold;
     flex: 1;
     margin: 0 5px;
+    cursor: pointer;
 }
 
 .info-button {

@@ -6,6 +6,7 @@ require_once 'classes/DbFunctions.inc.php';
 require_once 'classes/DbAccess.inc.php';
 require_once 'classes/DbAccess.inc.php';
 require_once 'classes/Sicherheit.inc.php';
+require_once 'classes/MailService.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
@@ -18,6 +19,10 @@ $no_results = false;
     
 // Standard: keine Fehlermeldung
 $no_results = false;
+
+//Email Adresse für die cancellation
+$me = DbAccess::getUserById($link, $_SESSION['user_id']);
+$userEmail = $me[0]['email'] ?? null;
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
@@ -46,15 +51,15 @@ if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
     
     if ($success) {
         header("Location: mytravelpacks.php?cancel_success=1");
+        $mailService = new MailService();
+        $mailService->sendCancelConfirmation($userEmail);
     } else {
         header("Location: mytravelpacks.php?cancel_error=1");
     }
     exit();
 } 
 
-
 $smarty->assign('no_results', $no_results);
 $smarty->assign('activePage', 'mytravelpacks');
 $smarty->display('mytravelpacks.tpl');
-
 ?>

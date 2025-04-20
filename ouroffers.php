@@ -5,6 +5,7 @@
     require_once 'classes/DbFunctions.inc.php';
     require_once 'classes/Sicherheit.inc.php';
     require_once 'classes/DbAccess.inc.php';
+    require_once 'classes/MailService.inc.php';
 
     DEFINE('ENCODING', 'UTF-8');
 
@@ -20,6 +21,10 @@
 
     // Standard: keine Fehlermeldung
     $no_results = false;
+
+    //Email Adresse für die Order Confirmation
+    $me = DbAccess::getUserById($link, $_SESSION['user_id']);
+    $userEmail = $me[0]['email'] ?? null;
 
     // Wenn das Formular abgeschickt wurde, Filter anwenden
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,24 +48,12 @@
     
             if ($success) {
                 $smarty->assign('booking_success', true);
+                $mailService = new MailService();
+                $mailService->sendBookingConfirmation($userEmail);
             } else {
                 $smarty->assign('booking_error', true);
             }
-        }
-
-        if (isset($_SESSION['user_id']) && isset($_POST['cancel_button'])) {
-            $user_id = $_SESSION['user_id'];
-            $book_bundle_id = $_POST['book_bundle_id'];
-            $booked_slots = intval($_POST['slots']);
-            $link = DbFunctions::connectWithDatabase();
-            $success = DbAccess::cancelBooking($link, $user_id, $book_bundle_id, $booked_slots);
-    
-            if ($success) {
-                $smarty->assign('booking_success', true);
-            } else {
-                $smarty->assign('booking_error', true);
-            }
-        }
+        }   
     }
 
     $smarty->assign('travelbundles', $travelbundles);
@@ -76,6 +69,4 @@
 
    // .tpl erst am Ende laden, um Fehler "unknown variable" zu vermeiden!
     $smarty->display('ouroffers.tpl');
-
-
 ?>
