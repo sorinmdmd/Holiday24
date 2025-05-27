@@ -5,7 +5,7 @@
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global_admin.css">
     <link rel="stylesheet" type="text/css" href="css/admin-panel.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>

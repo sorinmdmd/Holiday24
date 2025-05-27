@@ -3,15 +3,16 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
+require_once 'classes/Customer.inc.php';
 require_once 'classes/Sicherheit.inc.php';
-require_once 'classes/DbAccess.inc.php';
+require_once 'classes/Travelpack.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
 $link = DbFunctions::connectWithDatabase();
 $title = "My Profile";
 $smarty->assign('title', htmlentities($title));
-$me = DbAccess::getUserById($link, $_SESSION['user_id']);
+$me = Customer::getUserById($link, $_SESSION['user_id']);
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);

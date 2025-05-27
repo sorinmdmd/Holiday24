@@ -4,7 +4,7 @@
     require_once 'classes/includes/startTemplate.inc.php';
     require_once 'classes/DbFunctions.inc.php';
     require_once 'classes/Sicherheit.inc.php';
-    require_once 'classes/DbAccess.inc.php';
+    require_once 'classes/Travelpack.inc.php';
 
     DEFINE('ENCODING', 'UTF-8');
 
@@ -12,11 +12,11 @@
     $title = "Our Trips";
     $smarty->assign('title', htmlentities($title));
 
-    $months = DbAccess::getMonths($link);
+    $months = Travelpack::getMonths($link);
     $smarty->assign('months', $months);
 
     // Standard: alle Travelbundles laden
-    $travelbundles = DbAccess::getTravelbundles($link);
+    $travelbundles = Travelpack::getTravelbundles($link);
 
     // Standard: keine Fehlermeldung
     $no_results = false;
@@ -27,7 +27,7 @@
         $month = isset($_POST['month']) ? trim($_POST['month']) : null;
         $travelers = isset($_POST['number_travelers']) ? trim($_POST['number_travelers']) : null;
 
-        $travelbundles = DbAccess::getFilteredTravelbundles($link, $country, $month, $travelers);
+        $travelbundles = Travelpack::getFilteredTravelbundles($link, $country, $month, $travelers);
 
         if (empty($travelbundles)) {
             $no_results = true;
@@ -39,7 +39,7 @@
             $booked_slots = intval($_POST['slots']);
             $free_slots = intval($_POST['free_slots']);
             $link = DbFunctions::connectWithDatabase();
-            $success = DbAccess::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
+            $success = Travelpack::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
     
             if ($success) {
                 $smarty->assign('booking_success', true);
@@ -53,7 +53,7 @@
             $book_bundle_id = $_POST['book_bundle_id'];
             $booked_slots = intval($_POST['slots']);
             $link = DbFunctions::connectWithDatabase();
-            $success = DbAccess::cancelBooking($link, $user_id, $book_bundle_id, $booked_slots);
+            $success = Travelpack::cancelBooking($link, $user_id, $book_bundle_id);
     
             if ($success) {
                 $smarty->assign('booking_success', true);
@@ -75,7 +75,7 @@
     $smarty->assign('activePage', 'ouroffers');
 
    // .tpl erst am Ende laden, um Fehler "unknown variable" zu vermeiden!
-    $smarty->display('ouroffers.tpl');
+    $smarty->display('ourOffers.tpl');
 
 
 ?>

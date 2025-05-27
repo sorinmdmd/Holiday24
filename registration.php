@@ -3,6 +3,7 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
+require_once 'classes/Customer.inc.php';
 require_once 'classes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
@@ -39,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $smarty->assign('errorMessage', 'Alle Felder sind erforderlich.');
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $smarty->assign('errorMessage', 'Ungültiges E-Mail-Format.');
-        } elseif (DbFunctions::emailExists($link, $email)) {
+        } elseif (Customer::emailExists($link, $email)) {
             $smarty->assign('errorMessage', 'Diese E-Mail-Adresse ist bereits registriert.');
         } else {
             // Registrierung durchführen
-            if (DbFunctions::registerUser($link, $firstName, $lastName, $email, $password)) {
+            if (Customer::registerUser($link, $firstName, $lastName, $email, $password)) {
                 header("Location: login.php");
                 exit();
             } else {

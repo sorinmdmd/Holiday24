@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
@@ -16,7 +16,7 @@
     
     <!-- Search Menu -->
     <div class="search-menu">
-        <form method="post" action="ouroffers.php">
+        <form method="post" action="ourOffers.php">
             <div class="search-fields">
                 <!-- Destination country -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
@@ -74,7 +74,7 @@
                         <div class="travel-buttons">
                             {if $bundle.available_spaces > 0}
                                 {if isset($user_id)}
-                                    <form method="post" action="ouroffers.php" class="inline-booking-form">
+                                    <form method="post" action="ourOffers.php" class="inline-booking-form">
                                         <input type="hidden" name="book_bundle_id" value="{$bundle.id}">
                                         <input type="hidden" name="free_slots" value="{$bundle.available_spaces}">
                                         <select name="slots" id="slots_{$bundle.id} placeholder ="Number of slots">

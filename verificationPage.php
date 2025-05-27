@@ -3,7 +3,8 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/DbAccess.inc.php';
+require_once 'classes/Customer.inc.php';
+require_once 'classes/Travelpack.inc.php';
 require_once 'classes/Sicherheit.inc.php';
 require_once 'classes/MailService.inc.php';
 require 'vendor/autoload.php';
@@ -23,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$me = DbAccess::getUserById($link, $_SESSION['user_id']);
+$me = Customer::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
 $smarty->assign('user_id', $_SESSION['user_id']);
@@ -55,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Check if the entered code matches the session code
         if (isset($_SESSION['verification_code']) && $enteredCode == $_SESSION['verification_code']) {
-            DbAccess::verifyUser($link, $_SESSION['user_id']);
+            DbFunctions::verifyUser($link, $_SESSION['user_id']);
             unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
             header("Location: myProfile.php");
             exit();

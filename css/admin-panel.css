@@ -114,5 +114,6 @@ td p[style*="color: violet"] {
     font-style: italic;
 }
 #travelManagement{
+    color: var(--text-color-basic);
     margin-bottom: 20vh;
 }

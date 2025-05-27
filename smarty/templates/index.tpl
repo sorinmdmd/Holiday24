@@ -20,7 +20,7 @@
     <form action="{$PHP_SELF}" method="post">
     <input type="hidden" name="csrf_token" value="{$csrf_token}"/>
     <div id="aboutusId">
-        {include file="aboutus.tpl"}
+        {include file="aboutUs.tpl"}
     </div>
     {else}
         {if (isset($fehler))}

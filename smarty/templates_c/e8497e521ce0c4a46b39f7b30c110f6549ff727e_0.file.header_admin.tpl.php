@@ -38,7 +38,7 @@ function content_67fa521a5b9b38_22136356 (Smarty_Internal_Template $_smarty_tpl)
             <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'customer') {?>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'mytravelpacks') {?>active-link<?php }?>" href="mytravelpacks.php">My Travel Packs</a></li>
         <?php } elseif ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
-            <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'admin_panel') {?>active-link<?php }?>" href="admin_panel.php">Admin Panel</a></li>
+            <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'admin_panel') {?>active-link<?php }?>" href="adminPanel.php">Admin Panel</a></li>
         <?php }?>
         <li>
             <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>

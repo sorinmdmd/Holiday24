@@ -3,7 +3,7 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/DbAccess.inc.php';
+require_once 'classes/Travelpack.inc.php';
 require_once 'classes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
@@ -18,7 +18,7 @@ $no_results = false;
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 
-    $bookings = DbAccess::getBookingsForUser($link, $_SESSION['user_id']);
+    $bookings = Travelpack::getBookingsForUser($link, $_SESSION['user_id']);
     $smarty->assign('bookings', $bookings);
 
     if(empty($bookings)){
@@ -31,7 +31,7 @@ if (isset($_SESSION['user_role'])) {
 
 if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
     $travelbundleid = $_POST['travelbundleid'];
-    $success = DbAccess::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);
+    $success = Travelpack::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);
     
     if ($success) {
         header("Location: mytravelpacks.php?cancel_success=1");

@@ -34,7 +34,7 @@ function content_67fd50c544f444_14988304 (Smarty_Internal_Template $_smarty_tpl)
             </button>
         </li>
         <li>
-             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'adminPanel') {?>active-link<?php }?>" href="admin_panel.php">ADMIN</a></li>
+             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'adminPanel') {?>active-link<?php }?>" href="adminPanel.php">ADMIN</a></li>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'manageUsers') {?>active-link<?php }?>" href="manageUsers.php">Manage Users</a></li>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == '#') {?>active-link<?php }?>" href="#">Manage Travel</a></li>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'ouroffers') {?>active-link<?php }?>" href="ouroffers.php">Travelpacks</a></li> 
