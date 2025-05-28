@@ -19,7 +19,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:aboutus.tpl' => 1,
+    'file:aboutUs.tpl' => 1,
   ),
 ),false)) {
 function content_680238d25ee6c3_96750605 (Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ function content_680238d25ee6c3_96750605 (Smarty_Internal_Template $_smarty_tpl)
     <input type="hidden" name="csrf_token" value="<?php echo $_smarty_tpl->tpl_vars['csrf_token']->value;?>
 "/>
     <div id="aboutusId">
-        <?php $_smarty_tpl->_subTemplateRender("file:aboutus.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+        <?php $_smarty_tpl->_subTemplateRender("file:aboutUs.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     </div>
     <?php } else { ?>

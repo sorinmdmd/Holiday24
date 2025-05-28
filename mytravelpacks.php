@@ -3,8 +3,8 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/DbAccess.inc.php';
-require_once 'classes/DbAccess.inc.php';
+require_once 'classes/Travel.inc.php';
+require_once 'classes/Travel.inc.php';
 require_once 'classes/Sicherheit.inc.php';
 require_once 'classes/MailService.inc.php';
 
@@ -21,20 +21,20 @@ $no_results = false;
 $no_results = false;
 
 //Email Adresse für die cancellation
-$me = DbAccess::getUserById($link, $_SESSION['user_id']);
+$me = Travel::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 
-    $bookings = DbAccess::getBookingsForUser($link, $_SESSION['user_id']);
+    $bookings = Travel::getBookingsForUser($link, $_SESSION['user_id']);
     $smarty->assign('bookings', $bookings);
 
     if(empty($bookings)){
         $no_results = true;
     }
 
-    $bookings = DbAccess::getBookingsForUser($link, $_SESSION['user_id']);
+    $bookings = Travel::getBookingsForUser($link, $_SESSION['user_id']);
     $smarty->assign('bookings', $bookings);
 
     if(empty($bookings)){
@@ -47,7 +47,7 @@ if (isset($_SESSION['user_role'])) {
 
 if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
     $travelbundleid = $_POST['travelbundleid'];
-    $success = DbAccess::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);
+    $success = Travel::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);
     
     if ($success) {
         header("Location: mytravelpacks.php?cancel_success=1");
@@ -61,5 +61,5 @@ if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
 
 $smarty->assign('no_results', $no_results);
 $smarty->assign('activePage', 'mytravelpacks');
-$smarty->display('mytravelpacks.tpl');
+$smarty->display('myTravelpacks.tpl');
 ?>

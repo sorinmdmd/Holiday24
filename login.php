@@ -3,6 +3,7 @@ session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
 require_once 'classes/DbFunctions.inc.php';
+require_once 'classes/Customer.inc.php';
 require_once 'classes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
@@ -26,7 +27,7 @@ if ($REQUEST_METHOD == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = DbFunctions::verifyUser($link, $email, $password);
+    $user = Customer::verifyUser($link, $email, $password);
     
     if ($user) {
         $_SESSION['user_id'] = $user['id']; // Use 'id' instead of 'CustomerID'

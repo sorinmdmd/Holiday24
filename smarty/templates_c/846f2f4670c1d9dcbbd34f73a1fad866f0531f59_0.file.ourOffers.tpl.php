@@ -46,7 +46,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Acer\\OneDrive\\H
     
     <!-- Search Menu -->
     <div class="search-menu">
-        <form method="post" action="ouroffers.php">
+        <form method="post" action="ourOffers.php">
             <div class="search-fields">
                 <!-- Destination country -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">

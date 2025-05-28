@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-12 11:44:15
-  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/aboutus.tpl' */
+  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '2db4bad317d08beb0bf8366c2d28aa77ee5db551' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/aboutus.tpl',
+      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/aboutUs.tpl',
       1 => 1744443094,
       2 => 'file',
     ),

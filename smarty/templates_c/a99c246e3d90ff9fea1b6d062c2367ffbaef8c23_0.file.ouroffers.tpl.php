@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-13 09:50:17
-  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/ouroffers.tpl' */
+  from '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'a99c246e3d90ff9fea1b6d062c2367ffbaef8c23' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/ouroffers.tpl',
+      0 => '/Users/sorinotel/Documents/iksy2/iksy2/smarty/templates/ourOffers.tpl',
       1 => 1744443094,
       2 => 'file',
     ),
