@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 12:17:18
-  from 'C:\Users\Acer\OneDrive\HS Bochum\SS25\IKSY II\git\iksy2\smarty\templates\index.tpl' */
+/* Smarty version 4.2.0, created on 2025-05-28 09:58:57
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_28_Mai\iksy2\smarty\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_680242ce00a668_95403106',
+  'unifunc' => 'content_6836de61d4d609_95748808',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '33fa1abb9aff1f0a7db12ce015a3ae1d9695dbb0' => 
+    '161375778e9732e34c714c4664c29f501892803f' => 
     array (
-      0 => 'C:\\Users\\Acer\\OneDrive\\HS Bochum\\SS25\\IKSY II\\git\\iksy2\\smarty\\templates\\index.tpl',
-      1 => 1744975989,
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_28_Mai\\iksy2\\smarty\\templates\\index.tpl',
+      1 => 1748426269,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:aboutUs.tpl' => 1,
   ),
 ),false)) {
-function content_680242ce00a668_95403106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6836de61d4d609_95748808 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

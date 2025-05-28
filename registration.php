@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $smarty->assign('errorMessage', 'All fields are required.');
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $smarty->assign('errorMessage', 'Invalid email format.');
-        } elseif (DbFunctions::emailExists($link, $email)) {
+        } elseif (Customer::emailExists($link, $email)) {
             $smarty->assign('errorMessage', 'This email address is already registered.');
         } elseif (!Sicherheit::validatePassword(($password))) {
             $smarty->assign('errorMessage', 'The password must contain at least one number, one upper character, and contain at least one special character.');
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $smarty->assign('errorMessage', 'Passwords do not match.');
         } else {
             // Registrierung durchführen
-            if (DbFunctions::registerUser($link, $firstName, $lastName, $email, $password)) {
+            if (Customer::registerUser($link, $firstName, $lastName, $email, $password)) {
                 header("Location: login.php");
                 exit();
             } else {

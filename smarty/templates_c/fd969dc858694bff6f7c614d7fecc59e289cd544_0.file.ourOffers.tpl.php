@@ -1,29 +1,29 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 11:35:15
-  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\git\iksy2\smarty\templates\ourOffers.tpl' */
+/* Smarty version 4.2.0, created on 2025-05-28 10:12:58
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_28_Mai\iksy2\smarty\templates\ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_680238f3d3e830_51135648',
+  'unifunc' => 'content_6836e1aad159d5_44248324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5dc8e11f7b4ae44caacd3d56f2ef98a8eb4d138f' => 
+    'fd969dc858694bff6f7c614d7fecc59e289cd544' => 
     array (
-      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\git\\iksy2\\smarty\\templates\\ourOffers.tpl',
-      1 => 1744976001,
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_28_Mai\\iksy2\\smarty\\templates\\ourOffers.tpl',
+      1 => 1748427105,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header-admin.tpl' => 1,
+    'file:headerAdmin.tpl' => 1,
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_680238f3d3e830_51135648 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\HSBochum\\SS25\\IKSYII\\git\\iksy2\\classes\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_6836e1aad159d5_44248324 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\HSBochum\\SS25\\IKSYII\\Test_28_Mai\\iksy2\\classes\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -37,7 +37,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\H
 </head>
 <body>
     <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 'admin') {?>
-        <?php $_smarty_tpl->_subTemplateRender("file:header-admin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+        <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>   <!-- Wenn user_role = admin, dann Admin Panel im Menu zeigen -->
     <?php } else { ?>
         <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -46,7 +46,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\H
     
     <!-- Search Menu -->
     <div class="search-menu">
-        <form method="post" action="ourOffers.php">
+        <form method="post" action="ouroffers.php">
             <div class="search-fields">
                 <!-- Destination country -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
@@ -124,17 +124,38 @@ $_smarty_tpl->tpl_vars['bundle']->do_else = false;
 </p>
                         
                         <div class="travel-buttons">
-                            <a href="tripdetails.php?id=<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
-" class="info-button">Mehr Info</a>
                             <?php if ($_smarty_tpl->tpl_vars['bundle']->value['available_spaces'] > 0) {?>
                                 <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>
-                                    <a href="booking.php?id=<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
-" class="book-button">Buchen</a>
+                                    <form method="post" action="ouroffers.php" class="inline-booking-form">
+                                        <input type="hidden" name="book_bundle_id" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
+">
+                                        <input type="hidden" name="free_slots" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['available_spaces'];?>
+">
+                                        <select name="slots" id="slots_<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
+ placeholder ="Number of slots">
+                                            <option value="" disabled selected>Travelers</option>
+                                            <?php
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if (true) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 1; $__section_i_0_iteration <= 5; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
+                                                <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null) <= $_smarty_tpl->tpl_vars['bundle']->value['available_spaces']) {?>
+                                                    <option value="<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
+"><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
+</option>
+                                                <?php }?>
+                                            <?php
+}
+}
+?>
+                                        </select>
+                                        <button type="submit" name="confirm_booking" class="book-button">Book</button>
+                                    </form>
                                 <?php } else { ?>
-                                    <a href="login.php" class="book-button">Buchen</a>
+                                    <a href="login.php" class="book-button">Book</a>
                                 <?php }?>
                             <?php } else { ?>
-                                <span class="soldout-button">Ausgebucht</span>
+                                <span class="soldout-button">Full</span>
                             <?php }?>
                         </div>
 
@@ -145,6 +166,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </section>
     </main>
+
 </body>
 </html>
 <?php }

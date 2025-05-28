@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-19 16:00:05
-  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl' */
+  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'f3913ca469cdaee04ca86d4f0abdd82f680b9724' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ouroffers.tpl',
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/ourOffers.tpl',
       1 => 1745078374,
       2 => 'file',
     ),
@@ -46,7 +46,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/dennismac/Documents/P
     
     <!-- Search Menu -->
     <div class="search-menu">
-        <form method="post" action="ouroffers.php">
+        <form method="post" action="ourOffers.php">
             <div class="search-fields">
                 <!-- Destination country -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
@@ -126,7 +126,7 @@ $_smarty_tpl->tpl_vars['bundle']->do_else = false;
                         <div class="travel-buttons">
                             <?php if ($_smarty_tpl->tpl_vars['bundle']->value['available_spaces'] > 0) {?>
                                 <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>
-                                    <form method="post" action="ouroffers.php" class="inline-booking-form">
+                                    <form method="post" action="ourOffers.php" class="inline-booking-form">
                                         <input type="hidden" name="book_bundle_id" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
 ">
                                         <input type="hidden" name="free_slots" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['available_spaces'];?>

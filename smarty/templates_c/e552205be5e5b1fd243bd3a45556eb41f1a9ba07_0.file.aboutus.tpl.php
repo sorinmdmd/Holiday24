@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-09 10:09:23
-  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutus.tpl' */
+  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'e552205be5e5b1fd243bd3a45556eb41f1a9ba07' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutus.tpl',
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/aboutUs.tpl',
       1 => 1744193360,
       2 => 'file',
     ),

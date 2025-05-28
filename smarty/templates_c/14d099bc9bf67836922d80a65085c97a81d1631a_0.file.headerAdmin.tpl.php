@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-04-18 09:31:26
-  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/headerAdmin.tpl' */
+/* Smarty version 4.2.0, created on 2025-05-28 09:59:10
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_28_Mai\iksy2\smarty\templates\headerAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68021bee6675b6_68775102',
+  'unifunc' => 'content_6836de6e65bdd6_90009927',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ad7da3ad14aa7f306ba3e19e72f07b5842c5e00a' => 
+    '14d099bc9bf67836922d80a65085c97a81d1631a' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/headerAdmin.tpl',
-      1 => 1744968624,
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_28_Mai\\iksy2\\smarty\\templates\\headerAdmin.tpl',
+      1 => 1748426269,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_68021bee6675b6_68775102 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6836de6e65bdd6_90009927 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/headerAdmin.css">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">

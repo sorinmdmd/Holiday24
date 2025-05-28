@@ -39,7 +39,7 @@ function content_680384b8781c13_35682101 (Smarty_Internal_Template $_smarty_tpl)
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'mytravelpacks') {?>active-link<?php }?>" href="myTravelpacks.php">My Travel Packs</a></li>
             <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'myProfile') {?>active-link<?php }?>" href="myProfile.php">My Profile</a></li>
         <?php }?>
-        <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'ouroffers') {?>active-link<?php }?>" href="ouroffers.php">Our trips</a></li>
+        <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'ouroffers') {?>active-link<?php }?>" href="ourOffers.php">Our trips</a></li>
         <li><a class="<?php if ($_smarty_tpl->tpl_vars['activePage']->value == 'aboutus') {?>active-link<?php }?>" href="index.php#aboutusId">About us</a></li>
         <li>
             <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>

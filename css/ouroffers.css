@@ -89,6 +89,7 @@ h1::after {
 
 /* Our offers */
 #our-offers {
+    color: grey;
     background: white;
     border-radius: 10px;
     padding: 2.5rem;
@@ -128,6 +129,7 @@ h1::after {
 }
 
 .travel-card {
+    color: grey;
     background-color: white;
     border-radius: 10px;
     padding: 20px;

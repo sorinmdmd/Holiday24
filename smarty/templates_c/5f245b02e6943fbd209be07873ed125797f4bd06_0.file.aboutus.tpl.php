@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-18 11:34:42
-  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\git\iksy2\smarty\templates\aboutus.tpl' */
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\git\iksy2\smarty\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '5f245b02e6943fbd209be07873ed125797f4bd06' => 
     array (
-      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\git\\iksy2\\smarty\\templates\\aboutus.tpl',
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\git\\iksy2\\smarty\\templates\\aboutUs.tpl',
       1 => 1744975989,
       2 => 'file',
     ),
