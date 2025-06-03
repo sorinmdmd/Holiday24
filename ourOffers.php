@@ -49,7 +49,7 @@
             if ($success) {
                 $smarty->assign('booking_success', true);
                 $mailService = new MailService();
-                $mailService->sendBookingConfirmation($userEmail);
+                $mailService->sendBookingConfirmation($userEmail,$travelbundles,$booked_slots,$book_bundle_id);
             } else {
                 $smarty->assign('booking_error', true);
             }
@@ -65,7 +65,7 @@
     if (isset($_SESSION['user_role'])) {
         $smarty->assign('user_role', $_SESSION['user_role']);
     }
-    $smarty->assign('activePage', 'ouroffers');
+    $smarty->assign('activePage', 'ourOffers');
 
    // .tpl erst am Ende laden, um Fehler "unknown variable" zu vermeiden!
     $smarty->display('ourOffers.tpl');

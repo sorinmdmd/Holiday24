@@ -39,7 +39,6 @@ class DbFunctions
 				} else {
 					echo "Password is invalid.";
 				}
-				echo "*****************";
 				$hashedPassword = password_hash("customer", PASSWORD_BCRYPT);
 				echo $hashedPassword;
 			}
