@@ -38,21 +38,42 @@ class MailService
             return false;
         }
     }
-    public function sendBookingConfirmation($toEmail) {
-        try {
-            $this->mail->clearAllRecipients();
-            $this->mail->addAddress($toEmail);
-            $this->mail->Subject = 'Your booking confirmation';
-            $this->mail->Body = "Your new trip has been confirmed";
+   public function sendBookingConfirmation($toEmail, $travelbundles, $booked_slots, $book_bundle_id) {
+    try {
+        $this->mail->clearAllRecipients();
+        $this->mail->addAddress($toEmail);
+        $this->mail->Subject = "Your booking confirmation";
 
-            if (!$this->mail->send()) {
-                return false;
+        $bookedTravelBundle = null;
+        foreach ($travelbundles as $bundle) {
+            if (isset($bundle['id']) && $bundle['id'] == $book_bundle_id) {
+                $bookedTravelBundle = $bundle;
+                break;
             }
-            return true;
-        } catch (Exception $e) {
+        }
+
+        if ($bookedTravelBundle && !empty($booked_slots)) {
+            $numTravelers = is_array($booked_slots) && isset($booked_slots[0]['booked_slots']) ? $booked_slots[0]['booked_slots'] : (is_int($booked_slots) ? $booked_slots : 'some');
+            $country = $bookedTravelBundle['country'] ?? 'unknown country';
+            $city = $bookedTravelBundle['city'] ?? 'unknown city';
+            $formattedBody = "Dear customer,\n\n";
+            $formattedBody .= "Your booking for {$numTravelers} person(s) to {$country}, {$city} has been confirmed.\n\n";
+            $formattedBody .= "Thank you for your booking!\n\n";
+            $formattedBody .= "Sincerely,\nYour Travel Team";
+            $this->mail->Body = $formattedBody;
+        } else {
+            $this->mail->Body = "Your booking has been confirmed."; // Fallback message
+        }
+
+        if (!$this->mail->send()) {
             return false;
         }
+        return true;
+    } catch (Exception $e) {
+        error_log("Error sending booking confirmation email: " . $e->getMessage());
+        return false;
     }
+}
     public function sendCancelConfirmation($toEmail) {
         try {
             $this->mail->clearAllRecipients();

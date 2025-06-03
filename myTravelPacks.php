@@ -50,16 +50,16 @@ if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
     $success = Travel::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);
     
     if ($success) {
-        header("Location: mytravelpacks.php?cancel_success=1");
+        header("Location: myTravelPacks.php?cancel_success=1");
         $mailService = new MailService();
         $mailService->sendCancelConfirmation($userEmail);
     } else {
-        header("Location: mytravelpacks.php?cancel_error=1");
+        header("Location: myTravelPacks.php?cancel_error=1");
     }
     exit();
 } 
 
 $smarty->assign('no_results', $no_results);
-$smarty->assign('activePage', 'mytravelpacks');
-$smarty->display('myTravelpacks.tpl');
+$smarty->assign('activePage', 'myTravelPacks');
+$smarty->display('myTravelPacks.tpl');
 ?>
