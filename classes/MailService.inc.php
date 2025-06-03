@@ -19,7 +19,7 @@ class MailService
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->mail->Port = 587;
 
-        $this->mail->setFrom('iksy2@gmx.de', 'localhost');
+        $this->mail->setFrom('iksy2@gmx.de', 'Holiday24');
     }
 
     public function sendVerificationEmail($toEmail, $verificationCode)
@@ -28,7 +28,7 @@ class MailService
             $this->mail->clearAllRecipients();
             $this->mail->addAddress($toEmail);
             $this->mail->Subject = 'Verify Your Account';
-            $this->mail->Body = "Your verification code is: <b>{$verificationCode}</b>";
+            $this->mail->Body = "Your verification code is: {$verificationCode}";
 
             if (!$this->mail->send()) {
                 return false;
