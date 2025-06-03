@@ -27,6 +27,7 @@
         </li>
     </ul>
 </nav>
+
 <div id="overlay" onclick="closeSidebar()"></div>      
 <script src="script.js" defer></script>
 </header>
