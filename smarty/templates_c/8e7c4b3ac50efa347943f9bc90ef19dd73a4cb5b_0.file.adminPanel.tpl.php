@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 09:00:18
+/* Smarty version 4.2.0, created on 2025-06-04 19:17:11
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683eb9a28ee9c9_10974405',
+  'unifunc' => 'content_68409bb7c4f221_13663211',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e7c4b3ac50efa347943f9bc90ef19dd73a4cb5b' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1748940002,
+      1 => 1749064629,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_683eb9a28ee9c9_10974405 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68409bb7c4f221_13663211 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -36,9 +36,14 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/i
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
+<?php $_smarty_tpl->_assignInScope('today', smarty_modifier_date_format(time(),"%Y-%m-%d"));?>
     <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1 id="adminH1">Admin Panel</h1>
+    
+    <?php if ((isset($_GET['edit_success']))) {?>
+        <div class="success-message">Travel pack updated successfully!</div>
+    <?php }?>
     <div id="userTable">
     <div id="userTable">
         <h1>User Management</h1>
@@ -110,7 +115,8 @@ $_smarty_tpl->tpl_vars['bundle']->do_else = false;
                         
                     <div class="travel-buttons">
                         <?php if ($_smarty_tpl->tpl_vars['bundle']->value['available_spaces'] > 0) {?>
-                            <a href="" class="edit-button">Edit</a>
+                            <a href="adminPanel.php?edit=<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
+" class="edit-button">Edit</a>
                         <?php } else { ?>
                             <span class="soldout-button">Ausgebucht</span>
                         <?php }?>
@@ -121,6 +127,82 @@ $_smarty_tpl->tpl_vars['bundle']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
+
+    <?php if ((isset($_smarty_tpl->tpl_vars['editBundle']->value))) {?>
+    <div id="editTravel" class="travel">
+        <div class="travel-content">
+            <span class="close" onclick="window.location.href='adminPanel.php'">&times;</span>
+            <h2>Edit Travel Pack: <?php echo $_smarty_tpl->tpl_vars['editBundle']->value['city'];?>
+</h2>
+            
+            <?php if ((isset($_smarty_tpl->tpl_vars['edit_error']->value))) {?>
+                <div class="error-message"><?php echo $_smarty_tpl->tpl_vars['edit_error']->value;?>
+</div>
+            <?php }?>
+            
+            <form method="POST" action="adminPanel.php">
+                <input type="hidden" name="travelpack_id" value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['id'];?>
+">
+                
+                <div class="form-group">
+                    <label for="hotelid">Hotel:</label>
+                    <select name="hotelid" id="hotelid" required>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['hotels']->value, 'hotel');
+$_smarty_tpl->tpl_vars['hotel']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['hotel']->value) {
+$_smarty_tpl->tpl_vars['hotel']->do_else = false;
+?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['hotel']->value['id'];?>
+" <?php if ($_smarty_tpl->tpl_vars['hotel']->value['id'] == $_smarty_tpl->tpl_vars['editBundle']->value['hotelid']) {?>selected<?php }?>>
+                                <?php echo $_smarty_tpl->tpl_vars['hotel']->value['name'];?>
+
+                            </option>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="available_spaces">Free Slots:</label>
+                    <input type="number" name="available_spaces" id="available_spaces" 
+                           value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['available_spaces'];?>
+" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price (€):</label>
+                    <input type="number" name="price" id="price" 
+                           value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['price'];?>
+" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" name="start_date" id="start_date" 
+                           value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['start_date'];?>
+" min="<?php echo $_smarty_tpl->tpl_vars['today']->value;?>
+" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" name="end_date" id="end_date" 
+                           value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['end_date'];?>
+" min="<?php echo $_smarty_tpl->tpl_vars['today']->value+1;?>
+" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" name="edit_travelpack" class="save-button">Save Changes</button>
+                    <button type="button" class="cancel-button" onclick="window.location.href='adminPanel.php'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php }?>
+
 </body>
 </html>
 <?php }

@@ -9,6 +9,7 @@
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
+{assign var="today" value=$smarty.now|date_format:"%Y-%m-%d"}
     {include file="headerAdmin.tpl"}
     <h1 id="adminH1">Admin Panel</h1>
     
@@ -112,13 +113,13 @@
                 <div class="form-group">
                     <label for="start_date">Start Date:</label>
                     <input type="date" name="start_date" id="start_date" 
-                           value="{$editBundle.start_date}" required>
+                           value="{$editBundle.start_date}" min="{$today}" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="end_date">End Date:</label>
                     <input type="date" name="end_date" id="end_date" 
-                           value="{$editBundle.end_date}" required>
+                           value="{$editBundle.end_date}" min="{$today}" required>
                 </div>
                 
                 <div class="form-buttons">
