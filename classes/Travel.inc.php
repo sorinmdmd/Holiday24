@@ -177,4 +177,35 @@ class Travel
         mysqli_stmt_bind_param($stmt, 'ss', $customerid, $travelbundleid);
         return mysqli_stmt_execute($stmt);
     }
+
+    public static function getTravelBundleById($link, $id) {
+        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
+                        t.start_date, t.end_date, h.name as hotel_name
+                      FROM travelbundle t
+                      LEFT JOIN hotel h ON t.hotelid = h.id
+                      WHERE t.id = ?";
+        $stmt = mysqli_prepare($link, $query);     
+        mysqli_stmt_bind_param($stmt, 's', $id);       
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        if ($row = mysqli_fetch_assoc($result)) {           
+            return $row;       
+        }      
+        return null;
+    }  
+    public static function getAllHotels($link) {      
+        $query = "SELECT id, name FROM hotel ORDER BY name";
+        return DbFunctions::getRows($link, $query);    
+    }    
+    public static function updateTravelBundle($link, $id, $hotelid, $available_spaces, $price, $start_date, $end_date) {
+        $query = "UPDATE travelbundle SET hotelid = ?, available_spaces = ?, price = ?, start_date = ?, end_date = ? WHERE id = ?";  
+        $stmt = mysqli_prepare($link, $query);
+        if (!$stmt) {
+            error_log("Prepare failed: " . mysqli_error($link));
+            return false;        
+        }
+        mysqli_stmt_bind_param($stmt, 'sidssi', $hotelid, $available_spaces, $price, $start_date, $end_date, $id);
+        return mysqli_stmt_execute($stmt);
+    }
 }

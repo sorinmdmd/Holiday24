@@ -19,6 +19,35 @@ $users = Travel::getUserDetails($link);
 $travelbundles = Travel::getTravelbundles($link);
 $smarty->assign('travelbundles', $travelbundles);
 
+// Get all hotels for edit form
+$hotels = Travel::getAllHotels($link);
+$smarty->assign('hotels', $hotels);
+
+// Handle edit form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
+    $id = $_POST['travelpack_id'];
+    $hotelid = $_POST['hotelid'];
+    $available_spaces = $_POST['available_spaces'];
+    $price = $_POST['price'];
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+    
+    $success = Travel::updateTravelBundle($link, $id, $hotelid, $available_spaces, $price, $start_date, $end_date);
+    
+    if ($success) {
+        header("Location: adminPanel.php?edit_success=1");
+        exit();
+    } else {
+        $smarty->assign('edit_error', 'Failed to update travel pack');
+    }
+}
+
+// Handle edit request (GET parameter)
+if (isset($_GET['edit']) && !empty($_GET['edit'])) {
+    $editBundle = Travel::getTravelBundleById($link, $_GET['edit']);
+    $smarty->assign('editBundle', $editBundle);
+}
+
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 }
