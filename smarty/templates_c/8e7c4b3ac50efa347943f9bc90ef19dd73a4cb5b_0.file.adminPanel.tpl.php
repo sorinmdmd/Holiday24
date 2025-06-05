@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-04 19:17:11
+/* Smarty version 4.2.0, created on 2025-06-05 09:37:17
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68409bb7c4f221_13663211',
+  'unifunc' => 'content_6841654d968701_17078950',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e7c4b3ac50efa347943f9bc90ef19dd73a4cb5b' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1749064629,
+      1 => 1749116049,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_68409bb7c4f221_13663211 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6841654d968701_17078950 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -139,7 +139,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="error-message"><?php echo $_smarty_tpl->tpl_vars['edit_error']->value;?>
 </div>
             <?php }?>
-            
+        
             <form method="POST" action="adminPanel.php">
                 <input type="hidden" name="travelpack_id" value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['id'];?>
 ">
@@ -190,7 +190,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <label for="end_date">End Date:</label>
                     <input type="date" name="end_date" id="end_date" 
                            value="<?php echo $_smarty_tpl->tpl_vars['editBundle']->value['end_date'];?>
-" min="<?php echo $_smarty_tpl->tpl_vars['today']->value+1;?>
+" min="<?php echo $_smarty_tpl->tpl_vars['today']->value;?>
 " required>
                 </div>
                 
@@ -198,6 +198,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <button type="submit" name="edit_travelpack" class="save-button">Save Changes</button>
                     <button type="button" class="cancel-button" onclick="window.location.href='adminPanel.php'">Cancel</button>
                 </div>
+                
             </form>
         </div>
     </div>

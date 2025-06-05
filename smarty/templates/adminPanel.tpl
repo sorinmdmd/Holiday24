@@ -83,7 +83,7 @@
             {if isset($edit_error)}
                 <div class="error-message">{$edit_error}</div>
             {/if}
-            
+        
             <form method="POST" action="adminPanel.php">
                 <input type="hidden" name="travelpack_id" value="{$editBundle.id}">
                 
@@ -126,6 +126,7 @@
                     <button type="submit" name="edit_travelpack" class="save-button">Save Changes</button>
                     <button type="button" class="cancel-button" onclick="window.location.href='adminPanel.php'">Cancel</button>
                 </div>
+                
             </form>
         </div>
     </div>

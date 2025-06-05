@@ -51,7 +51,6 @@ if ($REQUEST_METHOD == "POST") {
     $smarty->assign('csrf_token', $_SESSION['csrf_token']);
 }
 
-// Ensure email and password are assigned even if not set
 $smarty->assign('email', isset($_POST['email']) ? $_POST['email'] : '');
 $smarty->assign('password', isset($_POST['password']) ? $_POST['password'] : '');
 

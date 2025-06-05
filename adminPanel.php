@@ -31,14 +31,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
     $price = $_POST['price'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
-    
-    $success = Travel::updateTravelBundle($link, $id, $hotelid, $available_spaces, $price, $start_date, $end_date);
-    
-    if ($success) {
-        header("Location: adminPanel.php?edit_success=1");
-        exit();
+
+    // !! Add this block for validation !!
+    if ($end_date <= $start_date) {
+        $smarty->assign('edit_error', 'End date must be after the start date.');
+        
+        // !! Re-populate form with submitted values
+        $editBundle = [
+            'id' => $id,
+            'hotelid' => $hotelid,
+            'available_spaces' => $available_spaces,
+            'price' => $price,
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'city' => '', // optional, can fetch if needed
+        ];
+        $smarty->assign('editBundle', $editBundle);
     } else {
-        $smarty->assign('edit_error', 'Failed to update travel pack');
+        $success = Travel::updateTravelBundle($link, $id, $hotelid, $available_spaces, $price, $start_date, $end_date);
+        if ($success) {
+            header("Location: adminPanel.php?edit_success=1");
+            exit();
+        } else {
+            $smarty->assign('edit_error', 'Failed to update travel pack');
+            // !! Re-populate on DB update failure too !!
+            $editBundle = [
+                'id' => $id,
+                'hotelid' => $hotelid,
+                'available_spaces' => $available_spaces,
+                'price' => $price,
+                'start_date' => $start_date,
+                'end_date' => $end_date,
+                'city' => '', // optional
+            ];
+            $smarty->assign('editBundle', $editBundle);
+        }
     }
 }
 
@@ -55,7 +82,7 @@ if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
-    $userId = $_POST['delete_user_id']; 
+    $userId = $_POST['delete_user_id'];
     if ($userId != 0) {
         Customer::deleteUser($link, $userId);
     }
