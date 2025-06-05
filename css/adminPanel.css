@@ -1,12 +1,14 @@
-#adminH1{
+#adminH1 {
     margin-top: 40vh;
 }
+
 h1 {
     color: var(--text-color);
     font-size: 80px;
     text-align: center;
     margin-top: 50vh;
 }
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -15,17 +17,19 @@ h1 {
     height: 40vh;
     flex-wrap: wrap;
 }
+
 .big-button {
     padding: 25px 50px;
     font-size: 22px;
     font-weight: bold;
     color: black;
-    background: linear-gradient(145deg,rgb(255, 255, 255),rgb(255, 255, 255));
+    background: linear-gradient(145deg, rgb(255, 255, 255), rgb(255, 255, 255));
     border: none;
     border-radius: 12px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
+
 .big-button:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px var(--text-color);
@@ -37,10 +41,9 @@ h1 {
     padding: 20px;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -48,7 +51,9 @@ table {
     color: black;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: none;
 }
 
@@ -59,24 +64,26 @@ th {
     font-size: 14px;
     letter-spacing: 1px;
 }
+
 th:first-child {
     border-top-left-radius: 12px;
 }
+
 th:last-child {
     border-top-right-radius: 12px;
 }
 
-th, td {
+th,
+td {
     padding: 14px 16px;
     text-align: left;
 }
 
-/* Hover effect for rows */
 tbody tr:hover {
     background-color: #f9f9f9;
     transition: background-color 0.2s ease;
 }
-/* Buttons */
+
 button {
     background-color: #ff4d4f;
     color: white;
@@ -92,7 +99,6 @@ button:hover {
     background-color: #d9363e;
 }
 
-/* Link styling */
 a {
     color: #007BFF;
     text-decoration: none;
@@ -102,17 +108,117 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Admin label */
 td p {
     margin: 0;
     font-weight: bold;
 }
 
-/* Admin special label */
 td p[style*="color: violet"] {
     color: #9c27b0;
     font-style: italic;
 }
-#travelManagement{
+
+#travelManagement {
     margin-bottom: 20vh;
+}
+
+.travel {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.travel-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-buttons {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.save-button,
+.cancel-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.cancel-button {
+    background-color: red;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #d9363e;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    font-family: underline;
+
+}
+
+.success-message {
+    color: var(--text-color);
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    font-family: underline;
 }

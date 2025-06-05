@@ -9,8 +9,13 @@
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
+{assign var="today" value=$smarty.now|date_format:"%Y-%m-%d"}
     {include file="headerAdmin.tpl"}
     <h1 id="adminH1">Admin Panel</h1>
+    
+    {if isset($smarty.get.edit_success)}
+        <div class="success-message">Travel pack updated successfully!</div>
+    {/if}
     <div id="userTable">
     <div id="userTable">
         <h1>User Management</h1>
@@ -59,7 +64,7 @@
                         
                     <div class="travel-buttons">
                         {if $bundle.available_spaces > 0}
-                            <a href="" class="edit-button">Edit</a>
+                            <a href="adminPanel.php?edit={$bundle.id}" class="edit-button">Edit</a>
                         {else}
                             <span class="soldout-button">Ausgebucht</span>
                         {/if}
@@ -68,5 +73,64 @@
             {/foreach}
         </div>
     </div>
+
+    {if isset($editBundle)}
+    <div id="editTravel" class="travel">
+        <div class="travel-content">
+            <span class="close" onclick="window.location.href='adminPanel.php'">&times;</span>
+            <h2>Edit Travel Pack: {$editBundle.city}</h2>
+            
+            {if isset($edit_error)}
+                <div class="error-message">{$edit_error}</div>
+            {/if}
+        
+            <form method="POST" action="adminPanel.php">
+                <input type="hidden" name="travelpack_id" value="{$editBundle.id}">
+                
+                <div class="form-group">
+                    <label for="hotelid">Hotel:</label>
+                    <select name="hotelid" id="hotelid" required>
+                        {foreach from=$hotels item=hotel}
+                            <option value="{$hotel.id}" {if $hotel.id == $editBundle.hotelid}selected{/if}>
+                                {$hotel.name}
+                            </option>
+                        {/foreach}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="available_spaces">Free Slots:</label>
+                    <input type="number" name="available_spaces" id="available_spaces" 
+                           value="{$editBundle.available_spaces}" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price (€):</label>
+                    <input type="number" name="price" id="price" 
+                           value="{$editBundle.price}" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" name="start_date" id="start_date" 
+                           value="{$editBundle.start_date}" min="{$today}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" name="end_date" id="end_date" 
+                           value="{$editBundle.end_date}" min="{$today}" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" name="edit_travelpack" class="save-button">Save Changes</button>
+                    <button type="button" class="cancel-button" onclick="window.location.href='adminPanel.php'">Cancel</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    {/if}
+
 </body>
 </html>
