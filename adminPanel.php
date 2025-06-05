@@ -32,11 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
 
-    // !! Add this block for validation !!
     if ($end_date <= $start_date) {
         $smarty->assign('edit_error', 'End date must be after the start date.');
         
-        // !! Re-populate form with submitted values
         $editBundle = [
             'id' => $id,
             'hotelid' => $hotelid,
@@ -44,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
             'price' => $price,
             'start_date' => $start_date,
             'end_date' => $end_date,
-            'city' => '', // optional, can fetch if needed
+            'city' => '', 
         ];
         $smarty->assign('editBundle', $editBundle);
     } else {
@@ -54,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
             exit();
         } else {
             $smarty->assign('edit_error', 'Failed to update travel pack');
-            // !! Re-populate on DB update failure too !!
             $editBundle = [
                 'id' => $id,
                 'hotelid' => $hotelid,
@@ -62,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
                 'price' => $price,
                 'start_date' => $start_date,
                 'end_date' => $end_date,
-                'city' => '', // optional
+                'city' => '',
             ];
             $smarty->assign('editBundle', $editBundle);
         }
