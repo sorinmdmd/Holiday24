@@ -38,21 +38,28 @@
         if (isset($_SESSION['user_id']) && isset($_POST['book_bundle_id']) && isset($_POST['slots'])) {
             //Email Adresse für die Order Confirmation
             $me = Travel::getUserById($link, $_SESSION['user_id']);
-            $userEmail = $me[0]['email'] ?? null;
-            $user_id = $_SESSION['user_id'];
-            $book_bundle_id = $_POST['book_bundle_id'];
-            $booked_slots = intval($_POST['slots']);
-            $free_slots = intval($_POST['free_slots']);
-            $link = DbFunctions::connectWithDatabase();
-            $success = Travel::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
-    
-            if ($success) {
-                $smarty->assign('booking_success', true);
-                $mailService = new MailService();
-                $mailService->sendBookingConfirmation($userEmail,$travelbundles,$booked_slots,$book_bundle_id);
-            } else {
-                $smarty->assign('booking_error', true);
-            }
+                if($me[0]['verified'] != 1){
+                    if ($me[0]['verified'] != 1) {
+                    $smarty->assign('account_not_verified', true);
+                } else {
+
+                    $userEmail = $me[0]['email'] ?? null;
+                    $user_id = $_SESSION['user_id'];
+                    $book_bundle_id = $_POST['book_bundle_id'];
+                    $booked_slots = intval($_POST['slots']);
+                    $free_slots = intval($_POST['free_slots']);
+                    $link = DbFunctions::connectWithDatabase();
+                    $success = Travel::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
+            
+                    if ($success) {
+                        $smarty->assign('booking_success', true);
+                        $mailService = new MailService();
+                        $mailService->sendBookingConfirmation($userEmail,$travelbundles,$booked_slots,$book_bundle_id);
+                    } else {
+                        $smarty->assign('booking_error', true);
+                    }
+                }
+            }   
         }   
     }
 

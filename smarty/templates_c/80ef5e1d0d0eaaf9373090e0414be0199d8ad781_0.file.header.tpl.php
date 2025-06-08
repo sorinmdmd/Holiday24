@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-04 06:23:55
-  from '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/header.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-08 14:39:11
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_08_Juni_2\Holiday24\smarty\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683fe67ba2cd26_90033393',
+  'unifunc' => 'content_6845a08fdccde5_05817324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f6d85e7b23f0faf0109f311183acbc41fc8b7575' => 
+    '80ef5e1d0d0eaaf9373090e0414be0199d8ad781' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/header.tpl',
-      1 => 1749018078,
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_08_Juni_2\\Holiday24\\smarty\\templates\\header.tpl',
+      1 => 1749393349,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_683fe67ba2cd26_90033393 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6845a08fdccde5_05817324 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>

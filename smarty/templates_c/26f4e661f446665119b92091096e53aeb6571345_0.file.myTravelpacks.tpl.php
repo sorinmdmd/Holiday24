@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-06-03 09:08:26
-  from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelpacks.tpl' */
+  from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '26f4e661f446665119b92091096e53aeb6571345' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelpacks.tpl',
+      0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelPacks.tpl',
       1 => 1748940002,
       2 => 'file',
     ),

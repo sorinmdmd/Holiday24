@@ -100,6 +100,14 @@
             </div>
         </section>
     </main>
+    
+    {if isset($account_not_verified) && $account_not_verified}
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                alert("Please verify your account before booking a trip.");
+            });
+        </script>
+    {/if}
 
 </body>
 </html>

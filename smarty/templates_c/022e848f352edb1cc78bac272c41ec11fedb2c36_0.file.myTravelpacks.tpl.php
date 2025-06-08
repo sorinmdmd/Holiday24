@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2025-04-18 09:34:14
-  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myTravelpacks.tpl' */
+  from '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '022e848f352edb1cc78bac272c41ec11fedb2c36' => 
     array (
-      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myTravelpacks.tpl',
+      0 => '/Users/dennismac/Documents/Projects/iksy2mainRep/iksy2/smarty/templates/myTravelPacks.tpl',
       1 => 1744967717,
       2 => 'file',
     ),

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-05-28 10:12:56
-  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_28_Mai\iksy2\smarty\templates\myTravelPacks.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-08 14:39:35
+  from 'C:\Users\Hugo\OneDrive\HS Bochum\SS25\IKSY II\Test_08_Juni_2\Holiday24\smarty\templates\myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6836e1a8694047_10217712',
+  'unifunc' => 'content_6845a0a731b2b4_49726638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'fcbbb35d14aefd48b8d673ba3dd04b7c6fbcdc6d' => 
+    'd64d9affb49df77ef458afdfa5c6a8e40078415e' => 
     array (
-      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_28_Mai\\iksy2\\smarty\\templates\\myTravelPacks.tpl',
-      1 => 1748426269,
+      0 => 'C:\\Users\\Hugo\\OneDrive\\HS Bochum\\SS25\\IKSY II\\Test_08_Juni_2\\Holiday24\\smarty\\templates\\myTravelPacks.tpl',
+      1 => 1749393349,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6836e1a8694047_10217712 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\HSBochum\\SS25\\IKSYII\\Test_28_Mai\\iksy2\\classes\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_6845a0a731b2b4_49726638 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\Hugo\\OneDrive\\HSBochum\\SS25\\IKSYII\\Test_08_Juni_2\\Holiday24\\classes\\smarty\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
 <html lang="de">
