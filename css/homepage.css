@@ -1,64 +1,61 @@
+/* index.css */
+
+/* === Fullscreen Hero Section === */
 .home {
-    position: relative;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, blue, lightblue);
+    position: relative; /* Crucial for absolute positioning of children */
+    width: 100%;
+    min-height: 100vh; /* Ensures it takes at least the full viewport height */
+    background: linear-gradient(to bottom, var(--primary-color), lightblue); /* A specific gradient for the hero, using a variable */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: hidden; /* **CRUCIAL**: Hides anything that overflows this section */
+    animation: fadeIn 0.8s ease-in-out; /* Apply fade in to the whole section */
 }
 
+/* === Heading in front of the image === */
 .home h1 {
-    transition:0.3s ease all;
-    border-radius: 12px;
-    position: absolute;
-    color: white;
+    position: relative; /* Gives it a z-index context */
+    z-index: 2; /* Ensure it's above the image */
+    color: var(--text-color);
     font-size: 80px;
     text-align: center;
-    z-index: 99;
-}
-.img {
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
+    border-radius: 12px;
+    transition: 0.3s ease all;
+    padding: 0 20px; /* Add some padding to prevent text touching edges */
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+    max-width: 90%; /* Limits width to prevent long lines causing overflow */
+    word-wrap: break-word; /* Breaks long words if necessary */
 }
 
+/* === Image as background layer === */
 .layer1 {
-    height: 100%;
-    right: 0;
-    pointer-events: none;
+    position: absolute; /* Takes the image out of the normal document flow */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Makes the image fill 100% of the .home section's width */
+    height: 100%; /* Makes the image fill 100% of the .home section's height */
+    object-fit: cover; /* **KEY FIX**: Scales the image to cover the container, maintaining aspect ratio and cropping if necessary */
+    object-position: center; /* Centers the image content within its frame */
+    z-index: 1; /* Places it behind the h1 (which is z-index: 2) */
+    display: block; /* Ensures image behaves as a block element, sometimes helps with overflow */
 }
 
-.layer2 {
-    position: absolute;
+/* === Decorative Body Overlay (moved from aboutUs.css as it affects the body) === */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    right: 0;
-    pointer-events: none;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
+    z-index: -1; /* Ensures it's behind everything else */
 }
 
-.layer3 {
-    position: absolute;
-    height: 100%;
-    right: 0;
-    pointer-events: none;
-}
-
+/* === Responsive adjustments for Hero Section === */
 @media screen and (max-width: 800px) {   
     .home h1 { 
         font-size: 40px;
-        z-index: 9;
     }
-}
-
-/* Initial hidden state with blur and opacity */
-.hidden-layer {
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity 1s ease-out, filter 1s ease-out;
-}
-
-/* When loaded, fade in and unblur */
-.loaded-layer {
-    opacity: 1;
-    filter: blur(0);
 }
