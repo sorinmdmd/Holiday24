@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-17 20:05:01
+/* Smarty version 4.2.0, created on 2025-06-17 21:30:35
   from '/var/www/html/iksy05/Git/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6851ca6d075c18_05603276',
+  'unifunc' => 'content_6851de7bb5deb7_46554200',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cf0b84f9535173e898527f15973cf077ce1ebcd' => 
     array (
       0 => '/var/www/html/iksy05/Git/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1750189699,
+      1 => 1750195832,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_6851ca6d075c18_05603276 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6851de7bb5deb7_46554200 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Git/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Git/Hol
 </title>
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
