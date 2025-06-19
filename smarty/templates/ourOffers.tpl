@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
@@ -18,10 +19,10 @@
     <div class="search-menu">
         <form method="post" action="ourOffers.php">
             <div class="search-fields">
-                <!-- Destination country -->
+                <!-- Destination country Text-Feld -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
 
-                <!-- Month of Travel Dropdown -->
+                <!-- Month of Travel Dropdown-Feld -->
                 <select name="month">
                     <option value="" disabled selected>Month of travel</option>
                     {foreach key=id item=name from=$months}
@@ -29,7 +30,7 @@
                     {/foreach}
                 </select>
 
-                <!-- Travelers Dropdown -->
+                <!-- Travelers Dropdown-Feld -->
                 <select name="number_travelers">
                     <option value="" disabled selected>Travelers</option>
                     <option value="1">1</option>
@@ -40,7 +41,7 @@
                 </select>
             </div>
 
-            <!-- Submit Button -->
+            <!-- Submit button for filters -->
             <div class="submit-button">
                 <input type="submit" id="submit_btn" name="Button1" value="Let's go!">
             </div>
@@ -48,7 +49,6 @@
     </div>
 
     <!-- Main section -->
-
     <main class="content">
         <h1>{$title}</h1>
         
@@ -75,7 +75,7 @@
                             {if $bundle.available_spaces > 0}
                                 {if isset($user_id)}
                                     <form method="post" action="ourOffers.php" class="inline-booking-form">
-                                        <input type="hidden" name="book_bundle_id" value="{$bundle.id}">
+                                        <input type="hidden" name="book_bundle_id" value="{$bundle.id}"> <!-- werden nicht angezeigt, müssen trotzdem submited werden -->
                                         <input type="hidden" name="free_slots" value="{$bundle.available_spaces}">
                                         <select name="slots" id="slots_{$bundle.id} placeholder ="Number of slots">
                                             <option value="" disabled selected>Travelers</option>
@@ -91,7 +91,7 @@
                                     <a href="login.php" class="book-button">Book</a>
                                 {/if}
                             {else}
-                                <span class="soldout-button">Full</span>
+                                <span class="soldout-button">Full</span>  <!-- "Book" wird zu "Soldout" falls available_spaces = 0 -->
                             {/if}
                         </div>
 
