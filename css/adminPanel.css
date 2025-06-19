@@ -222,3 +222,24 @@ td p[style*="color: violet"] {
     text-align: center;
     font-family: underline;
 }
+
+.create-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.create-button {
+    display: inline-block;
+    background-color: #FFA725;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+    background-color: #e6951c;
+}

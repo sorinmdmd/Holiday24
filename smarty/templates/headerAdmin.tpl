@@ -11,11 +11,11 @@
             </button>
         </li>
         <li>
-            <li><a class="{if $activePage == 'adminPanel'}active-link{/if}" href="adminPanel.php">ADMIN</a></li>
+<li><a class="{if isset($activePage) and $activePage == 'adminPanel'}active-link{/if}" href="adminPanel.php">ADMIN</a></li>
             <li><a href="adminPanel.php#userTable">Manage Users</a></li>
             <li><a href="adminPanel.php#travelManagement">Manage Travel</a></li>
-            <li><a class="{if $activePage == 'ouroffers'}active-link{/if}" href="ourOffers.php">Travelpacks</a></li> 
-            <li><a class="accent-link" href="logout.php">Logout - {$user_role}</a></li>
+<li><a class="{if isset($activePage) and $activePage == 'ouroffers'}active-link{/if}" href="ourOffers.php">Travelpacks</a></li>
+<li><a class="accent-link" href="logout.php">Logout{if isset($user_role)} - {$user_role}{/if}</a></li>
         </li>
     </ul>
 </nav>
