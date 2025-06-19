@@ -1,4 +1,4 @@
-/* Basic styles */
+/* Basic */
 body::before {
     content: '';
     position: fixed;
@@ -233,7 +233,7 @@ h1::after {
     border: 1px solid #ccc;
 }
 
-/* Animations */
+/* Animationen */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -245,7 +245,7 @@ h1::after {
     }
 }
 
-
+/* Für responsive design notwendig */
 @media (max-width: 768px) {
     main {
         padding: 1rem;
@@ -262,6 +262,40 @@ h1::after {
     .travel-card {
         width: 100%;
         max-width: 400px;
+    }
+
+    .search-menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px 8px;
+    }
+
+    .search-menu form {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-fields {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-fields input[type="text"],
+    .search-fields select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .submit-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .submit-button input[type="submit"] {
+        width: 100%;
     }
     
 }

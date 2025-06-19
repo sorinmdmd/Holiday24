@@ -2,8 +2,8 @@
 session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
-require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/Sicherheit.inc.php';
+require_once 'classes/includes/DbFunctions.inc.php';
+require_once 'classes/includes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
@@ -20,6 +20,7 @@ if (!($REQUEST_METHOD == "POST")) {
     }
     $smarty->assign('csrf_token', $_SESSION['csrf_token']);
     $smarty->assign('PHP_SELF', $PHP_SELF);
+
 } else {
     if (!isset($_POST["csrf_token"]) || !isset($_SESSION["csrf_token"]) || $_POST["csrf_token"] != $_SESSION["csrf_token"]) {
         unset($_SESSION["csrf_token"]);

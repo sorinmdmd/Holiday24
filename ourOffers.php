@@ -2,10 +2,10 @@
 session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
-require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/Sicherheit.inc.php';
-require_once 'classes/Travel.inc.php';
-require_once 'classes/MailService.inc.php';
+require_once 'classes/includes/DbFunctions.inc.php';
+require_once 'classes/includes/Sicherheit.inc.php';
+require_once 'classes/includes/Travel.inc.php';
+require_once 'classes/includes/MailService.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
@@ -25,18 +25,23 @@ $no_results = false;
 
 // Wenn das Formular abgeschickt wurde, Filter anwenden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verify CSRF token
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(64));
+    }
+
     $country = isset($_POST['i_country']) ? trim($_POST['i_country']) : null;
     $month = isset($_POST['month']) ? trim($_POST['month']) : null;
     $travelers = isset($_POST['number_travelers']) ? trim($_POST['number_travelers']) : null;
 
     $travelbundles = Travel::getFilteredTravelbundles($link, $country, $month, $travelers);
 
-    if (empty($travelbundles)) {
+    if (empty($travelbundles)) { // Falls keine Travelpacks gefunden, wird Message gezeigt
         $no_results = true;
     }
 
     if (isset($_SESSION['user_id']) && isset($_POST['book_bundle_id']) && isset($_POST['slots'])) {
-        //Email Adresse für die Order Confirmation
+        // Benutzerdate holen
         $me = Travel::getUserById($link, $_SESSION['user_id']);
         if ($me[0]['verified'] != 1) {
             $smarty->assign('account_not_verified', true);
@@ -48,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $free_slots = intval($_POST['free_slots']);
             $link = DbFunctions::connectWithDatabase();
             $success = Travel::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
-
+            
+            // Prüfen ob Benutzerkonto verifiziert wurde für die Buchung
             if ($success) {
                 $smarty->assign('booking_success', true);
                 $mailService = new MailService();

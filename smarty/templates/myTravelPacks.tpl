@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>{$title}</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
     {include file="header.tpl"}
     <!-- Main section -->
-
     <main class="content">
         <h1>{$title}</h1>
         
@@ -35,7 +34,7 @@
                         <p class="travel-hotel"><b>Hotel:</b> {$booking.hotel_name}</p>
                         
                         <div class="travel-buttons">
-                            <form method="post" action="mytravelpacks.php"
+                            <form method="post" action="myTravelPacks.php"
                                 onsubmit="return confirm('Are you sure you want to cancel this trip?');">
                                 <input type="hidden" name="travelbundleid" value="{$booking.id}">
                                 <button type="submit" name="cancel_booking" class="cancel-button">Cancel</button>

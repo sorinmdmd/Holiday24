@@ -2,9 +2,9 @@
 session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
-require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/Sicherheit.inc.php';
-require_once 'classes/Travel.inc.php';
+require_once 'classes/includes/DbFunctions.inc.php';
+require_once 'classes/includes/Sicherheit.inc.php';
+require_once 'classes/includes/Travel.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 

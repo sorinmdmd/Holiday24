@@ -2,7 +2,7 @@
     $ROOT_DIR='./'; 
     require_once("$ROOT_DIR/classes/smarty/libs/Smarty.class.php");
     
-    require_once("$ROOT_DIR/classes/SmartyEscaped.inc.php");
+    require_once("$ROOT_DIR/classes/includes/SmartyEscaped.inc.php");
 
     $smarty = new SmartyEscaped();
     

@@ -2,11 +2,10 @@
 session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
-require_once 'classes/DbFunctions.inc.php';
-require_once 'classes/Travel.inc.php';
-require_once 'classes/Travel.inc.php';
-require_once 'classes/Sicherheit.inc.php';
-require_once 'classes/MailService.inc.php';
+require_once 'classes/includes/DbFunctions.inc.php';
+require_once 'classes/includes/Travel.inc.php';
+require_once 'classes/includes/Sicherheit.inc.php';
+require_once 'classes/includes/MailService.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
@@ -20,7 +19,7 @@ $no_results = false;
 // Standard: keine Fehlermeldung
 $no_results = false;
 
-//Email Adresse für die cancellation
+// Benutzerdaten holen
 $me = Travel::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
@@ -30,21 +29,18 @@ if (isset($_SESSION['user_id'])) {
     $bookings = Travel::getBookingsForUser($link, $_SESSION['user_id']);
     $smarty->assign('bookings', $bookings);
 
-    if(empty($bookings)){
-        $no_results = true;
-    }
-
-    $bookings = Travel::getBookingsForUser($link, $_SESSION['user_id']);
-    $smarty->assign('bookings', $bookings);
-
+    // Message zeigen, falls keine gebuchten Reisepakete
     if(empty($bookings)){
         $no_results = true;
     }
 }
+
+// Bestimmen, welche Art von Benutzer angemeldet ist (admin?)
 if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
 
+// Buchungsstornierung
 if (isset($_POST['cancel_booking']) && isset($_SESSION['user_id'])) {
     $travelbundleid = $_POST['travelbundleid'];
     $success = Travel::cancelBooking($link, $_SESSION['user_id'], $travelbundleid);

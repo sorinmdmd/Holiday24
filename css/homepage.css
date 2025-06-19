@@ -1,48 +1,40 @@
-/* index.css */
-
-/* === Fullscreen Hero Section === */
 .home {
-    position: relative; /* Crucial for absolute positioning of children */
-    width: 100%;
-    min-height: 100vh; /* Ensures it takes at least the full viewport height */
-    background: linear-gradient(to bottom, var(--primary-color), lightblue); /* A specific gradient for the hero, using a variable */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* **CRUCIAL**: Hides anything that overflows this section */
-    animation: fadeIn 0.8s ease-in-out; /* Apply fade in to the whole section */
-}
-
-/* === Heading in front of the image === */
-.home h1 {
-    position: relative; /* Gives it a z-index context */
-    z-index: 2; /* Ensure it's above the image */
-    color: var(--text-color);
-    font-size: 80px;
     text-align: center;
-    border-radius: 12px;
-    transition: 0.3s ease all;
-    padding: 0 20px; /* Add some padding to prevent text touching edges */
-    box-sizing: border-box; /* Include padding in the element's total width/height */
-    max-width: 90%; /* Limits width to prevent long lines causing overflow */
-    word-wrap: break-word; /* Breaks long words if necessary */
+    background: linear-gradient(to bottom, blue, lightblue);
 }
 
-/* === Decorative Body Overlay (moved from aboutUs.css as it affects the body) === */
-body::before {
-    content: '';
-    position: fixed;
+.img {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(155, 89, 182, 0.05) 100%);
-    z-index: -1; /* Ensures it's behind everything else */
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
 }
 
-/* === Responsive adjustments for Hero Section === */
-@media screen and (max-width: 800px) {   
-    .home h1 { 
+.layer1 { z-index: 1; }
+.layer2 { z-index: 2; }
+.layer3 { z-index: 3; }
+
+.home h1 {
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: 80px;
+    background-color: none;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 800px) {
+    .home h1 {
         font-size: 40px;
     }
 }

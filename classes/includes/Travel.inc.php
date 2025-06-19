@@ -1,5 +1,5 @@
 <?php
-require_once 'classes/Customer.inc.php';
+require_once 'classes/includes/Customer.inc.php';
 class Travel
 {
 
@@ -28,21 +28,6 @@ class Travel
     {
         $query = "SELECT * FROM customer WHERE id = '" . mysqli_real_escape_string($link, $userId) . "'";
         return DbFunctions::getRows($link, $query);
-    }
-
-    public static function verifyUser($link, $userid)
-    {
-        $query = "UPDATE customer SET verified = 1 WHERE id = ?";
-
-        $stmt = $link->prepare($query);
-
-        if ($stmt) {
-            $stmt->bind_param("s", $userid);
-            $stmt->execute();
-            $stmt->close();
-        } else {
-            error_log("Error preparing statement: " . $link->error);
-        }
     }
 
     public static function getFilteredTravelbundles($link, $country = null, $month = null, $travelers = null)
@@ -251,6 +236,19 @@ class Travel
         return $hotelId; // Return the random hotel ID
     }
 
+    public static function verifyUser($link, $userid)
+    {
+        $query = "UPDATE customer SET verified = 1 WHERE id = ?";
 
+        $stmt = $link->prepare($query);
+
+        if ($stmt) {
+            $stmt->bind_param("s", $userid);
+            $stmt->execute();
+            $stmt->close();
+        } else {
+            error_log("Error preparing statement: " . $link->error);
+        }
+    }
 
 }
