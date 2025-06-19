@@ -3,8 +3,8 @@
 Dieses Projekt wurde entwickelt im SS25 im Rahmen des Moduls IKSY II von: 
     Corbaci, Murat
     Czernicki, Dennis
-    Schwengber Kelm, Ana Luísa
     Otel, Sorin
+    Schwengber Kelm, Ana Luísa
 
 ### Funktionalitäten
 
