@@ -28,19 +28,6 @@
     word-wrap: break-word; /* Breaks long words if necessary */
 }
 
-/* === Image as background layer === */
-.layer1 {
-    position: absolute; /* Takes the image out of the normal document flow */
-    top: 0;
-    left: 0;
-    width: 100%;  /* Makes the image fill 100% of the .home section's width */
-    height: 100%; /* Makes the image fill 100% of the .home section's height */
-    object-fit: cover; /* **KEY FIX**: Scales the image to cover the container, maintaining aspect ratio and cropping if necessary */
-    object-position: center; /* Centers the image content within its frame */
-    z-index: 1; /* Places it behind the h1 (which is z-index: 2) */
-    display: block; /* Ensures image behaves as a block element, sometimes helps with overflow */
-}
-
 /* === Decorative Body Overlay (moved from aboutUs.css as it affects the body) === */
 body::before {
     content: '';

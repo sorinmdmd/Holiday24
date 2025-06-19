@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 09:21:37
+/* Smarty version 4.2.0, created on 2025-06-19 07:42:24
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683ebea1974234_87866274',
+  'unifunc' => 'content_6853bf60ddcfb4_47400124',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ee006b5ddb854d5d0ab663dc5601052e4725a10' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/ourOffers.tpl',
-      1 => 1748942126,
+      1 => 1750318662,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_683ebea1974234_87866274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6853bf60ddcfb4_47400124 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -166,6 +166,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </section>
     </main>
+    
+    <?php if ((isset($_smarty_tpl->tpl_vars['account_not_verified']->value)) && $_smarty_tpl->tpl_vars['account_not_verified']->value) {?>
+        <?php echo '<script'; ?>
+>
+            window.addEventListener('DOMContentLoaded', function () {
+                alert("Please verify your account before booking a trip.");
+            });
+        <?php echo '</script'; ?>
+>
+    <?php }?>
 
 </body>
 </html>

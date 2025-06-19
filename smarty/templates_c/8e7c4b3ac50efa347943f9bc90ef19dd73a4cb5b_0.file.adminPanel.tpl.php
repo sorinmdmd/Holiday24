@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-05 09:37:17
+/* Smarty version 4.2.0, created on 2025-06-19 09:47:31
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6841654d968701_17078950',
+  'unifunc' => 'content_6853dcb39c3416_24674294',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e7c4b3ac50efa347943f9bc90ef19dd73a4cb5b' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1749116049,
+      1 => 1750326426,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_6841654d968701_17078950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6853dcb39c3416_24674294 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
-<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +31,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/i
 </title>
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
@@ -89,6 +88,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <div id="travelManagement">
         <h1>Travel Management</h1>
+     <div class="create-button-container">
+    <a href="createTravelBundle.php" class="create-button">Create Travel Bundle</a>
+</div>
+
         <div class="travel-bundle-container">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['travelbundles']->value, 'bundle');

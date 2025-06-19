@@ -72,6 +72,19 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
     $smarty->assign('editBundle', $editBundle);
 }
 
+if (isset($_GET['create']) && $_GET['create'] == 1) {
+    $editBundle = [
+        'id' => null,
+        'hotelid' => '',
+        'available_spaces' => '',
+        'price' => '',
+        'start_date' => '',
+        'end_date' => '',
+        'city' => '',
+    ];
+    $smarty->assign('editBundle', $editBundle);
+}
+
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);
 }

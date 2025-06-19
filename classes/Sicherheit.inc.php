@@ -29,13 +29,7 @@ class Sicherheit {
 		}
 		return false;
 	}      
-	
-	static function isCorrectWinterart($str) {
-	    if ($str == 'mild' || $str == 'normal' || $str == 'streng'||$str=='sehr streng') {
-	        return true;
-	    }
-	    return false;
-	}
+
 
 	public static function generateCSRFToken() {
         return bin2hex(random_bytes(64));

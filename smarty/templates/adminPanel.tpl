@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -50,6 +49,10 @@
     </div>
     <div id="travelManagement">
         <h1>Travel Management</h1>
+     <div class="create-button-container">
+    <a href="createTravelBundle.php" class="create-button">Create Travel Bundle</a>
+</div>
+
         <div class="travel-bundle-container">
             {foreach from=$travelbundles item=bundle}
                 <div class="travel-card">

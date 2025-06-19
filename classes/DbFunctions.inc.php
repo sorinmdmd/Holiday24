@@ -45,7 +45,7 @@ class DbFunctions
 		} else {
 			echo "<script>console.log('No user found with the provided email');</script>";
 		}
-		return false; 
+		return false;
 	}
 
 	public static function registerUser($link, $firstName, $lastName, $email, $password)
@@ -70,80 +70,111 @@ class DbFunctions
 		return mysqli_stmt_num_rows($stmt) > 0;
 	}
 
-	public static function generateID(): String {
+	public static function generateID(): string
+	{
 		return sprintf(
 			'%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-			random_int(0, 0xffff), random_int(0, 0xffff),
+			random_int(0, 0xffff),
+			random_int(0, 0xffff),
 			random_int(0, 0xffff),
 			random_int(0, 0x0fff) | 0x4000,
 			random_int(0, 0x3fff) | 0x8000,
-			random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff)
+			random_int(0, 0xffff),
+			random_int(0, 0xffff),
+			random_int(0, 0xffff)
 		);
 	}
 
 	public static function getHash($link, $query)
 	{
-	    $result=self::executeQuery($link, $query);
-	    $countRows=mysqli_num_rows($result);
-	    if ($countRows==0)
-	    {
-	        return null;
-	    }
-	    $fieldList=array();
-	    for ($i=0; $i<$countRows; $i++)
-	    {
-	        $row=mysqli_fetch_row($result);
-	        $fieldList[$row[0]]=$row[1];
-	    }
-	    mysqli_free_result($result);
-	    return $fieldList;
+		$result = self::executeQuery($link, $query);
+		$countRows = mysqli_num_rows($result);
+		if ($countRows == 0) {
+			return null;
+		}
+		$fieldList = array();
+		for ($i = 0; $i < $countRows; $i++) {
+			$row = mysqli_fetch_row($result);
+			$fieldList[$row[0]] = $row[1];
+		}
+		mysqli_free_result($result);
+		return $fieldList;
 	}
 
 	public static function getRows($link, $query)
 	{
 		$result = self::executeQuery($link, $query);
 		$rows = [];
-		
-		while($row = mysqli_fetch_assoc($result)) {
+
+		while ($row = mysqli_fetch_assoc($result)) {
 			$rows[] = $row;
 		}
-		
+
 		return $rows;
 	}
 
-	public static function getUserId($link) {
-		$query = "SELECT id FROM customer"; 
-   	 	$result = self::executeQuery($link, $query);
+	public static function getUserId($link)
+	{
+		$query = "SELECT id FROM customer";
+		$result = self::executeQuery($link, $query);
 
-    	if ($row = mysqli_fetch_assoc($result)) {
-        	return $row['id']; 
-    	}
-    	return null;
+		if ($row = mysqli_fetch_assoc($result)) {
+			return $row['id'];
+		}
+		return null;
 	}
 
-	public static function deleteUser($link, $userId) {
-       
-        $userId = mysqli_real_escape_string($link, $userId);    
-        $query = "DELETE FROM customer WHERE id = '$userId'";
-        $result = self::executeQuery($link, $query);
+	public static function deleteUser($link, $userId)
+	{
+		$userId = mysqli_real_escape_string($link, $userId);
 
-        if ($result && mysqli_affected_rows($link) > 0) {
-            return true; 
-        } else {
-            return false; 
-        }
-    }
+		mysqli_begin_transaction($link);
+
+		try {
+			$deleteBookingsQuery = "DELETE FROM booking WHERE customerid = '$userId'";
+			$resultBookings = self::executeQuery($link, $deleteBookingsQuery);
+
+			if (!$resultBookings) {
+				throw new Exception("Failed to delete bookings: " . mysqli_error($link));
+			}
+
+			$deleteCustomerQuery = "DELETE FROM customer WHERE id = '$userId'";
+			$resultCustomer = self::executeQuery($link, $deleteCustomerQuery);
+
+			if (!$resultCustomer) {
+				throw new Exception("Failed to delete customer: " . mysqli_error($link));
+			}
+
+			mysqli_commit($link);
+			return true;
+		} catch (Exception $e) {
+			mysqli_rollback($link);
+			error_log("Error deleting user and bookings: " . $e->getMessage()); // Log the error for debugging
+			return false;
+		}
+	}
+
 
 	public static function getFirstFieldOfResult($link, $query)
 	{
-	    $result=self::executeQuery($link, $query);
-	    if (mysqli_num_rows($result)==0)
-	    {
-	        return null;
-	    }
-	    $row=mysqli_fetch_row($result);
-	    mysqli_free_result($result);
-	    return ($row[0]);
+		$result = self::executeQuery($link, $query);
+		if (mysqli_num_rows($result) == 0) {
+			return null;
+		}
+		$row = mysqli_fetch_row($result);
+		mysqli_free_result($result);
+		return ($row[0]);
+	}
+	public static function createTravelBundle($link, $hotelid, $city, $spaces, $price, $start, $end, $img_path)
+	{
+		$sql = "INSERT INTO travelbundles (hotelid, city, available_spaces, price, start_date, end_date, img_path)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
+		$stmt = mysqli_prepare($link, $sql);
+		if (!$stmt)
+			return false;
+
+		mysqli_stmt_bind_param($stmt, 'isidsss', $hotelid, $city, $spaces, $price, $start, $end, $img_path);
+		return mysqli_stmt_execute($stmt);
 	}
 
 }
