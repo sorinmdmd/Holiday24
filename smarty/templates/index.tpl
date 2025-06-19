@@ -16,16 +16,6 @@
 
     <section class="home">
         <h1>Your Journey Starts Here✈️</h1>
-        <img src="images/layer1.png" class="layer1" alt="Layered background" style="
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures it covers the area, cropping as needed */
-        object-position: center; /* Centers the image content */
-        display: block; /* Removes any default inline spacing issues */
-    ">
     </section>
 
     <form action="{$PHP_SELF}" method="post">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 07:42:20
+/* Smarty version 4.2.0, created on 2025-06-19 07:52:31
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6853bf5c5f0506_52427654',
+  'unifunc' => 'content_6853c1bf4524b2_31228512',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b1b61feca8f930f104374d4713203d1135e387da' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/index.tpl',
-      1 => 1750318662,
+      1 => 1750319548,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:aboutUs.tpl' => 1,
   ),
 ),false)) {
-function content_6853bf5c5f0506_52427654 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6853c1bf4524b2_31228512 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -43,16 +43,6 @@ function content_6853bf5c5f0506_52427654 (Smarty_Internal_Template $_smarty_tpl)
 
     <section class="home">
         <h1>Your Journey Starts Here✈️</h1>
-        <img src="images/layer1.png" class="layer1" alt="Layered background" style="
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures it covers the area, cropping as needed */
-        object-position: center; /* Centers the image content */
-        display: block; /* Removes any default inline spacing issues */
-    ">
     </section>
 
     <form action="<?php echo $_smarty_tpl->tpl_vars['PHP_SELF']->value;?>

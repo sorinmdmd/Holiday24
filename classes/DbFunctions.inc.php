@@ -121,18 +121,35 @@ class DbFunctions
     	return null;
 	}
 
-	public static function deleteUser($link, $userId) {
-       
-        $userId = mysqli_real_escape_string($link, $userId);    
-        $query = "DELETE FROM customer WHERE id = '$userId'";
-        $result = self::executeQuery($link, $query);
+	 public static function deleteUser($link, $userId) {
+        $userId = mysqli_real_escape_string($link, $userId);
 
-        if ($result && mysqli_affected_rows($link) > 0) {
-            return true; 
-        } else {
-            return false; 
+        mysqli_begin_transaction($link);
+
+        try {
+            $deleteBookingsQuery = "DELETE FROM booking WHERE customerid = '$userId'";
+            $resultBookings = self::executeQuery($link, $deleteBookingsQuery);
+
+            if (!$resultBookings) {
+                throw new Exception("Failed to delete bookings: " . mysqli_error($link));
+            }
+
+            $deleteCustomerQuery = "DELETE FROM customer WHERE id = '$userId'";
+            $resultCustomer = self::executeQuery($link, $deleteCustomerQuery);
+
+            if (!$resultCustomer) {
+                throw new Exception("Failed to delete customer: " . mysqli_error($link));
+            }
+
+            mysqli_commit($link);
+            return true;
+        } catch (Exception $e) {
+            mysqli_rollback($link);
+            error_log("Error deleting user and bookings: " . $e->getMessage()); // Log the error for debugging
+            return false;
         }
     }
+
 
 	public static function getFirstFieldOfResult($link, $query)
 	{
