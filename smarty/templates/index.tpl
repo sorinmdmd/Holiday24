@@ -11,7 +11,7 @@
 <body>
     {include file="header.tpl"}
 
-    <!-- Layered image section -->
+    <!-- Einzelne Bilder, die übereinander dargestellt werden -->
     <section class="home">
         <img src="images/layer1.png" class="img layer1" alt="Layer 1">
         <img src="images/layer2.png" class="img layer2" alt="Layer 2">
@@ -19,7 +19,7 @@
         <h1>Your Journey Starts Here ✈️</h1>
     </section>
 
-    <!-- About us section inside a form -->
+    <!-- Einbindung der aboutUs.tpl in index und CSRF Schutz -->
     {if isset($PHP_SELF)}
     <form action="{$PHP_SELF}" method="post">
         <input type="hidden" name="csrf_token" value="{$csrf_token}">
