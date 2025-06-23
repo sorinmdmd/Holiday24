@@ -38,7 +38,7 @@ class Sicherheit {
     public static function validateCSRFToken($token, $sessionToken) {
         return hash_equals($token, $sessionToken);
     }
-	//Validates password when registration. Condition: At least 8 characters long, one number, one upper character and one special character
+	//Überprüft, ob das Passwort mindestens 8 Zeichen lang ist, mindestens eine Zahl, ein Sonderzeichen und einen Großbuchstaben enthält
 	public static function validatePassword($password) {
 		if (strlen($password) >= 8) {
 			if (preg_match('/\d/', $password)) {

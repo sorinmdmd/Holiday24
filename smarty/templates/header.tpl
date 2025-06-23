@@ -4,6 +4,8 @@
 <button id="open-sidebar-button" onclick="openSidebar()">
     <img src="images/menu-button.svg" height="40px" width="40px" fill="#FFA725">
 </button>  
+<!--Navigationsbar. Wird auf jeder Seite eingebunden, um die Navigation zu ermöglichen. 
+IF-Bedingungen werden genutzt, um die aktive Seite zu markieren.-->
 <nav id="navbar">
     <ul>
         <li>
@@ -27,7 +29,7 @@
         </li>
     </ul>
 </nav>
-
+<!--Funktion zum schließen der Navbar (nur wenn Fenster <800px)  -->
 <div id="overlay" onclick="closeSidebar()"></div>      
 <script src="script.js" defer></script>
 </header>
