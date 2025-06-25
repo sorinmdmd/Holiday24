@@ -12,10 +12,6 @@
  * - E-Mail-Duplikatsprüfung
  * - UUID-Generierung für eindeutige Benutzer-IDs
  * - Benutzerverwaltung (Löschen, Abrufen)
- * 
- * @author Holiday24 Development Team
- * @version 1.0
- * @since 2024
  */
 class Customer
 {
@@ -25,11 +21,6 @@ class Customer
 	 * 
 	 * Diese Methode überprüft die Anmeldedaten eines Benutzers gegen die Datenbank.
 	 * Sie verwendet sichere Passwort-Verifikation mit bcrypt-Hashes.
-	 * 
-	 * @param mysqli $link Datenbankverbindung
-	 * @param string $email E-Mail-Adresse des Benutzers
-	 * @param string $password Klartext-Passwort zur Verifikation
-	 * @return array|false Benutzerinformationen (id, role, password_hash) bei Erfolg, false bei Fehler
 	 * 
 	 * Sicherheitsfeatures:
 	 * - SQL-Injection-Schutz durch mysqli_real_escape_string
@@ -80,13 +71,6 @@ class Customer
 	 * Diese Methode erstellt einen neuen Kundeneintrag in der Datenbank mit
 	 * sicherer Passwort-Verschlüsselung und automatischer ID-Generierung.
 	 * 
-	 * @param mysqli $link Datenbankverbindung
-	 * @param string $firstName Vorname des Benutzers
-	 * @param string $lastName Nachname des Benutzers
-	 * @param string $email E-Mail-Adresse des Benutzers (muss eindeutig sein)
-	 * @param string $password Klartext-Passwort (wird automatisch gehasht)
-	 * @return bool True bei erfolgreicher Registrierung, false bei Fehler
-	 * 
 	 * Sicherheitsfeatures:
 	 * - Automatische UUID-Generierung für eindeutige Benutzer-IDs
 	 * - Sichere Passwort-Verschlüsselung mit bcrypt
@@ -117,11 +101,7 @@ class Customer
 	 * 
 	 * Diese Methode wird typischerweise vor der Registrierung verwendet,
 	 * um E-Mail-Duplikate zu vermeiden und eindeutige Benutzerkonten sicherzustellen.
-	 * 
-	 * @param mysqli $link Datenbankverbindung
-	 * @param string $email E-Mail-Adresse die überprüft werden soll
-	 * @return bool True wenn E-Mail bereits existiert, false wenn verfügbar
-	 * 
+  	 *
 	 * Performance-Optimierungen:
 	 * - SELECT 1 statt SELECT * für bessere Performance
 	 * - LIMIT 1 für frühzeitigen Abbruch bei erstem Treffer
@@ -149,10 +129,9 @@ class Customer
 	/**
 	 * Generiert eine eindeutige UUID (Universally Unique Identifier)
 	 * 
-	 * Diese Methode erstellt eine UUID nach RFC 4122 Standard (Version 4).
+	 * Diese Methode erstellt eine UUID nach RFC 4122 Standard.
 	 * Die UUID wird als primärer Schlüssel für neue Benutzer verwendet.
 	 * 
-	 * @return string UUID im Format: xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
 	 * 
 	 * UUID-Struktur:
 	 * - 32 Hexadezimalzeichen
@@ -182,20 +161,7 @@ class Customer
 		);
 	}
 
-	/**
-	 * Ruft die ID des ersten Benutzers aus der Datenbank ab
-	 * 
-	 * WARNUNG: Diese Methode hat ein Design-Problem, da sie nur die erste
-	 * Benutzer-ID zurückgibt, ohne spezifische Filterkriterien.
-	 * 
-	 * @param mysqli $link Datenbankverbindung
-	 * @return string|null Benutzer-ID oder null wenn kein Benutzer gefunden
-	 * 
-	 * TODO: Diese Methode sollte überarbeitet werden, um:
-	 * - Spezifische Benutzer-ID basierend auf Kriterien abzurufen
-	 * - Session-basierte Benutzer-ID-Abfrage zu implementieren
-	 * - Bessere Fehlerbehandlung hinzuzufügen
-	 */
+	 // Ruft die ID des ersten Benutzers aus der Datenbank ab
 	public static function getUserId($link)
 	{
 		// WARNUNG: Diese Abfrage gibt nur den ersten Benutzer zurück
@@ -211,21 +177,7 @@ class Customer
 		return null;
 	}
 
-	/**
-	 * Löscht einen Benutzer aus der Datenbank
-	 * 
-	 * Diese Methode delegiert die eigentliche Löschoperation an die
-	 * DbFunctions-Klasse. Sie dient als Wrapper-Funktion.
-	 * 
-	 * @param mysqli $link Datenbankverbindung
-	 * @param string $userId UUID des zu löschenden Benutzers
-	 * @return bool True bei erfolgreichem Löschen, false bei Fehler
-	 * 
-	 * Sicherheitshinweise:
-	 * - Sollte nur von Administratoren oder dem Benutzer selbst aufgerufen werden
-	 * - Löschung ist irreversibel - Backup empfohlen
-	 * - Überprüfung der Benutzerrechte sollte vor Aufruf erfolgen
-	 */
+	// Löscht einen Benutzer aus der Datenbank
 	public static function deleteUser($link, $userId)
 	{
 		// Delegation an DbFunctions-Klasse für die eigentliche Löschoperation
