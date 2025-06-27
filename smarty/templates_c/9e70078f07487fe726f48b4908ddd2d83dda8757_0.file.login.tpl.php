@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-04 06:25:40
+/* Smarty version 4.2.0, created on 2025-06-27 16:22:55
   from '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683fe6e444a736_18286919',
+  'unifunc' => 'content_685ec55fdf4e96_79582218',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e70078f07487fe726f48b4908ddd2d83dda8757' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/login.tpl',
-      1 => 1749018078,
+      1 => 1751041351,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_683fe6e444a736_18286919 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685ec55fdf4e96_79582218 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>

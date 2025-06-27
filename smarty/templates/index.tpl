@@ -10,7 +10,6 @@
 </head>
 <body>
     {include file="header.tpl"}
-
     <!-- Einzelne Bilder, die übereinander dargestellt werden -->
     <section class="home">
         <img src="images/layer1.png" class="img layer1" alt="Layer 1">
@@ -33,4 +32,6 @@
         <p>{$ausgabeText}</p>
     {/if}
 </body>
+{include file="footer.tpl"}
+
 </html>
