@@ -110,4 +110,5 @@
     {/if}
 
 </body>
+{include file="footer.tpl"}
 </html>
