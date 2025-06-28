@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-04 06:23:55
+/* Smarty version 4.2.0, created on 2025-06-28 10:25:50
   from '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683fe67ba63d22_45531333',
+  'unifunc' => 'content_685fc32e7dcf45_29547603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef08671ff721f133a286ac167029e57bb9a1e58f' => 
     array (
       0 => '/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/smarty/templates/aboutUs.tpl',
-      1 => 1749018078,
+      1 => 1751106146,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_683fe67ba63d22_45531333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685fc32e7dcf45_29547603 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +43,8 @@ function content_683fe67ba63d22_45531333 (Smarty_Internal_Template $_smarty_tpl)
             <p>Join us on this journey and let us help you create memories that will last a lifetime. Your adventure awaits!</p>
         </section>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }
