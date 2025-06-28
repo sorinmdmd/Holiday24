@@ -33,5 +33,6 @@
             <p>Don't have an account? <a href="registration.php">Register here</a></p>
         </div>
     </main>
+    {include file="footer.tpl"}
 </body>
 </html>
