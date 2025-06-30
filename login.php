@@ -7,6 +7,12 @@ require_once 'classes/includes/Customer.inc.php';
 require_once 'classes/includes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
+/*
+if (isset($_SESSION['successMessage'])) {
+    $smarty->assign('successMessage', $_SESSION['successMessage']);
+    unset($_SESSION['successMessage']);  // Damit die Meldung nur einmal angezeigt wird
+}
+*/
 
 $link = DbFunctions::connectWithDatabase();
 $title = "Login";

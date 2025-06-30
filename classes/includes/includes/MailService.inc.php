@@ -31,7 +31,6 @@ class MailService
             $this->mail->Body = "Your verification code is: {$verificationCode}";
             
             if (!$this->mail->send()) {
-                echo "Hier";
                 return false;
             }
             return true;
