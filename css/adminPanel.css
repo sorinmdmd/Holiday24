@@ -3,7 +3,7 @@
 }
 
 h1 {
-    color: var(--text-color);
+    color: var(--text-color-admin);
     font-size: 80px;
     text-align: center;
     margin-top: 50vh;
@@ -32,7 +32,7 @@ h1 {
 
 .big-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px var(--text-color);
+    box-shadow: 0 6px 12px var(--text-color-admin);
 }
 
 .benutzerTabelle {
