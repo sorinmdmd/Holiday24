@@ -1,4 +1,18 @@
 <?php
+/**
+ * Admin Panel - Verwaltungsbereich für Holiday24 Reisebüro
+ * 
+ * Diese Datei stellt das Admin-Panel für die Holiday24 Anwendung bereit.
+ * Administratoren können hier Reisepakete verwalten (erstellen, bearbeiten, löschen)
+ * und Benutzer verwalten.
+ * 
+ * Funktionalitäten:
+ * - Anzeige aller Reisepakete (Travel Bundles)
+ * - Bearbeitung von Reisepaketen (Hotels, Verfügbarkeit, Preise, Daten)
+ * - Erstellung neuer Reisepakete
+ * - Benutzerverwaltung (Anzeige und Löschung von Benutzern)
+ * - Session-basierte Authentifizierung
+ */
 session_start();
 
 require_once 'classes/includes/startTemplate.inc.php';
@@ -19,11 +33,9 @@ $users = Travel::getUserDetails($link);
 $travelbundles = Travel::getTravelbundles($link);
 $smarty->assign('travelbundles', $travelbundles);
 
-// Get all hotels for edit form
 $hotels = Travel::getAllHotels($link);
 $smarty->assign('hotels', $hotels);
 
-// Handle edit form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
     $id = $_POST['travelpack_id'];
     $hotelid = $_POST['hotelid'];
@@ -66,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_travelpack'])) {
     }
 }
 
-// Handle edit request (GET parameter)
 if (isset($_GET['edit']) && !empty($_GET['edit'])) {
     $editBundle = Travel::getTravelBundleById($link, $_GET['edit']);
     $smarty->assign('editBundle', $editBundle);
@@ -97,7 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
         Customer::deleteUser($link, $userId);
     }
 }
-// Assign user_role to Smarty if the user is logged in
 $smarty->assign('users', $users);
 $smarty->assign('activePage', 'adminPanel');
 $smarty->display('adminPanel.tpl');

@@ -1,4 +1,14 @@
 <?php
+/** 
+ * Diese Klasse stellt E-Mail-Funktionalitäten für das Holiday24 Reisebüro bereit.
+ * Sie verwendet PHPMailer für den sicheren Versand von E-Mails über SMTP.
+ * 
+ * Funktionalitäten:
+ * - Account-Verifizierungs-E-Mails
+ * - Buchungsbestätigungs-E-Mails
+ * - Stornierungsbestätigungs-E-Mails
+ * - SMTP-Konfiguration für GMX Mail-Server
+ */
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

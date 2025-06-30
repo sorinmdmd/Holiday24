@@ -47,4 +47,5 @@
     </main>
     {include file="footer.tpl"}
 </body>
+{include file="footer.tpl"}
 </html>

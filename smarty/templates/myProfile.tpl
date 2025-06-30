@@ -13,7 +13,7 @@
         <h1>{$title}</h1>
 
         <!-- Display user information -->
-        <div>
+        <div class="lenbinde">
             <h2>User Information</h2>
             <p><strong>First Name:</strong> {$me[0].first_name}</p>
             <p><strong>Last Name:</strong> {$me[0].last_name}</p>
@@ -33,4 +33,5 @@
     </main>
     {include file="footer.tpl"}
 </body>
+{include file="footer.tpl"}
 </html>
