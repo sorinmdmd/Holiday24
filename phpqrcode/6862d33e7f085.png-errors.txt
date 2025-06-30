@@ -1,0 +1,12 @@
+2025-06-30 18:11:10: <br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>62</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>71</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>53</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on int in <b>/Users/dennismac/Documents/Projects/reisebüro24/Holiday24/phpqrcode/qrsplit.php</b> on line <b>62</b><br />
