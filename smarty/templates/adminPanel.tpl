@@ -134,6 +134,6 @@
         </div>
     </div>
     {/if}
-
+    {include file="footer.tpl"}
 </body>
 </html>

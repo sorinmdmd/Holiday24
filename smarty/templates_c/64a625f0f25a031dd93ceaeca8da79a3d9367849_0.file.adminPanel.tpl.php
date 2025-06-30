@@ -1,28 +1,29 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:53
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/adminPanel.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:45:03
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7b11dd4d9_63109779',
+  'unifunc' => 'content_6862cd1fa8cb42_18414590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '9dc9ad2a5f5e913cdc156bbd0dd1ceb62ce808af' => 
+    '64a625f0f25a031dd93ceaeca8da79a3d9367849' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1751303970,
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/adminPanel.tpl',
+      1 => 1751305426,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:headerAdmin.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6862c7b11dd4d9_63109779 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_6862cd1fa8cb42_18414590 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24_test/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <html lang="de">
 <head>
@@ -206,7 +207,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
     <?php }?>
-
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }

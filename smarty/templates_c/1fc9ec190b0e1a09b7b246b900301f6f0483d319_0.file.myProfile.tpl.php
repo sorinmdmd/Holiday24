@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:35:52
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/myProfile.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:46:13
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/myProfile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862caf88f4654_69722756',
+  'unifunc' => 'content_6862cd655e7c45_43075374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5f7f9b89394bbd9f142da9830a4801cc5b0b666c' => 
+    '1fc9ec190b0e1a09b7b246b900301f6f0483d319' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/myProfile.tpl',
-      1 => 1751303970,
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/myProfile.tpl',
+      1 => 1751305468,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6862caf88f4654_69722756 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6862cd655e7c45_43075374 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -61,6 +62,8 @@ function content_6862caf88f4654_69722756 (Smarty_Internal_Template $_smarty_tpl)
             <!-- Add more fields as needed -->
         </div>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }

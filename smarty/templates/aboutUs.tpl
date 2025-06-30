@@ -17,5 +17,6 @@
             <p>Join us on this journey and let us help you create memories that will last a lifetime. Your adventure awaits!</p>
         </section>
     </main>
+    {include file="footer.tpl"}
 </body>
 </html>

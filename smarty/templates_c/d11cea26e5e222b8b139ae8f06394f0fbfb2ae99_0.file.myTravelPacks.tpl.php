@@ -1,28 +1,29 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:35:50
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/myTravelPacks.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:46:16
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862caf63ac203_77367615',
+  'unifunc' => 'content_6862cd68109bb1_42387751',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd817e92aaa92240f9aed37066e22e80a1702d5ab' => 
+    'd11cea26e5e222b8b139ae8f06394f0fbfb2ae99' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/myTravelPacks.tpl',
-      1 => 1751303970,
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/myTravelPacks.tpl',
+      1 => 1751305473,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6862caf63ac203_77367615 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_6862cd68109bb1_42387751 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24_test/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -90,6 +91,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </section>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html><?php }
 }

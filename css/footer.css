@@ -1,0 +1,24 @@
+.footer {
+   background-color: #19415f;
+   text-align: center;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   padding: 10px 0;
+}
+
+.footer footer {
+   margin: 0;
+}
+
+.footer p {
+   margin: 0;
+   color: var(--text-color);
+}
+
+/* Add bottom padding to body to prevent content from being hidden behind sticky footer */
+body {
+   padding-bottom: 60px; /* Adjust based on footer height */
+}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:37
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/ourOffers.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:44:51
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7a1444fc4_71607833',
+  'unifunc' => 'content_6862cd138b8f31_97847471',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ae3345dddbb2f72e238acffca5087339307eeb04' => 
+    '2e70e800709dcafec223dcd19ce274f49b0697fd' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/ourOffers.tpl',
-      1 => 1751303970,
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/ourOffers.tpl',
+      1 => 1751305480,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:headerAdmin.tpl' => 1,
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6862c7a1444fc4_71607833 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+function content_6862cd138b8f31_97847471 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24_test/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -176,7 +177,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <?php echo '</script'; ?>
 >
     <?php }?>
-
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }

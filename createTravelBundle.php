@@ -8,7 +8,6 @@ require_once 'classes/includes/Travel.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
 
-
 $link = DbFunctions::connectWithDatabase();
 
 $title = "Create Travel Bundle";
@@ -23,21 +22,23 @@ $smarty->assign('today', date("Y-m-d"));
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hotel_name = $_POST['hotel_name'];
-    $country = $_POST['country'];
-    $hotel_address = $_POST['hotel_address'];
-    $city = $_POST['city'];
-    $available_spaces = $_POST['available_spaces'];
-    $price = $_POST['price'];
+    // Basic input validation
+    $hotel_name = trim($_POST['hotel_name']);
+    $country = trim($_POST['country']);
+    $hotel_address = trim($_POST['hotel_address']);
+    $city = trim($_POST['city']);
+    $available_spaces = (int) $_POST['available_spaces'];
+    $price = (float) $_POST['price'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
-    $img_path = $_POST['img_path']; // assuming this is a string URL
+    $img_path = trim($_POST['img_path']); // assuming this is a string URL
 
     // Save hotel, get hotelid
-    $hotelid = Travel::createHotel($link, $hotel_name, $hotel_address);
+    $hotelid = Travel::createHotel($link, $hotel_name, $hotel_address, $city, $country);
 
     if ($hotelid) {
-        $success = Travel::createTravelBundle($link, $hotelid, $city, $available_spaces, $price, $start_date, $end_date, $img_path,$country);
+        // Correct parameter order and count
+        $success = Travel::createTravelBundle($link, $hotelid, $available_spaces, $price, $start_date, $end_date, $img_path);
         if ($success) {
             echo "Travel bundle successfully created!";
         } else {

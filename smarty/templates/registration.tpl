@@ -39,5 +39,6 @@
             <p style="color: red;">{$errorMessage}</p>
         {/if}
     </main>
+    {include file="footer.tpl"}
 </body>
 </html>
