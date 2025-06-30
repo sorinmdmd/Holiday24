@@ -26,6 +26,7 @@
             <button type="submit" name="action" value="resend_email">Resend Verification Email</button>
         </form>
     </main>
+    {include file="footer.tpl"}
 </body>
 {include file="footer.tpl"}
 </html>

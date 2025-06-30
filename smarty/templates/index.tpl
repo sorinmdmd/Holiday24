@@ -31,6 +31,7 @@
     {else}
         <p>{$ausgabeText}</p>
     {/if}
+    {include file="footer.tpl"}
 </body>
 {include file="footer.tpl"}
 

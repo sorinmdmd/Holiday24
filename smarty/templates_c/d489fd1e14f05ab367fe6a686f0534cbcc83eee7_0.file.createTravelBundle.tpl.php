@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:22:49
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/createTravelBundle.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:45:52
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/createTravelBundle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7e936d478_50564798',
+  'unifunc' => 'content_6862cd50203561_96611448',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ab9d79b7ad4fabec9c40aad6bc06e55bc4fdeae5' => 
+    'd489fd1e14f05ab367fe6a686f0534cbcc83eee7' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/createTravelBundle.tpl',
-      1 => 1751303970,
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/createTravelBundle.tpl',
+      1 => 1751305432,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:headerAdmin.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6862c7e936d478_50564798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6862cd50203561_96611448 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -97,6 +98,8 @@ function content_6862c7e936d478_50564798 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </form>
 </div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }

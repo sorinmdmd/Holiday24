@@ -31,6 +31,7 @@
             <!-- Add more fields as needed -->
         </div>
     </main>
+    {include file="footer.tpl"}
 </body>
 {include file="footer.tpl"}
 </html>

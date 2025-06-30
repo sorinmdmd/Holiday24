@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:33
-  from '/var/www/html/iksy05/Holiday24/smarty/templates/header.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 17:39:25
+  from '/var/www/html/iksy05/Holiday24_test/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c79de10821_14180889',
+  'unifunc' => 'content_6862cbcdf028b2_69581211',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0376c7198ca08518e8b98884a5ea1adce60218e0' => 
+    '7cc8630987f6dbefdc41d915a2e74f0d9c77e0ce' => 
     array (
-      0 => '/var/www/html/iksy05/Holiday24/smarty/templates/header.tpl',
+      0 => '/var/www/html/iksy05/Holiday24_test/smarty/templates/header.tpl',
       1 => 1751303970,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6862c79de10821_14180889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6862cbcdf028b2_69581211 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>

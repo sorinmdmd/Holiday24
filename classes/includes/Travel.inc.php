@@ -9,9 +9,20 @@ class Travel
                     from month";
         return DbFunctions::getHash($link, $query);
     }
+
+    public static function getFutureTravelbundles($link)
+    {
+        $query = "SELECT t.id, t.available_spaces, t.price, t.hotelid, t.img_path, 
+                            t.start_date, t.end_date, h.country, h.city, h.name as hotel_name
+                FROM travelbundle t
+                LEFT JOIN hotel h ON t.hotelid = h.id
+                WHERE t.start_date > NOW()"; // Only future bundles
+                
+        return DbFunctions::getRows($link, $query);
+    }
     public static function getTravelbundles($link)
     {
-        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
+        $query = "SELECT t.id, h.country, h.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
                         t.start_date, t.end_date, h.name as hotel_name
                       FROM travelbundle t
                       LEFT JOIN hotel h ON t.hotelid = h.id";
@@ -33,7 +44,7 @@ class Travel
     public static function getFilteredTravelbundles($link, $country = null, $month = null, $travelers = null)
     {
         // Eingabeparameter mit = null initialisieren, damit sie ignoriert werden können, falls der User nichts auswählt
-        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path,
+        $query = "SELECT t.id, h.country, h.city, t.available_spaces, t.price, t.hotelid, t.img_path,
                          h.name as hotel_name, t.start_date, t.end_date
                   FROM travelbundle t
                   LEFT JOIN hotel h ON t.hotelid = h.id
@@ -44,7 +55,7 @@ class Travel
         // Parameter werden mit mysqli_stmt_bind_param() gebündelt, um SQLInjections zu vermeiden
         // Werte werden getrennt vom SQL-Statement verarbeitet
         if ($country) {
-            $query .= " AND t.country LIKE ?";
+            $query .= " AND h.country LIKE ?";
             $params[] = "%$country%";
             $types .= "s";
         }
@@ -76,7 +87,7 @@ class Travel
     public static function getBookingsForUser($link, $user_id)
     {
 
-        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
+        $query = "SELECT t.id, h.country, h.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
                         t.start_date, t.end_date, h.name as hotel_name, b.booked_slots
                       FROM booking b
                       INNER JOIN travelbundle t
@@ -172,7 +183,7 @@ class Travel
 
     public static function getTravelBundleById($link, $id)
     {
-        $query = "SELECT t.id, t.country, t.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
+        $query = "SELECT t.id, h.country, h.city, t.available_spaces, t.price, t.hotelid, t.img_path, 
                         t.start_date, t.end_date, h.name as hotel_name
                       FROM travelbundle t
                       LEFT JOIN hotel h ON t.hotelid = h.id
@@ -204,32 +215,31 @@ class Travel
         return mysqli_stmt_execute($stmt);
     }
 
-    public static function createTravelBundle($link, $hotelid, $city, $spaces, $price, $start, $end, $img_path, $country)
+    public static function createTravelBundle($link, $hotelid, $spaces, $price, $start, $end, $img_path)
     {
         $id = random_int(10000000, 99999999);
 
-
-        $sql = "INSERT INTO travelbundle (id,hotelid,country, city, available_spaces, price, start_date, end_date, img_path)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+        $sql = "INSERT INTO travelbundle (id, hotelid, available_spaces, price, start_date, end_date, img_path)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($link, $sql);
         if (!$stmt)
             return false;
 
-        mysqli_stmt_bind_param($stmt, 'iissidsss', $id, $hotelid, $country, $city, $spaces, $price, $start, $end, $img_path);
+        mysqli_stmt_bind_param($stmt, 'iiidsss', $id, $hotelid, $spaces, $price, $start, $end, $img_path);
         return mysqli_stmt_execute($stmt);
     }
 
-    public static function createHotel($link, $name, $adress)
+    public static function createHotel($link, $name, $adress, $city, $country)
     {
         // Generate a random hotel ID (e.g. 8-digit number)
         $hotelId = random_int(10000000, 99999999);
 
-        $sql = "INSERT INTO hotel (id, name, adress) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO hotel (id, name, adress, city, country) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($link, $sql);
         if (!$stmt)
             return false;
 
-        mysqli_stmt_bind_param($stmt, 'iss', $hotelId, $name, $adress);
+        mysqli_stmt_bind_param($stmt, 'issss', $hotelId, $name, $adress, $city, $country);
         if (!mysqli_stmt_execute($stmt))
             return false;
 
