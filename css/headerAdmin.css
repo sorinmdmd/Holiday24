@@ -1,5 +1,10 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 nav {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-admin);
     border-bottom: 1px solid black;
 }
 nav ul {
