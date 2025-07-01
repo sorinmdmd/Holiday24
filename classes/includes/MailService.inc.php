@@ -33,23 +33,6 @@ class MailService
         $this->mail->setFrom('iksy2@gmx.de', 'Holiday24');
     }
 
-    public function sendVerificationEmail($toEmail, $verificationCode)
-    {
-        try {
-            $this->mail->clearAllRecipients();
-            $this->mail->addAddress($toEmail);
-            $this->mail->Subject = 'Verify Your Account';
-            $this->mail->Body = "Your verification code is: {$verificationCode}";
-
-            if (!$this->mail->send()) {
-                return false;
-            }
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
-
      public function sendBookingConfirmation($toEmail, $travelbundles, $booked_slots, $book_bundle_id) {
     try {
         $this->mail->clearAllRecipients();
