@@ -80,6 +80,7 @@ class DbFunctions
 		mysqli_free_result($result);
 		return ($row[0]);
 	}
+	
 	public static function deleteUser($link, $userId)
 	{
 		$userId = mysqli_real_escape_string($link, $userId);
