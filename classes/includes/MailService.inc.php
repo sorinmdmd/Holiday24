@@ -65,23 +65,23 @@ class MailService
                 }
             }
 
-            if ($bookedTravelBundle && !empty($booked_slots)) {
-                $numTravelers = is_array($booked_slots) && isset($booked_slots[0]['booked_slots']) ? $booked_slots[0]['booked_slots'] : (is_int($booked_slots) ? $booked_slots : 'some');
-                $country = $bookedTravelBundle['country'] ?? 'unknown country';
-                $city = $bookedTravelBundle['city'] ?? 'unknown city';
-                $formattedBody = "<html><body>";
-                $formattedBody .= "<p>Dear customer,</p>";
-                $formattedBody .= "<p>Your booking for {$numTravelers} person(s) to {$country}, {$city} has been confirmed.</p>";
-                $formattedBody .= "<p>Thank you for your booking!</p>";
-                $formattedBody .= "<p>Sincerely,<br>Your Travel Team</p>";
-                $formattedBody .= "</body></html>";
+        if ($bookedTravelBundle && !empty($booked_slots)) {
+            $numTravelers = is_array($booked_slots) && isset($booked_slots[0]['booked_slots']) ? $booked_slots[0]['booked_slots'] : (is_int($booked_slots) ? $booked_slots : 'some');
+            $country = $bookedTravelBundle['country'] ?? 'unknown country';
+            $city = $bookedTravelBundle['city'] ?? 'unknown city';
+            $formattedBody = "<html><body>";
+            $formattedBody .= "<p>Dear customer,</p>";
+            $formattedBody .= "<p>Your booking for {$numTravelers} person(s) to {$country}, {$city} has been confirmed.</p>";
+            $formattedBody .= "<p>Thank you for your booking!</p>";
+            $formattedBody .= "<p>Sincerely,<br>Your Travel Team</p>";
+            $formattedBody .= "</body></html>";
 
-                $this->mail->Body = $formattedBody;
-                $this->mail->addAttachment($file, 'booking_qr.png');
+            $this->mail->Body = $formattedBody;
+            $this->mail->addAttachment($file, 'booking_qr.png');
 
-            } else {
-                $this->mail->Body = "Your booking has been confirmed."; // Fallback message
-            }
+        } else {
+            $this->mail->Body = "Your booking has been confirmed."; // Fallback message
+        }
 
             if (!$this->mail->send()) {
                 return false;
