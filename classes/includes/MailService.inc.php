@@ -1,8 +1,8 @@
 <?php
-/**
+/** 
  * Diese Klasse stellt E-Mail-Funktionalitäten für das Holiday24 Reisebüro bereit.
  * Sie verwendet PHPMailer für den sicheren Versand von E-Mails über SMTP.
- *
+ * 
  * Funktionalitäten:
  * - Account-Verifizierungs-E-Mails
  * - Buchungsbestätigungs-E-Mails
@@ -39,10 +39,7 @@ class MailService
             $this->mail->clearAllRecipients();
             $this->mail->addAddress($toEmail);
             $this->mail->Subject = 'Verify Your Account';
-            // Conflict resolved: Kept the <b> tag for bold text as it's a good practice for HTML emails.
-            $this->mail->Body = "Your verification code is: <b>{$verificationCode}</b>";
-            // Conflict resolved: Ensure HTML is enabled for the verification email as well, for consistency with booking confirmation.
-            $this->mail->isHTML(true);
+            $this->mail->Body = "Your verification code is: {$verificationCode}";
 
             if (!$this->mail->send()) {
                 return false;
@@ -83,22 +80,12 @@ class MailService
                 $numTravelers = is_array($booked_slots) && isset($booked_slots[0]['booked_slots']) ? $booked_slots[0]['booked_slots'] : (is_int($booked_slots) ? $booked_slots : 'some');
                 $country = $bookedTravelBundle['country'] ?? 'unknown country';
                 $city = $bookedTravelBundle['city'] ?? 'unknown city';
-                // Conflict resolved: Adopted the calculation for price and the more detailed HTML body from 'adjustments'.
-                $price = ($bookedTravelBundle['price'] * $booked_slots) ?? 'unknown price';
                 $formattedBody = "<html><body>";
                 $formattedBody .= "<p>Dear customer,</p>";
-                $formattedBody .= "<p>Your booking for <b>{$numTravelers} person(s)</b> to <b>{$city}, {$country}</b> has been confirmed.</p>";
-                $formattedBody .= "<p>Please transfer <b>€{$price}</b> to the following account in the next 14 days to guarantee your slot:</p>";
-                $formattedBody .= "<p><b>Kontoinhaber:</b> Holiday24 AG</p>";
-                $formattedBody .= "<p><b>IBAN:</b> xxxx xxxx xxxx xxxx</p>";
-                $formattedBody .= "<p>Use the QR-Code attached to this email to checkin at your hotel upon arrival.</p>";
+                $formattedBody .= "<p>Your booking for {$numTravelers} person(s) to {$country}, {$city} has been confirmed.</p>";
                 $formattedBody .= "<p>Thank you for your booking!</p>";
                 $formattedBody .= "<p>Sincerely,<br>Your Travel Team</p>";
                 $formattedBody .= "</body></html>";
-
-                // Conflict resolved: Included CharSet and Encoding from 'adjustments' for better email compatibility.
-                $this->mail->CharSet = 'UTF-8';
-                $this->mail->Encoding = 'base64';
 
                 $this->mail->Body = $formattedBody;
                 $this->mail->addAttachment($file, 'booking_qr.png');
@@ -123,8 +110,6 @@ class MailService
             $this->mail->addAddress($toEmail);
             $this->mail->Subject = 'Your booking has been cancelled';
             $this->mail->Body = "Your trip has been cancelled";
-            // Ensure HTML is enabled for the cancellation email as well, for consistency.
-            $this->mail->isHTML(true);
 
             if (!$this->mail->send()) {
                 return false;
