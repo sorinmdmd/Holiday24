@@ -28,7 +28,7 @@ $link = DbFunctions::connectWithDatabase();
 $title = "Admin Panel";
 $smarty->assign('title', htmlentities($title));
 
-$users = Travel::getUserDetails($link);
+$users = Customer::getUserDetails($link);
 
 $travelbundles = Travel::getTravelbundles($link);
 $smarty->assign('travelbundles', $travelbundles);

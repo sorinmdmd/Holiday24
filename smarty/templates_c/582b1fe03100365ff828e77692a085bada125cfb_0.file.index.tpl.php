@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:33
+/* Smarty version 4.2.0, created on 2025-07-01 09:23:43
   from '/var/www/html/iksy05/Holiday24/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c79de07dd8_76002975',
+  'unifunc' => 'content_6863a91f840f78_81286951',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '582b1fe03100365ff828e77692a085bada125cfb' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/index.tpl',
-      1 => 1751303970,
+      1 => 1751361813,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:header.tpl' => 1,
     'file:aboutUs.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6862c79de07dd8_76002975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863a91f840f78_81286951 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +38,7 @@ function content_6862c79de07dd8_76002975 (Smarty_Internal_Template $_smarty_tpl)
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-    <!-- Layered image section -->
+    <!-- Einzelne Bilder, die übereinander dargestellt werden -->
     <section class="home">
         <img src="images/layer1.png" class="img layer1" alt="Layer 1">
         <img src="images/layer2.png" class="img layer2" alt="Layer 2">
@@ -46,7 +46,7 @@ function content_6862c79de07dd8_76002975 (Smarty_Internal_Template $_smarty_tpl)
         <h1>Your Journey Starts Here ✈️</h1>
     </section>
 
-    <!-- About us section inside a form -->
+    <!-- Einbindung der aboutUs.tpl in index und CSRF Schutz -->
     <?php if ((isset($_smarty_tpl->tpl_vars['PHP_SELF']->value))) {?>
     <form action="<?php echo $_smarty_tpl->tpl_vars['PHP_SELF']->value;?>
 " method="post">
@@ -63,7 +63,12 @@ function content_6862c79de07dd8_76002975 (Smarty_Internal_Template $_smarty_tpl)
         <p><?php echo $_smarty_tpl->tpl_vars['ausgabeText']->value;?>
 </p>
     <?php }?>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
+
 </html>
 <?php }
 }

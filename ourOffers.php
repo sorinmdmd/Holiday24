@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_SESSION['user_id']) && isset($_POST['book_bundle_id']) && isset($_POST['slots'])) {
         // Benutzerdate holen
-        $me = Travel::getUserById($link, $_SESSION['user_id']);
+        $me = Customer::getUserById($link, $_SESSION['user_id']);
         if ($me[0]['verified'] != 1) {
             $smarty->assign('account_not_verified', true);
         } else {

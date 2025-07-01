@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --primary-color-admin: #0D0210;
+    --hover-color-admin: #003B00;
+    --accent-color-admin: #008F11;
+    --text-color-admin: #00FF41;
+    --primary-gradient-admin: linear-gradient(#0D0230);
+}
+
 header {
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color: var(--primary-color-admin);
+    backdrop-filter: none; /* just in case */
+    -webkit-backdrop-filter: none;
 }
+
+
 nav {
     background-color: var(--primary-color-admin);
     border-bottom: 1px solid black;

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:37
+/* Smarty version 4.2.0, created on 2025-07-01 09:34:21
   from '/var/www/html/iksy05/Holiday24/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7a1444fc4_71607833',
+  'unifunc' => 'content_6863ab9d9dfee7_19941751',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ae3345dddbb2f72e238acffca5087339307eeb04' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/ourOffers.tpl',
-      1 => 1751303970,
+      1 => 1751362457,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:headerAdmin.tpl' => 1,
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6862c7a1444fc4_71607833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863ab9d9dfee7_19941751 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -176,8 +177,26 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <?php echo '</script'; ?>
 >
     <?php }?>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+    <!-- Auto-update free slots after booking -->
+    <?php echo '<script'; ?>
+>
+    document.querySelectorAll('.inline-booking-form').forEach(form => {
+        form.addEventListener('submit', function () {
+            // Delay a reload to give PHP time to process
+            setTimeout(() => {
+                window.location.reload();
+            }, 300); 
+        });
+    });
+    <?php echo '</script'; ?>
+>
 
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }

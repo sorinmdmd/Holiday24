@@ -2,9 +2,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title}</title>
-    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
     <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
+    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
+
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
@@ -134,6 +135,5 @@
         </div>
     </div>
     {/if}
-    {include file="footer.tpl"}
 </body>
 </html>

@@ -18,7 +18,7 @@ html {
 body {
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--primary-gradient-admin);
+    background: var(--primary-gradient-admin) !important;
 }
 main {
     padding: min(5em, 7%);

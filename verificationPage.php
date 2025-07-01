@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$me = Travel::getUserById($link, $_SESSION['user_id']);
+$me = Customer::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
 /*
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Check if the entered code matches the session code
         if (isset($_SESSION['verification_code']) && $enteredCode == $_SESSION['verification_code']) {
-            Travel::verifyUser($link, $_SESSION['user_id']);
+            Customer::verifyUser($link, $_SESSION['user_id']);
             unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
 
             if($_SESSION['isPwReset']){

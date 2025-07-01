@@ -28,18 +28,6 @@ class Travel
                       LEFT JOIN hotel h ON t.hotelid = h.id";
         return DbFunctions::getRows($link, $query);
     }
-    public static function getUserDetails($link)
-    {
-        $query = "SELECT *
-                      FROM customer";
-        return DbFunctions::getRows($link, $query);
-    }
-
-    public static function getUserById($link, $userId)
-    {
-        $query = "SELECT * FROM customer WHERE id = '" . mysqli_real_escape_string($link, $userId) . "'";
-        return DbFunctions::getRows($link, $query);
-    }
 
     public static function getFilteredTravelbundles($link, $country = null, $month = null, $travelers = null)
     {
@@ -244,21 +232,6 @@ class Travel
             return false;
 
         return $hotelId; // Return the random hotel ID
-    }
-
-    public static function verifyUser($link, $userid)
-    {
-        $query = "UPDATE customer SET verified = 1 WHERE id = ?";
-
-        $stmt = $link->prepare($query);
-
-        if ($stmt) {
-            $stmt->bind_param("s", $userid);
-            $stmt->execute();
-            $stmt->close();
-        } else {
-            error_log("Error preparing statement: " . $link->error);
-        }
     }
 
 }

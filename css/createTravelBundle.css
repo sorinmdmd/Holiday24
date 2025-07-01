@@ -82,3 +82,18 @@ button[type="submit"]:hover,
   min-height: 100vh;
   padding: 20px;
 }
+
+body, html {
+  background: var(--primary-gradient-admin) !important;
+  color: var(--text-color-admin) !important;
+}
+
+form, .form-container {
+  background: transparent !important;
+  color: var(--text-color-admin) !important;
+}
+
+h1, label, input, button {
+  color: var(--text-color-admin) !important;
+}
+

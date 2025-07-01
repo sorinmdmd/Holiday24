@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{$title}</title>
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/createTravelBundle.css">
 
 </head>

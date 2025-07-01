@@ -27,7 +27,7 @@ class Customer
 	 * - Sichere Passwort-Verifikation mit password_verify()
 	 * - Detailliertes Error-Logging für Debugging
 	 */
-	public static function verifyUser($link, $email, $password)
+	public static function verifyUserLogin($link, $email, $password)
 	{
 		// Entfernen von Leerzeichen am Anfang und Ende des Passworts
 		$password = trim($password);
@@ -63,6 +63,21 @@ class Customer
 		// Standardrückgabe bei Fehler
 		return false;
 	}
+
+	public static function verifyUser($link, $userid)
+    {
+        $query = "UPDATE customer SET verified = 1 WHERE id = ?";
+    
+        $stmt = $link->prepare($query);
+    
+        if ($stmt) {
+            $stmt->bind_param("s", $userid); 
+            $stmt->execute();
+            $stmt->close();
+        } else {
+            error_log("Error preparing statement: " . $link->error);
+        }
+    }    
 
 
 	/**
@@ -176,6 +191,19 @@ class Customer
 		// Kein Benutzer gefunden
 		return null;
 	}
+
+	public static function getUserById($link, $userId)
+    {
+        $query = "SELECT * FROM customer WHERE id = '" . mysqli_real_escape_string($link, $userId) . "'";
+        return DbFunctions::getRows($link, $query);
+    }
+
+	public static function getUserDetails($link)
+    {
+        $query = "SELECT *
+                      FROM customer";
+        return DbFunctions::getRows($link, $query);
+    }
 
 	// Löscht einen Benutzer aus der Datenbank
 	public static function deleteUser($link, $userId)

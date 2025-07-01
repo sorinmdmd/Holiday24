@@ -109,6 +109,19 @@
         </script>
     {/if}
     {include file="footer.tpl"}
+
+    <!-- Auto-update free slots after booking -->
+    <script>
+    document.querySelectorAll('.inline-booking-form').forEach(form => {
+        form.addEventListener('submit', function () {
+            // Delay a reload to give PHP time to process
+            setTimeout(() => {
+                window.location.reload();
+            }, 300); 
+        });
+    });
+    </script>
+
 </body>
 {include file="footer.tpl"}
 </html>

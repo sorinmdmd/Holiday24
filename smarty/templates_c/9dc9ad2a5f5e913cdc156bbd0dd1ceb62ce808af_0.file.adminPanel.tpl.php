@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:21:53
+/* Smarty version 4.2.0, created on 2025-07-01 09:45:49
   from '/var/www/html/iksy05/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7b11dd4d9_63109779',
+  'unifunc' => 'content_6863ae4db53a71_57029440',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9dc9ad2a5f5e913cdc156bbd0dd1ceb62ce808af' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1751303970,
+      1 => 1751363147,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_6862c7b11dd4d9_63109779 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863ae4db53a71_57029440 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <html lang="de">
@@ -29,9 +29,10 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
     <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
+    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
+
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
@@ -206,7 +207,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
     <?php }?>
-
 </body>
 </html>
 <?php }

@@ -15,50 +15,6 @@ class DbFunctions
 		return mysqli_query($link, $query);
 	}
 
-	public static function verifyUser($link, $email, $password)
-	{
-		$password = trim($password);
-		$email = mysqli_real_escape_string($link, $email);
-		$query = "SELECT id, role, password_hash FROM customer WHERE email = '$email'";
-		$result = self::executeQuery($link, $query);
-
-		if ($result && mysqli_num_rows($result) > 0) {
-			$user = mysqli_fetch_assoc($result);
-			if (password_verify($password, $user['password_hash'])) {
-				echo "Password is valid!";
-				return $user;
-			} else {
-				echo "Input password: " . $password;
-				echo "Stored hash: " . $user['password_hash'];
-				echo "Password verification failed.";
-				$hash = '$2y$10$K8YeRKzxUh.1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJK';
-				$password = 'admin';
-
-				if (password_verify($password, $hash)) {
-					echo "Password is valid!";
-				} else {
-					echo "Password is invalid.";
-				}
-				$hashedPassword = password_hash("customer", PASSWORD_BCRYPT);
-				echo $hashedPassword;
-			}
-		} else {
-			echo "<script>console.log('No user found with the provided email');</script>";
-		}
-		return false;
-	}
-
-	public static function registerUser($link, $firstName, $lastName, $email, $password)
-	{
-		$id = self::generateID();
-
-		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
-		$query = "INSERT INTO customer (id, first_name, last_name, email, password_hash, role) VALUES (?, ?, ?, ?, ?, 'customer')";
-		$stmt = mysqli_prepare($link, $query);
-		mysqli_stmt_bind_param($stmt, 'sssss', $id, $firstName, $lastName, $email, $passwordHash);
-
-		return mysqli_stmt_execute($stmt);
-	}
 	public static function emailExists($link, $email): bool
 	{
 		$query = "SELECT 1 FROM customer WHERE email = ? LIMIT 1";
@@ -113,17 +69,17 @@ class DbFunctions
 		return $rows;
 	}
 
-	public static function getUserId($link)
+
+	public static function getFirstFieldOfResult($link, $query)
 	{
-		$query = "SELECT id FROM customer";
 		$result = self::executeQuery($link, $query);
-
-		if ($row = mysqli_fetch_assoc($result)) {
-			return $row['id'];
+		if (mysqli_num_rows($result) == 0) {
+			return null;
 		}
-		return null;
+		$row = mysqli_fetch_row($result);
+		mysqli_free_result($result);
+		return ($row[0]);
 	}
-
 	public static function deleteUser($link, $userId)
 	{
 		$userId = mysqli_real_escape_string($link, $userId);
@@ -188,27 +144,6 @@ class DbFunctions
 
 
 
-	public static function getFirstFieldOfResult($link, $query)
-	{
-		$result = self::executeQuery($link, $query);
-		if (mysqli_num_rows($result) == 0) {
-			return null;
-		}
-		$row = mysqli_fetch_row($result);
-		mysqli_free_result($result);
-		return ($row[0]);
-	}
-	public static function createTravelBundle($link, $hotelid, $city, $spaces, $price, $start, $end, $img_path)
-	{
-		$sql = "INSERT INTO travelbundles (hotelid, city, available_spaces, price, start_date, end_date, img_path)
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
-		$stmt = mysqli_prepare($link, $sql);
-		if (!$stmt)
-			return false;
-
-		mysqli_stmt_bind_param($stmt, 'isidsss', $hotelid, $city, $spaces, $price, $start, $end, $img_path);
-		return mysqli_stmt_execute($stmt);
-	}
 
 }
 ?>

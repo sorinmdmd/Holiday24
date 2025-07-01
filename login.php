@@ -33,7 +33,7 @@ if ($REQUEST_METHOD == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $user = Customer::verifyUser($link, $email, $password);
+    $user = Customer::verifyUserLogin($link, $email, $password);
     
     if ($user) {
         $_SESSION['user_id'] = $user['id']; // Use 'id' instead of 'CustomerID'
