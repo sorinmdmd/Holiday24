@@ -80,13 +80,20 @@ class MailService
                 $numTravelers = is_array($booked_slots) && isset($booked_slots[0]['booked_slots']) ? $booked_slots[0]['booked_slots'] : (is_int($booked_slots) ? $booked_slots : 'some');
                 $country = $bookedTravelBundle['country'] ?? 'unknown country';
                 $city = $bookedTravelBundle['city'] ?? 'unknown city';
-                $formattedBody = "<html><body>";
+                $price = ($bookedTravelBundle['price'] * $booked_slots) ?? 'unknown price';
+                $formattedBody  = "<html><body>";
                 $formattedBody .= "<p>Dear customer,</p>";
-                $formattedBody .= "<p>Your booking for {$numTravelers} person(s) to {$country}, {$city} has been confirmed.</p>";
+                $formattedBody .= "<p>Your booking for <b>{$numTravelers} person(s)</b> to <b>{$city}, {$country}</b> has been confirmed.</p>";
+                $formattedBody .= "<p>Please transfer <b>€{$price}</b> to the following account in the next 14 days to guarantee your slot:</p>";
+                $formattedBody .= "<p><b>Kontoinhaber:</b> Holiday24 AG</p>";
+                $formattedBody .= "<p><b>IBAN:</b> xxxx xxxx xxxx xxxx</p>";
+                $formattedBody .= "<p>Use the QR-Code attached to this email to check-in at your hotel upon arrival.</p>";
                 $formattedBody .= "<p>Thank you for your booking!</p>";
                 $formattedBody .= "<p>Sincerely,<br>Your Travel Team</p>";
                 $formattedBody .= "</body></html>";
-
+                
+                $this->mail->CharSet = 'UTF-8';
+                $this->mail->Encoding = 'base64';
                 $this->mail->Body = $formattedBody;
                 $this->mail->addAttachment($file, 'booking_qr.png');
 
