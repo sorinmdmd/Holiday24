@@ -13,12 +13,12 @@
 }
 html {
     font-family: Poppins, "Segoe UI", sans-serif;
-    color: var(--text-color);
+    color: var(--text-color-admin);
 }
 body {
     min-height: 100vh;
     min-height: 100dvh;
-    background: var(--primary-gradient);
+    background: var(--primary-gradient-admin);
 }
 main {
     padding: min(5em, 7%);
