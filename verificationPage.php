@@ -26,10 +26,13 @@ if (!isset($_SESSION['user_id'])) {
 $me = Travel::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
+/*
 $smarty->assign('user_id', $_SESSION['user_id']);
 if (isset($_SESSION['user_role'])) {
     $smarty->assign('user_role', $_SESSION['user_role']);
 }
+
+*/
 
 // Generate or refresh code
 $codeExpired = !isset($_SESSION['verification_code_time']) || (time() - $_SESSION['verification_code_time']) > 300;
@@ -41,7 +44,7 @@ if (!isset($_SESSION['verification_code']) || $codeExpired) {
         $mailService = new MailService();
         $mailSent = $mailService->sendVerificationEmail($userEmail, $_SESSION['verification_code']);
         if (!$mailSent) {
-            $smarty->assign('error', 'Verification email could not be sent.');
+            $smarty->assign('error', 'Verification email could not be sent1.');
         }
     } else {
         $smarty->assign('error', 'Email address not found.');
@@ -57,8 +60,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_SESSION['verification_code']) && $enteredCode == $_SESSION['verification_code']) {
             Travel::verifyUser($link, $_SESSION['user_id']);
             unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
-            header("Location: myProfile.php");
-            exit();
+
+            if($_SESSION['isPwReset']){
+
+                header("Location: resetPassword.php");
+                exit();
+
+            } else {
+                header("Location: myProfile.php");
+                exit();
+            }
+        
+            
         } else {
             // Set error only if the code is invalid
             $smarty->assign('error', "Invalid verification code.");
@@ -68,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mailService = new MailService();
             $mailSent = $mailService->sendVerificationEmail($userEmail, $_SESSION['verification_code']);
             if (!$mailSent) {
-                $smarty->assign('error', 'Verification email could not be sent.');
+                $smarty->assign('error', 'Verification email could not be sent2.');
             } else {
                 $smarty->assign('message', 'Verification email has been resent.');
             }
@@ -77,7 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
+else {
+    // Wenn GET: CSRF Token generieren (falls noch nicht vorhanden)
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(64));
+    }
+    $smarty->assign('csrf_token', $_SESSION['csrf_token']);
+}
 $smarty->assign('activePage', 'verificationPage');
 $smarty->display('verificationPage.tpl');
 ?>

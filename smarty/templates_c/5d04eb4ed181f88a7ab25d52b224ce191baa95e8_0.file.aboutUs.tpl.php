@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 10:28:18
-  from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/aboutUs.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 13:32:13
+  from 'D:\D_Uni\6. Semester\IKSY2\IKSY2_Projekt\Erstaz\Holiday24\smarty\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_686266c2f2abd0_65534146',
+  'unifunc' => 'content_686291dd975d37_80491416',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b27d255615a8c07a9512885e1cf543b05153d003' => 
+    '5d04eb4ed181f88a7ab25d52b224ce191baa95e8' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/aboutUs.tpl',
-      1 => 1751279296,
+      0 => 'D:\\D_Uni\\6. Semester\\IKSY2\\IKSY2_Projekt\\Erstaz\\Holiday24\\smarty\\templates\\aboutUs.tpl',
+      1 => 1751290137,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_686266c2f2abd0_65534146 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686291dd975d37_80491416 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

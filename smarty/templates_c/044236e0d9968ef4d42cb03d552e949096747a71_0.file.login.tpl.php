@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 10:28:24
-  from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/login.tpl' */
+/* Smarty version 4.2.0, created on 2025-06-30 13:39:26
+  from 'D:\D_Uni\6. Semester\IKSY2\IKSY2_Projekt\Erstaz\Holiday24\smarty\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_686266c8bb1852_17900540',
+  'unifunc' => 'content_6862938e849ed0_48111245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '421c1dc0330b33cd843d73a02c9357bf673a5cab' => 
+    '044236e0d9968ef4d42cb03d552e949096747a71' => 
     array (
-      0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/login.tpl',
-      1 => 1751279296,
+      0 => 'D:\\D_Uni\\6. Semester\\IKSY2\\IKSY2_Projekt\\Erstaz\\Holiday24\\smarty\\templates\\login.tpl',
+      1 => 1751290763,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_686266c8bb1852_17900540 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6862938e849ed0_48111245 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -43,6 +42,12 @@ function content_686266c8bb1852_17900540 (Smarty_Internal_Template $_smarty_tpl)
             <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fehler']->value;?>
 </p>
         <?php }?>
+
+        <?php if ((isset($_smarty_tpl->tpl_vars['successMessage']->value))) {?>
+            <div style="color: green;"><?php echo $_smarty_tpl->tpl_vars['successMessage']->value;?>
+</div>
+        <?php }?>
+
         <form action="<?php echo $_smarty_tpl->tpl_vars['PHP_SELF']->value;?>
 " method="POST">
             <input type="hidden" name="csrf_token" value="<?php if ((isset($_smarty_tpl->tpl_vars['csrf_token']->value))) {
@@ -62,15 +67,13 @@ echo $_smarty_tpl->tpl_vars['password']->value;
             <button type="submit">Log In</button>
 
             <div class="forgot-password">
-                <a href="passwort_vergessen.php">Forgot password?</a>
+                <a href="forgotPassword.php">Forgot password?</a>
             </div>
         </form>
         <div class="forgot-password">
             <p>Don't have an account? <a href="registration.php">Register here</a></p>
         </div>
     </main>
-    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
 </body>
 </html><?php }
 }
