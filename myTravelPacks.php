@@ -20,7 +20,7 @@ $no_results = false;
 $no_results = false;
 
 // Benutzerdaten holen
-$me = Travel::getUserById($link, $_SESSION['user_id']);
+$me = Customer::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
 if (isset($_SESSION['user_id'])) {

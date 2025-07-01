@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 15:39:43
+/* Smarty version 4.2.0, created on 2025-07-01 10:30:25
   from '/var/www/html/iksy05/Holiday24/smarty/templates/registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_68542f3f062ea8_15019209',
+  'unifunc' => 'content_6863b8c1e8ebb4_28470970',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a2f92845b25f36876e3b02a6e3de9495515973ca' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/registration.tpl',
-      1 => 1750331819,
+      1 => 1751361818,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_68542f3f062ea8_15019209 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863b8c1e8ebb4_28470970 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -79,7 +80,11 @@ echo $_smarty_tpl->tpl_vars['password']->value;
 </p>
         <?php }?>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }

@@ -11,7 +11,7 @@ DEFINE('ENCODING', 'UTF-8');
 $link = DbFunctions::connectWithDatabase();
 $title = "My Profile";
 $smarty->assign('title', htmlentities($title));
-$me = Travel::getUserById($link, $_SESSION['user_id']);
+$me = Customer::getUserById($link, $_SESSION['user_id']);
 
 if (isset($_SESSION['user_id'])) {
     $smarty->assign('user_id', $_SESSION['user_id']);

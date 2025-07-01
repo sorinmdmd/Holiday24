@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 11:30:35
+/* Smarty version 4.2.0, created on 2025-07-01 10:33:53
   from '/var/www/html/iksy05/Holiday24/smarty/templates/verificationPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6853f4db0171e4_95119024',
+  'unifunc' => 'content_6863b991ef0fe9_68620444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8d751ad273617d6ed8fd3834857ce7b46c8c6ea2' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/verificationPage.tpl',
-      1 => 1750331819,
+      1 => 1751361819,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6853f4db0171e4_95119024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863b991ef0fe9_68620444 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -54,7 +55,11 @@ function content_6853f4db0171e4_95119024 (Smarty_Internal_Template $_smarty_tpl)
             <button type="submit" name="action" value="resend_email">Resend Verification Email</button>
         </form>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }

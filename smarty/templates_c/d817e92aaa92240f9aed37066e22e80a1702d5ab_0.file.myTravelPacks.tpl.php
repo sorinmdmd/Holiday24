@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:35:50
+/* Smarty version 4.2.0, created on 2025-07-01 09:26:22
   from '/var/www/html/iksy05/Holiday24/smarty/templates/myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862caf63ac203_77367615',
+  'unifunc' => 'content_6863a9be55ace6_86819509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd817e92aaa92240f9aed37066e22e80a1702d5ab' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/myTravelPacks.tpl',
-      1 => 1751303970,
+      1 => 1751361816,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6862caf63ac203_77367615 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863a9be55ace6_86819509 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -90,6 +91,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </section>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html><?php }
 }

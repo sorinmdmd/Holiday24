@@ -1,35 +1,36 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 17:22:49
+/* Smarty version 4.2.0, created on 2025-07-01 09:59:11
   from '/var/www/html/iksy05/Holiday24/smarty/templates/createTravelBundle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6862c7e936d478_50564798',
+  'unifunc' => 'content_6863b16fd499c8_54007255',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ab9d79b7ad4fabec9c40aad6bc06e55bc4fdeae5' => 
     array (
       0 => '/var/www/html/iksy05/Holiday24/smarty/templates/createTravelBundle.tpl',
-      1 => 1751303970,
+      1 => 1751363945,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:headerAdmin.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6862c7e936d478_50564798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863b16fd499c8_54007255 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="de">
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/createTravelBundle.css">
 
 </head>
@@ -97,7 +98,11 @@ function content_6862c7e936d478_50564798 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </form>
 </div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }
