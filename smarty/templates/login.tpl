@@ -24,6 +24,9 @@
             <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
             
             <button type="submit">Log In</button>
+            <div class="forgot-password">
+        <a href="forgotPassword.php">Forgot password?</a>
+            </div>
         </form>
         <div class="forgot-password">
             <p>Don't have an account? <a href="registration.php">Register here</a></p>

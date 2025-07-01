@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-30 10:28:24
+/* Smarty version 4.2.0, created on 2025-07-01 10:45:09
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_686266c8bb1852_17900540',
+  'unifunc' => 'content_6863bc35465b14_07213242',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '421c1dc0330b33cd843d73a02c9357bf673a5cab' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/login.tpl',
-      1 => 1751279296,
+      1 => 1751366692,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_686266c8bb1852_17900540 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863bc35465b14_07213242 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -60,9 +60,8 @@ echo $_smarty_tpl->tpl_vars['password']->value;
 }?>" required><br>
             
             <button type="submit">Log In</button>
-
             <div class="forgot-password">
-                <a href="passwort_vergessen.php">Forgot password?</a>
+        <a href="forgotPassword.php">Forgot password?</a>
             </div>
         </form>
         <div class="forgot-password">
