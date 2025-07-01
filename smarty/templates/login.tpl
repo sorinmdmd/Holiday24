@@ -20,23 +20,24 @@
         {/if}
 
         <form action="{$PHP_SELF}" method="POST">
-            <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
-            
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
-            
-            <button type="submit">Log In</button>
+    <input type="hidden" name="csrf_token" value="{if isset($csrf_token)}{$csrf_token}{/if}">
+    
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" value="{if isset($email)}{$email}{/if}" required><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="{if isset($password)}{$password}{/if}" required><br>
+    
+    <button type="submit">Log In</button>
 
-            <div class="forgot-password">
-                <a href="forgotPassword.php">Forgot password?</a>
-            </div>
-        </form>
-        <div class="forgot-password">
-            <p>Don't have an account? <a href="registration.php">Register here</a></p>
-        </div>
+    <div class="forgot-password">
+        <a href="forgotPassword.php">Forgot password?</a>
+    </div>
+</form>
+<div class="forgot-password">
+    <p>Don't have an account? <a href="registration.php">Register here</a></p>
+</div>
+
     </main>
 </body>
 </html>

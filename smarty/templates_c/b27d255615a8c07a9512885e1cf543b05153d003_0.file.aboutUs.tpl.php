@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 09:24:53
+/* Smarty version 4.2.0, created on 2025-06-30 10:28:18
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683ebf65f03179_07201983',
+  'unifunc' => 'content_686266c2f2abd0_65534146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b27d255615a8c07a9512885e1cf543b05153d003' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/aboutUs.tpl',
-      1 => 1748942051,
+      1 => 1751279296,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_683ebf65f03179_07201983 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686266c2f2abd0_65534146 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +43,8 @@ function content_683ebf65f03179_07201983 (Smarty_Internal_Template $_smarty_tpl)
             <p>Join us on this journey and let us help you create memories that will last a lifetime. Your adventure awaits!</p>
         </section>
     </main>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </html>
 <?php }

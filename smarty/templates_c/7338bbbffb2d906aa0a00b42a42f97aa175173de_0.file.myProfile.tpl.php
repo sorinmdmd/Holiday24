@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 09:08:31
+/* Smarty version 4.2.0, created on 2025-06-30 10:28:33
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myProfile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683ebb8f5d88d5_03890499',
+  'unifunc' => 'content_686266d1a3ef52_12131280',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7338bbbffb2d906aa0a00b42a42f97aa175173de' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myProfile.tpl',
-      1 => 1748940002,
+      1 => 1751279296,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_683ebb8f5d88d5_03890499 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686266d1a3ef52_12131280 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -40,7 +41,7 @@ function content_683ebb8f5d88d5_03890499 (Smarty_Internal_Template $_smarty_tpl)
 </h1>
 
         <!-- Display user information -->
-        <div>
+        <div class="lenbinde">
             <h2>User Information</h2>
             <p><strong>First Name:</strong> <?php echo $_smarty_tpl->tpl_vars['me']->value[0]['first_name'];?>
 </p>
@@ -62,6 +63,8 @@ function content_683ebb8f5d88d5_03890499 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </main>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </html>
 <?php }
 }

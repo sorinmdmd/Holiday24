@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 09:48:04
+/* Smarty version 4.2.0, created on 2025-06-30 10:28:32
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelPacks.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683ec4d49e4f79_79632130',
+  'unifunc' => 'content_686266d01df9c9_75644461',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f56ef71e311e099aa1c80520492066d57644afe3' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/myTravelPacks.tpl',
-      1 => 1748940002,
+      1 => 1751279296,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_683ec4d49e4f79_79632130 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686266d01df9c9_75644461 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -31,14 +32,13 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/i
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/ouroffers.css">
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
     <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <!-- Main section -->
-
     <main class="content">
         <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
@@ -77,7 +77,7 @@ $_smarty_tpl->tpl_vars['booking']->do_else = false;
 </p>
                         
                         <div class="travel-buttons">
-                            <form method="post" action="mytravelpacks.php"
+                            <form method="post" action="myTravelPacks.php"
                                 onsubmit="return confirm('Are you sure you want to cancel this trip?');">
                                 <input type="hidden" name="travelbundleid" value="<?php echo $_smarty_tpl->tpl_vars['booking']->value['id'];?>
 ">
@@ -92,5 +92,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </section>
     </main>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </html><?php }
 }

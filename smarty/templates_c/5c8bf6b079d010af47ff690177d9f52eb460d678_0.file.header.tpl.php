@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-03 08:56:39
+/* Smarty version 4.2.0, created on 2025-06-30 10:28:18
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_683eb8c749add2_57592372',
+  'unifunc' => 'content_686266c2f12428_20016046',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5c8bf6b079d010af47ff690177d9f52eb460d678' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/header.tpl',
-      1 => 1748940159,
+      1 => 1751279296,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_683eb8c749add2_57592372 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686266c2f12428_20016046 (Smarty_Internal_Template $_smarty_tpl) {
 ?><link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <header>
 <button id="open-sidebar-button" onclick="openSidebar()">
     <img src="images/menu-button.svg" height="40px" width="40px" fill="#FFA725">
 </button>  
+<!--Navigationsbar. Wird auf jeder Seite eingebunden, um die Navigation zu ermöglichen. 
+IF-Bedingungen werden genutzt, um die aktive Seite zu markieren.-->
 <nav id="navbar">
     <ul>
         <li>
@@ -50,7 +52,7 @@ function content_683eb8c749add2_57592372 (Smarty_Internal_Template $_smarty_tpl)
         </li>
     </ul>
 </nav>
-
+<!--Funktion zum schließen der Navbar (nur wenn Fenster <800px)  -->
 <div id="overlay" onclick="closeSidebar()"></div>      
 <?php echo '<script'; ?>
  src="script.js" defer><?php echo '</script'; ?>
