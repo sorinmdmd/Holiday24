@@ -3,13 +3,12 @@
  * Admin Panel - Verwaltungsbereich für Holiday24 Reisebüro
  * 
  * Diese Datei stellt das Admin-Panel für die Holiday24 Anwendung bereit.
- * Administratoren können hier Reisepakete verwalten (erstellen, bearbeiten, löschen)
+ * Administratoren können hier Reisepakete verwalten 
  * und Benutzer verwalten.
  * 
  * Funktionalitäten:
  * - Anzeige aller Reisepakete (Travel Bundles)
  * - Bearbeitung von Reisepaketen (Hotels, Verfügbarkeit, Preise, Daten)
- * - Erstellung neuer Reisepakete
  * - Benutzerverwaltung (Anzeige und Löschung von Benutzern)
  * - Session-basierte Authentifizierung
  */
