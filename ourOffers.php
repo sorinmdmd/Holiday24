@@ -17,7 +17,7 @@ $months = Travel::getMonths($link);
 $smarty->assign('months', $months);
 
 // Standard: alle Travelbundles laden
-$travelbundles = Travel::getTravelbundles($link);
+$travelbundles = Travel::getFutureTravelbundles($link);
 
 // Standard: keine Fehlermeldung
 $no_results = false;
