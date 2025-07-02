@@ -17,6 +17,9 @@ $smarty->assign('title', htmlentities($title));
 $hotels = Travel::getAllHotels($link);
 $smarty->assign('hotels', $hotels);
 
+$smarty->assign('activePage', $activePage ?? '');
+$smarty->assign('user_role', $_SESSION['user_role']);
+
 // Today's date for date picker
 $smarty->assign('today', date("Y-m-d"));
 

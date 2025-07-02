@@ -1,20 +1,47 @@
+<?php
+/* Smarty version 4.2.0, created on 2025-07-02 20:55:03
+  from '/var/www/html/iksy05/Git/Holiday24/smarty/templates/createTravelBundle.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.0',
+  'unifunc' => 'content_68659ca77f7042_60633358',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e454eceae377f18d489fe532e6742e1a21202e2e' => 
+    array (
+      0 => '/var/www/html/iksy05/Git/Holiday24/smarty/templates/createTravelBundle.tpl',
+      1 => 1751489415,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:headerAdmin.tpl' => 1,
+    'file:footer.tpl' => 2,
+  ),
+),false)) {
+function content_68659ca77f7042_60633358 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/iksy05/Git/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+?>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>{$title}</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/createTravelBundle.css">
 
 </head>
 <body>
-    {include file="headerAdmin.tpl"}
+    <?php $_smarty_tpl->_assignInScope('today', smarty_modifier_date_format(time(),"%Y-%m-%d"));?>
+    <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <h1>Create New Travel Bundle</h1>
 
-    {if isset($create_error)}
-        <div class="error-message">{$create_error}</div>
-    {/if}
     <div class="form-container">
     <form method="POST" action="createTravelBundle.php">
     <div class="form-group">
@@ -49,12 +76,14 @@
 
         <div class="form-group">
             <label for="start_date">Start Date:</label>
-            <input type="date" name="start_date" id="start_date" min="{$today}" required>
+            <input type="date" name="start_date" id="start_date" min="<?php echo $_smarty_tpl->tpl_vars['today']->value;?>
+" required>
         </div>
 
         <div class="form-group">
             <label for="end_date">End Date:</label>
-            <input type="date" name="end_date" id="end_date" min="{$today}" required>
+            <input type="date" name="end_date" id="end_date" min="<?php echo $_smarty_tpl->tpl_vars['today']->value;?>
+" required>
         </div>
 
         <div class="form-group">
@@ -68,5 +97,11 @@
         </div>
     </form>
 </div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
+<?php }
+}

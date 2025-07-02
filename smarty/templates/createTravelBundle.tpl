@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    {assign var="today" value=$smarty.now|date_format:"%Y-%m-%d"}
     {include file="headerAdmin.tpl"}
     <h1>Create New Travel Bundle</h1>
 
