@@ -80,7 +80,7 @@ class DbFunctions
 		mysqli_free_result($result);
 		return ($row[0]);
 	}
-	
+
 	public static function deleteUser($link, $userId)
 	{
 		$userId = mysqli_real_escape_string($link, $userId);
@@ -120,19 +120,19 @@ class DbFunctions
 		mysqli_stmt_bind_result($stmt, $user_id);
 
 		if (mysqli_stmt_fetch($stmt)) {
-			return $user_id; 
+			return $user_id;
 		} else {
-			return null; 
+			return null;
 		}
 	}
-		
+
 	public static function updatePassword($link, $email, $password)
 	{
 		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
 		$query = "UPDATE customer SET password_hash = ? WHERE email = ?";
 		$stmt = mysqli_prepare($link, $query);
-		
+
 		if (!$stmt) {
 			echo "Prepare failed: " . mysqli_error($link);
 			return false;
@@ -142,9 +142,5 @@ class DbFunctions
 
 		return mysqli_stmt_execute($stmt);
 	}
-
-
-
-
 }
 ?>

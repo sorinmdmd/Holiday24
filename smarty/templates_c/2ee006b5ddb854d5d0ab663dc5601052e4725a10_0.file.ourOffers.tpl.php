@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 07:42:24
+/* Smarty version 4.2.0, created on 2025-07-02 07:13:05
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/ourOffers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6853bf60ddcfb4_47400124',
+  'unifunc' => 'content_6864dc01172425_64985247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ee006b5ddb854d5d0ab663dc5601052e4725a10' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/ourOffers.tpl',
-      1 => 1750318662,
+      1 => 1751440342,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:headerAdmin.tpl' => 1,
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6853bf60ddcfb4_47400124 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864dc01172425_64985247 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
@@ -48,10 +50,10 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/i
     <div class="search-menu">
         <form method="post" action="ourOffers.php">
             <div class="search-fields">
-                <!-- Destination country -->
+                <!-- Destination country Text-Feld -->
                 <input type="text" id="country" name="i_country" placeholder="Destination country" pattern="/^[a-zÀ-ÿ ,.'-]+$/i">
 
-                <!-- Month of Travel Dropdown -->
+                <!-- Month of Travel Dropdown-Feld -->
                 <select name="month">
                     <option value="" disabled selected>Month of travel</option>
                     <?php
@@ -68,7 +70,7 @@ $_smarty_tpl->tpl_vars['name']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
 
-                <!-- Travelers Dropdown -->
+                <!-- Travelers Dropdown-Feld -->
                 <select name="number_travelers">
                     <option value="" disabled selected>Travelers</option>
                     <option value="1">1</option>
@@ -79,7 +81,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
             </div>
 
-            <!-- Submit Button -->
+            <!-- Submit button for filters -->
             <div class="submit-button">
                 <input type="submit" id="submit_btn" name="Button1" value="Let's go!">
             </div>
@@ -87,7 +89,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <!-- Main section -->
-
     <main class="content">
         <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
@@ -128,7 +129,7 @@ $_smarty_tpl->tpl_vars['bundle']->do_else = false;
                                 <?php if ((isset($_smarty_tpl->tpl_vars['user_id']->value))) {?>
                                     <form method="post" action="ourOffers.php" class="inline-booking-form">
                                         <input type="hidden" name="book_bundle_id" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
-">
+"> <!-- werden nicht angezeigt, müssen trotzdem submited werden -->
                                         <input type="hidden" name="free_slots" value="<?php echo $_smarty_tpl->tpl_vars['bundle']->value['available_spaces'];?>
 ">
                                         <select name="slots" id="slots_<?php echo $_smarty_tpl->tpl_vars['bundle']->value['id'];?>
@@ -155,7 +156,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                                     <a href="login.php" class="book-button">Book</a>
                                 <?php }?>
                             <?php } else { ?>
-                                <span class="soldout-button">Full</span>
+                                <span class="soldout-button">Full</span>  <!-- "Book" wird zu "Soldout" falls available_spaces = 0 -->
                             <?php }?>
                         </div>
 
@@ -176,8 +177,26 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <?php echo '</script'; ?>
 >
     <?php }?>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+    <!-- Auto-update free slots after booking -->
+    <?php echo '<script'; ?>
+>
+    document.querySelectorAll('.inline-booking-form').forEach(form => {
+        form.addEventListener('submit', function () {
+            // Delay a reload to give PHP time to process
+            setTimeout(() => {
+                window.location.reload();
+            }, 300); 
+        });
+    });
+    <?php echo '</script'; ?>
+>
 
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }

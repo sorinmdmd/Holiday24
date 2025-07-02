@@ -17,7 +17,7 @@ class Travel
                 FROM travelbundle t
                 LEFT JOIN hotel h ON t.hotelid = h.id
                 WHERE t.start_date > NOW()"; // Only future bundles
-                
+
         return DbFunctions::getRows($link, $query);
     }
     public static function getTravelbundles($link)

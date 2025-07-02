@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-07-01 10:45:10
+/* Smarty version 4.2.0, created on 2025-07-02 08:00:47
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/forgotPassword.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6863bc36b29224_34449964',
+  'unifunc' => 'content_6864e72f0efdc0_73762609',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b12bb6a174bf1facffa4932b72aa3adcc374cec4' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/forgotPassword.tpl',
-      1 => 1751366577,
+      1 => 1751443190,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6863bc36b29224_34449964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864e72f0efdc0_73762609 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -73,7 +73,7 @@ echo $_smarty_tpl->tpl_vars['csrf_token']->value;
 
     <?php echo '<script'; ?>
 >
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function ()) {
 
             // Wenn das E-Mail-Formular abgeschickt wird, überprüfen wir die E-Mail mit PHP
             document.querySelector('#email-form').addEventListener('submit', function(e) {
@@ -103,7 +103,7 @@ echo $_smarty_tpl->tpl_vars['csrf_token']->value;
                 })
                 .catch(error => console.error('Error:', error));
             });
-
+        }
        
     <?php echo '</script'; ?>
 >

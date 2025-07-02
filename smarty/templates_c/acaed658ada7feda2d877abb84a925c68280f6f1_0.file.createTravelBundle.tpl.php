@@ -1,35 +1,36 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 09:53:13
+/* Smarty version 4.2.0, created on 2025-07-02 07:45:23
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/createTravelBundle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6853de096a2964_68606742',
+  'unifunc' => 'content_6864e3937d7649_22113738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'acaed658ada7feda2d877abb84a925c68280f6f1' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/createTravelBundle.tpl',
-      1 => 1750326784,
+      1 => 1751442311,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:headerAdmin.tpl' => 1,
+    'file:footer.tpl' => 2,
   ),
 ),false)) {
-function content_6853de096a2964_68606742 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864e3937d7649_22113738 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html lang="de">
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
+    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
-    <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
     <link rel="stylesheet" type="text/css" href="css/createTravelBundle.css">
 
 </head>
@@ -38,10 +39,6 @@ function content_6853de096a2964_68606742 (Smarty_Internal_Template $_smarty_tpl)
 ?>
     <h1>Create New Travel Bundle</h1>
 
-    <?php if ((isset($_smarty_tpl->tpl_vars['create_error']->value))) {?>
-        <div class="error-message"><?php echo $_smarty_tpl->tpl_vars['create_error']->value;?>
-</div>
-    <?php }?>
     <div class="form-container">
     <form method="POST" action="createTravelBundle.php">
     <div class="form-group">
@@ -97,7 +94,11 @@ function content_6853de096a2964_68606742 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </form>
 </div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
 </html>
 <?php }
 }

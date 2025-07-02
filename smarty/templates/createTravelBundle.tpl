@@ -12,9 +12,6 @@
     {include file="headerAdmin.tpl"}
     <h1>Create New Travel Bundle</h1>
 
-    {if isset($create_error)}
-        <div class="error-message">{$create_error}</div>
-    {/if}
     <div class="form-container">
     <form method="POST" action="createTravelBundle.php">
     <div class="form-group">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2025-06-19 09:47:31
+/* Smarty version 4.2.0, created on 2025-07-02 07:16:20
   from '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6853dcb39c3416_24674294',
+  'unifunc' => 'content_6864dcc41c6ce0_40780649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e7c4b3ac50efa347943f9bc90ef19dd73a4cb5b' => 
     array (
       0 => '/Users/sorinotel/Documents/iksy2/Holiday24/smarty/templates/adminPanel.tpl',
-      1 => 1750326426,
+      1 => 1751440342,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:headerAdmin.tpl' => 1,
   ),
 ),false)) {
-function content_6853dcb39c3416_24674294 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864dcc41c6ce0_40780649 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/iksy2/Holiday24/classes/smarty/libs/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <html lang="de">
@@ -29,9 +29,10 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Users/sorinotel/Documents/i
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </title>
-    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
     <link rel="stylesheet" type="text/css" href="css/adminPanel.css">
     <link rel="stylesheet" type="text/css" href="css/ourOffers.css">
+    <link rel="stylesheet" type="text/css" href="css/globalAdmin.css">
+
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
@@ -206,7 +207,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
     <?php }?>
-
 </body>
 </html>
 <?php }
