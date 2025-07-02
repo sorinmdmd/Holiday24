@@ -26,13 +26,6 @@ if (!isset($_SESSION['user_id'])) {
 $me = Customer::getUserById($link, $_SESSION['user_id']);
 $userEmail = $me[0]['email'] ?? null;
 
-/*
-$smarty->assign('user_id', $_SESSION['user_id']);
-if (isset($_SESSION['user_role'])) {
-    $smarty->assign('user_role', $_SESSION['user_role']);
-}
-
-*/
 
 // Generate or refresh code
 $codeExpired = !isset($_SESSION['verification_code_time']) || (time() - $_SESSION['verification_code_time']) > 300;
@@ -61,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             Customer::verifyUser($link, $_SESSION['user_id']);
             unset($_SESSION['verification_code'], $_SESSION['verification_code_time']);
 
-            if($_SESSION['isPwReset']){
+            if ($_SESSION['isPwReset']) {
 
                 header("Location: resetPassword.php");
                 exit();
@@ -70,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: myProfile.php");
                 exit();
             }
-        
-            
+
+
         } else {
             // Set error only if the code is invalid
             $smarty->assign('error', "Invalid verification code.");
@@ -89,8 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $smarty->assign('error', 'Email address not found.');
         }
     }
-}
-else {
+} else {
     // Wenn GET: CSRF Token generieren (falls noch nicht vorhanden)
     if (!isset($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(64));

@@ -43,24 +43,6 @@ if ($REQUEST_METHOD == "POST") {
         die("CSRF Token ungültig!");
     }
 
-
-
-
-    // Wenn Button "Login" geklickt wurde
-    if (isset($_POST['login'])) {
-        $user = DbFunctions::verifyUser($link, $email, $password);
-
-        if ($user) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_role'] = $user['role'];
-            $smarty->assign('user_id', $user['id']);
-            header("Location: index.php");
-            exit();
-        } else {
-            $smarty->assign('error-message', "Invalid email or password.");
-        }
-    }
-
     // Nach jedem POST neuen CSRF Token generieren
     $_SESSION['csrf_token'] = bin2hex(random_bytes(64));
 } else {

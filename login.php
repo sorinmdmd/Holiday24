@@ -7,12 +7,6 @@ require_once 'classes/includes/Customer.inc.php';
 require_once 'classes/includes/Sicherheit.inc.php';
 
 DEFINE('ENCODING', 'UTF-8');
-/*
-if (isset($_SESSION['successMessage'])) {
-    $smarty->assign('successMessage', $_SESSION['successMessage']);
-    unset($_SESSION['successMessage']);  // Damit die Meldung nur einmal angezeigt wird
-}
-*/
 
 $link = DbFunctions::connectWithDatabase();
 $title = "Login";
@@ -36,7 +30,7 @@ if ($REQUEST_METHOD == "POST") {
     $user = Customer::verifyUserLogin($link, $email, $password);
     
     if ($user) {
-        $_SESSION['user_id'] = $user['id']; // Use 'id' instead of 'CustomerID'
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_role'] = $user['role'];
         $smarty->assign('user_id', $user['id']); // Assign user_id to Smarty
         if($user['role'] == 'admin') {

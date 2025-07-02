@@ -41,7 +41,7 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function ()) {
 
             // Wenn das E-Mail-Formular abgeschickt wird, überprüfen wir die E-Mail mit PHP
             document.querySelector('#email-form').addEventListener('submit', function(e) {
@@ -70,7 +70,7 @@
                 })
                 .catch(error => console.error('Error:', error));
             });
-
+        }
        
     </script>
 </body>

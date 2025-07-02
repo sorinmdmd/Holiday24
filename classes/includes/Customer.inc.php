@@ -31,10 +31,10 @@ class Customer
 	{
 		// Entfernen von Leerzeichen am Anfang und Ende des Passworts
 		$password = trim($password);
-		
+
 		// Schutz vor SQL-Injection durch Escaping der E-Mail
 		$email = mysqli_real_escape_string($link, $email);
-		
+
 		// SQL-Abfrage: Hole Benutzerinformationen basierend auf E-Mail
 		$query = "SELECT id, role, password_hash FROM customer WHERE email = '$email'";
 		$result = DbFunctions::executeQuery($link, $query);
@@ -65,19 +65,19 @@ class Customer
 	}
 
 	public static function verifyUser($link, $userid)
-    {
-        $query = "UPDATE customer SET verified = 1 WHERE id = ?";
-    
-        $stmt = $link->prepare($query);
-    
-        if ($stmt) {
-            $stmt->bind_param("s", $userid); 
-            $stmt->execute();
-            $stmt->close();
-        } else {
-            error_log("Error preparing statement: " . $link->error);
-        }
-    }    
+	{
+		$query = "UPDATE customer SET verified = 1 WHERE id = ?";
+
+		$stmt = $link->prepare($query);
+
+		if ($stmt) {
+			$stmt->bind_param("s", $userid);
+			$stmt->execute();
+			$stmt->close();
+		} else {
+			error_log("Error preparing statement: " . $link->error);
+		}
+	}
 
 
 	/**
@@ -99,24 +99,24 @@ class Customer
 
 		// Sichere Passwort-Verschlüsselung mit bcrypt-Algorithmus
 		$passwordHash = password_hash($password, PASSWORD_BCRYPT);
-		
+
 		// SQL-Insert mit Prepared Statement für maximale Sicherheit
 		$query = "INSERT INTO customer (id, first_name, last_name, email, password_hash, role) VALUES (?, ?, ?, ?, ?, 'customer')";
 		$stmt = mysqli_prepare($link, $query);
-		
+
 		// Parameter an das Prepared Statement binden (alle als Strings)
 		mysqli_stmt_bind_param($stmt, 'sssss', $id, $firstName, $lastName, $email, $passwordHash);
 
 		// SQL-Statement ausführen und Ergebnis zurückgeben
 		return mysqli_stmt_execute($stmt);
 	}
-	
+
 	/**
 	 * Überprüft ob eine E-Mail-Adresse bereits in der Datenbank existiert
 	 * 
 	 * Diese Methode wird typischerweise vor der Registrierung verwendet,
 	 * um E-Mail-Duplikate zu vermeiden und eindeutige Benutzerkonten sicherzustellen.
-  	 *
+	 *
 	 * Performance-Optimierungen:
 	 * - SELECT 1 statt SELECT * für bessere Performance
 	 * - LIMIT 1 für frühzeitigen Abbruch bei erstem Treffer
@@ -127,13 +127,13 @@ class Customer
 		// Effiziente Abfrage: SELECT 1 ist schneller als SELECT *
 		$query = "SELECT 1 FROM customer WHERE email = ? LIMIT 1";
 		$stmt = mysqli_prepare($link, $query);
-		
+
 		// E-Mail-Parameter binden
 		mysqli_stmt_bind_param($stmt, 's', $email);
-		
+
 		// Statement ausführen
 		mysqli_stmt_execute($stmt);
-		
+
 		// Ergebnis im Speicher laden für Zählung
 		mysqli_stmt_store_result($stmt);
 
@@ -176,7 +176,7 @@ class Customer
 		);
 	}
 
-	 // Ruft die ID des ersten Benutzers aus der Datenbank ab
+	// Ruft die ID des ersten Benutzers aus der Datenbank ab
 	public static function getUserId($link)
 	{
 		// WARNUNG: Diese Abfrage gibt nur den ersten Benutzer zurück
@@ -187,23 +187,23 @@ class Customer
 		if ($row = mysqli_fetch_assoc($result)) {
 			return $row['id'];
 		}
-		
+
 		// Kein Benutzer gefunden
 		return null;
 	}
 
 	public static function getUserById($link, $userId)
-    {
-        $query = "SELECT * FROM customer WHERE id = '" . mysqli_real_escape_string($link, $userId) . "'";
-        return DbFunctions::getRows($link, $query);
-    }
+	{
+		$query = "SELECT * FROM customer WHERE id = '" . mysqli_real_escape_string($link, $userId) . "'";
+		return DbFunctions::getRows($link, $query);
+	}
 
 	public static function getUserDetails($link)
-    {
-        $query = "SELECT *
+	{
+		$query = "SELECT *
                       FROM customer";
-        return DbFunctions::getRows($link, $query);
-    }
+		return DbFunctions::getRows($link, $query);
+	}
 
 	// Löscht einen Benutzer aus der Datenbank
 	public static function deleteUser($link, $userId)

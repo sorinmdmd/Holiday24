@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $free_slots = intval($_POST['free_slots']);
             $link = DbFunctions::connectWithDatabase();
             $success = Travel::addBooking($link, $user_id, $book_bundle_id, $free_slots, $booked_slots);
-            
+
             // Prüfen ob Benutzerkonto verifiziert wurde für die Buchung
             if ($success) {
                 $smarty->assign('booking_success', true);
