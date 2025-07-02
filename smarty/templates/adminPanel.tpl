@@ -67,11 +67,7 @@
                     <p class="travel-hotel"><b>Hotel:</b> {$bundle.hotel_name}</p>
                         
                     <div class="travel-buttons">
-                        {if $bundle.available_spaces > 0}
-                            <a href="adminPanel.php?edit={$bundle.id}" class="edit-button">Edit</a>
-                        {else}
-                            <span class="soldout-button">Sold out</span>
-                        {/if}
+                        <a href="adminPanel.php?edit={$bundle.id}" class="edit-button">Edit</a>
                     </div>
                 </div>
             {/foreach}
